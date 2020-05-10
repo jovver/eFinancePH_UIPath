@@ -1,7 +1,7 @@
 {
   "name": "eFinance_Process",
   "description": "Transactional Process",
-  "main": "Main.xaml",
+  "main": "Archives\\Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.7.2]",
     "UiPath.Mail.Activities": "[1.7.2]",
@@ -32,7 +32,7 @@
       "includeOriginalXaml": false,
       "privateWorkflows": []
     },
-    "fileInfos": []
+    "fileInfoCollection": []
   },
   "expressionLanguage": "VisualBasic"
 }
