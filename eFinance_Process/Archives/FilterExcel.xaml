@@ -8,7 +8,7 @@
     <x:Property Name="strAccountNumberPDF" Type="InOutArgument(x:String)" />
     <x:Property Name="dtResults" Type="OutArgument(sd:DataTable)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>324,585</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,802</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -55,7 +55,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Filter Excel" sap:VirtualizedContainerService.HintSize="304,525" sap2010:WorkflowViewState.IdRef="Sequence_70">
+  <Sequence sap2010:Annotation.AnnotationText="ARCHIVED&#xD;&#xA;&#xD;&#xA;Description: Custom code that clones the datatables and only select the 'test data' of &quot;CSJR&quot;" DisplayName="Filter Excel" sap:VirtualizedContainerService.HintSize="304,597" sap2010:WorkflowViewState.IdRef="Sequence_70">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtExcel" />
       <Variable x:TypeArguments="x:Int32" Default="0" Name="intCounter" />
@@ -63,6 +63,7 @@
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" Visible="False" WorkbookPath="[strExtractedFile.ToString.Trim + strFileName.ToString.Trim + &quot;.xlsx&quot;]">
@@ -147,21 +148,21 @@
                       <InArgument x:TypeArguments="x:String">[strExtractedFile.ToString.Trim + item(12).ToString]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke DownloadAttachments workflow" sap:VirtualizedContainerService.HintSize="569,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="DownloadAttachments.xaml">
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke DownloadAttachments workflow" sap:VirtualizedContainerService.HintSize="569,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="eFinance System/DownloadAttachments.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="strExtractedFile">[strExtractedFile]</InArgument>
                       <InOutArgument x:TypeArguments="x:String" x:Key="strPath">[strPath]</InOutArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_ID">[item(12).ToString]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
-                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Read PDF workflow" sap:VirtualizedContainerService.HintSize="569,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Read PDF.xaml">
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Read PDF workflow" sap:VirtualizedContainerService.HintSize="569,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="eFinance System/Read PDF.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <OutArgument x:TypeArguments="x:String" x:Key="out_TotalAmountDue">[strTotalAmountPDF]</OutArgument>
                       <OutArgument x:TypeArguments="x:String" x:Key="out_AccountNumber">[strAccountNumberPDF]</OutArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_PDFPath">[strPath + ".pdf"]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
-                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Read Picture workflow" sap:VirtualizedContainerService.HintSize="569,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Read Picture.xaml">
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Read Picture workflow" sap:VirtualizedContainerService.HintSize="569,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="eFinance System/Read Picture.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="in_Path">[strPath + ".png"]</InArgument>
                       <OutArgument x:TypeArguments="x:String" x:Key="out_Result">[strResult]</OutArgument>

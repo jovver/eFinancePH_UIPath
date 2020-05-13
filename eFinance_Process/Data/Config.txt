@@ -1,0 +1,8 @@
+{
+
+	"ExtractedFilePath":"C:\\Users\\csjr\\Desktop\\eFinance Project\\Extracted File\\",
+	"FileName":"EFinanceReport",
+	"URL":"http://workit.nnitcorp.com/Departments/399-1000/Corporate/Finance/e-Finance/Lists/Communication/AllItems.aspx",
+	"ResultPath":"C:\\Users\\csjr\\Desktop\\eFinance Project\\Extracted File\\Results.xlsx"
+
+}
