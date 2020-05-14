@@ -1984,15 +1984,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\JAVV\\.nuget\\packages\\": {}
+    "C:\\Users\\LDAY\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "eFinance_Process",
       "projectName": "eFinance_Process",
-      "projectPath": "C:\\Users\\JAVV\\Downloads\\Plans\\UIPath\\eFinancePH_UIPath\\eFinance_Process\\.local",
-      "packagesPath": "C:\\Users\\JAVV\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\JAVV\\Downloads\\Plans\\UIPath\\eFinancePH_UIPath\\eFinance_Process\\.local"
+      "projectPath": "D:\\UIPath\\eFinance\\eFinance_Process\\.local",
+      "packagesPath": "C:\\Users\\LDAY\\.nuget\\packages\\",
+      "outputPath": "D:\\UIPath\\eFinance\\eFinance_Process\\.local"
     },
     "frameworks": {
       "net461": {
