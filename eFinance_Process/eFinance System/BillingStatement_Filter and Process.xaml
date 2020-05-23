@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,1786</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1215,1786</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>BillingStatement_Compare_and_Process_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="22">
@@ -54,9 +54,10 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: This is the main flow for processing of Billing Statements and then extracts the total amount due present in the statement.&#xA;&#xA;This workflow consists of a sequence and another state machine&#xA;&#xA;Current list of supported Bills:&#xA;PLDT&#xA;SMART&#xA;SKY&#xD;&#xA;GLOBE&#xD;&#xA;CONVERGE&#xA;&#xA;Pre-Conditions:&#xA;The attachments have been downloaded to the Output folder.&#xA;Adobe Acrobat reader is installed and is configured to be the default PDF reader.&#xA;Checking for a presence of one or more PDF files, assumed to be the Billing Statement and/or OR, is done on a separate workflow. Thus this workflow assumes that the ones present in the '\Output' folder have been pre-screened.&#xA;Adobe Acrobat reader has been set-up properly: 'Fit To Page' is set, Readability settings have been adjusted&#xA;&#xA;Post-Conditions: Extracts the 'Total Amount Due' (or derivatives thereof) of various Billing Statements into out_TotalAmountDue&#xA;&#xA;Arguments:&#xA;in_Config: Dictionary{String,Object}&#xA;out_TotalAmountDue: Double" DisplayName="BillingStatement_Compare_and_Process" sap:VirtualizedContainerService.HintSize="767,1621" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description: This is the main flow for processing of Billing Statements and then extracts the total amount due present in the statement.&#xA;&#xA;This workflow consists of a sequence and another state machine&#xA;&#xA;Current list of supported Bills:&#xA;PLDT&#xA;SMART&#xA;SKY&#xA;GLOBE&#xA;CONVERGE&#xA;&#xA;Pre-Conditions:&#xA;The attachments have been downloaded to the Output folder.&#xA;Adobe Acrobat reader is installed and is configured to be the default PDF reader.&#xA;Checking for a presence of one or more PDF files, assumed to be the Billing Statement and/or OR, is done on a separate workflow. Thus this workflow assumes that the ones present in the '\Output' folder have been pre-screened.&#xA;Adobe Acrobat reader has been set-up properly: 'Fit To Page' is set, Readability settings have been adjusted&#xA;&#xA;Post-Conditions: Extracts the 'Total Amount Due' (or derivatives thereof) of various Billing Statements into out_TotalAmountDue&#xA;&#xA;Arguments:&#xA;in_Config: Dictionary{String,Object}&#xA;out_TotalAmountDue: Double" DisplayName="BillingStatement_Compare_and_Process" sap:VirtualizedContainerService.HintSize="767,1621" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="CurrentDirectory" />
       <Variable x:TypeArguments="x:String" Name="WorkingDirectory" />
@@ -146,7 +147,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </State>
-      <State x:Name="__ReferenceID4" DisplayName="Initial State. Opening of the Output folder" sap:VirtualizedContainerService.HintSize="281,61" sap2010:WorkflowViewState.IdRef="State_2">
+      <State x:Name="__ReferenceID4" DisplayName="Initial State. Opening of the Output folder" sap:VirtualizedContainerService.HintSize="522,1457" sap2010:WorkflowViewState.IdRef="State_2">
         <State.Entry>
           <Sequence sap:VirtualizedContainerService.HintSize="476,1097" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
@@ -168,14 +169,14 @@
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,759" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence sap:VirtualizedContainerService.HintSize="376,759" sap2010:WorkflowViewState.IdRef="Sequence_28">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
-                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Address' toolbar" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Address' toolbar" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
                       <ui:Click.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -209,7 +210,7 @@
                         </ui:Target>
                       </ui:TypeInto.Target>
                     </ui:TypeInto>
-                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send 'Enter' to navigate" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SpecialKey="True">
+                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send 'Enter' to navigate" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="enter" KeyModifiers="None" SpecialKey="True">
                       <ui:SendHotkey.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="2ddda15cf6ea10fb7d9b15c1e0baa530" Selector="&lt;wnd aaname='Address' cls='ComboBox' /&gt;&lt;wnd aaname='Address' cls='Edit' /&gt;&lt;ctrl name='Address' role='editable text' /&gt;">
                           <ui:Target.TimeoutMS>
@@ -221,7 +222,7 @@
                         </ui:Target>
                       </ui:SendHotkey.Target>
                     </ui:SendHotkey>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Directory opened...&quot;]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Directory opened...&quot;]" />
                   </Sequence>
                 </ActivityAction>
               </ui:OpenApplication.Body>
