@@ -1040,7 +1040,7 @@
                       <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="SMART_Bill AND PDF_Found" />
                     </Transition.Condition>
                     <Transition.To>
-                      <State x:Name="__ReferenceID4" DisplayName="SMART Bill Processing" sap:VirtualizedContainerService.HintSize="848,1390" sap2010:WorkflowViewState.IdRef="State_6">
+                      <State x:Name="__ReferenceID4" DisplayName="SMART Bill Processing" sap:VirtualizedContainerService.HintSize="176,61" sap2010:WorkflowViewState.IdRef="State_6">
                         <State.Entry>
                           <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach to the current Adobe Acrobat Window" sap:VirtualizedContainerService.HintSize="802,1003" sap2010:WorkflowViewState.IdRef="WindowScope_8" InformativeScreenshot="5935b251bb891d99132e4f40e17f6838" Selector="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='*- Adobe Acrobat Reader DC' /&gt;&#xA;">
                             <ui:WindowScope.Body>
