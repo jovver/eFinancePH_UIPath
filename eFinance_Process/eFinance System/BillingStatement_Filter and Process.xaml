@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1209,1831</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1119,1871</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>BillingStatement_Compare_and_Process_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="22">
@@ -59,7 +59,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: This is the main flow for processing of Billing Statements and then extracts the total amount due present in the statement.&#xA;&#xA;This workflow consists of a sequence and another state machine&#xA;&#xA;Current list of supported Bills:&#xA;PLDT&#xA;SMART&#xA;SKY&#xA;GLOBE&#xA;CONVERGE - In progress&#xA;&#xA;Pre-Conditions:&#xA;The attachments have been downloaded to the Output folder.&#xA;Adobe Acrobat reader is installed and is configured to be the default PDF reader.&#xA;Checking for a presence of one or more PDF files, assumed to be the Billing Statement and/or OR, is done on a separate workflow. Thus this workflow assumes that the ones present in the '\Output' folder have been pre-screened.&#xA;Adobe Acrobat reader has been set-up properly: 'Fit To Page' is set, Readability settings have been adjusted. But the workflow contains the capability to adjust the zoom for robustness and consistentcy.&#xA;&#xA;Post-Conditions: Extracts the 'Total Amount Due' (or derivatives thereof) of various Billing Statements into out_TotalAmountDue&#xA;&#xA;Arguments:&#xA;in_Config: Dictionary{String,Object}&#xA;out_TotalAmountDue: Double&#xA;out_OR_NumberList: List[String] - Not yet implemented&#xA;out_SoABill_NumberList: List[String] - Not yet implemented" DisplayName="BillingStatement_Compare_and_Process" sap:VirtualizedContainerService.HintSize="859,1666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description: This is the main flow for processing of Billing Statements and then extracts the total amount due present in the statement.&#xA;&#xA;This workflow consists of a sequence and another state machine&#xA;&#xA;Current list of supported Bills:&#xA;PLDT - Current PoC Scope&#xA;SMART - Developed but not to be routed&#xA;SKY - Developed but not to be routed&#xA;GLOBE - Developed but not to be routed&#xA;CONVERGE - Stated not developed&#xA;&#xA;Pre-Conditions:&#xA;The attachments have been downloaded to the Output folder.&#xA;Adobe Acrobat reader is installed and is configured to be the default PDF reader.&#xA;Checking for a presence of one or more PDF files, assumed to be the Billing Statement and/or OR, is done on a separate workflow. Thus this workflow assumes that the ones present in the '\Output' folder have been pre-screened.&#xA;Adobe Acrobat reader has been set-up properly: 'Fit To Page' is set, Readability settings have been adjusted. But the workflow contains the capability to adjust the zoom for robustness and consistentcy.&#xA;&#xA;Post-Conditions: Extracts the 'Total Amount Due' (or derivatives thereof) of various Billing Statements into out_TotalAmountDue&#xA;&#xA;Arguments:&#xA;in_Config: Dictionary{String,Object}&#xA;out_TotalAmountDue: Double&#xA;out_OR_NumberList: List[String] - Not yet implemented&#xA;out_SoABill_NumberList: List[String] - Not yet implemented" DisplayName="BillingStatement_Compare_and_Process" sap:VirtualizedContainerService.HintSize="859,1666" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="CurrentDirectory" />
       <Variable x:TypeArguments="x:String" Name="WorkingDirectory" />
@@ -257,17 +257,17 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <Transition.To>
-              <State x:Name="__ReferenceID1" DisplayName="Determining the PDF service provider" sap:VirtualizedContainerService.HintSize="269,62" sap2010:WorkflowViewState.IdRef="State_1">
+              <State x:Name="__ReferenceID1" DisplayName="Determining the PDF service provider" sap:VirtualizedContainerService.HintSize="1504,4138" sap2010:WorkflowViewState.IdRef="State_1">
                 <State.Entry>
-                  <Sequence sap:VirtualizedContainerService.HintSize="1378,2835" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                  <Sequence sap:VirtualizedContainerService.HintSize="1458,3643" sap2010:WorkflowViewState.IdRef="Sequence_15">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1336,2743" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1416,3551" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                       <TryCatch.Try>
-                        <Sequence sap:VirtualizedContainerService.HintSize="1298,2516" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                        <Sequence sap:VirtualizedContainerService.HintSize="1378,3324" sap2010:WorkflowViewState.IdRef="Sequence_14">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="FileName" />
                           </Sequence.Variables>
@@ -276,7 +276,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:MultipleAssign DisplayName="Multiple Assign for initialization" sap:VirtualizedContainerService.HintSize="1256,284" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+                          <ui:MultipleAssign DisplayName="Multiple Assign for initialization" sap:VirtualizedContainerService.HintSize="1336,284" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
                             <ui:MultipleAssign.AssignOperations>
                               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
@@ -338,32 +338,32 @@
                               </scg:List>
                             </ui:MultipleAssign.AssignOperations>
                           </ui:MultipleAssign>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1256,91" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;Processing file number: &quot; + FileNumber.ToString]" />
-                          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1256,1969" sap2010:WorkflowViewState.IdRef="TryCatch_7">
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1336,91" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;Processing file number: &quot; + FileNumber.ToString]" />
+                          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1336,2777" sap2010:WorkflowViewState.IdRef="TryCatch_7">
                             <TryCatch.Try>
-                              <If Condition="[FileNumber &lt;= FilesArray.Length]" sap:VirtualizedContainerService.HintSize="1218,1742" sap2010:WorkflowViewState.IdRef="If_3">
+                              <If Condition="[FileNumber &lt;= FilesArray.Length]" sap:VirtualizedContainerService.HintSize="1298,2550" sap2010:WorkflowViewState.IdRef="If_3">
                                 <If.Then>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="973,1594" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                  <Sequence sap:VirtualizedContainerService.HintSize="1053,2402" sap2010:WorkflowViewState.IdRef="Sequence_17">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <If Condition="[Path.GetExtension(FilesArray(FileNumber-1)).Equals(&quot;.pdf&quot;)]" sap:VirtualizedContainerService.HintSize="931,1502" sap2010:WorkflowViewState.IdRef="If_4">
+                                    <If Condition="[Path.GetExtension(FilesArray(FileNumber-1)).Equals(&quot;.pdf&quot;)]" sap:VirtualizedContainerService.HintSize="1011,2310" sap2010:WorkflowViewState.IdRef="If_4">
                                       <If.Then>
-                                        <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach to the current working directory" sap:VirtualizedContainerService.HintSize="510,1354" sap2010:WorkflowViewState.IdRef="WindowScope_4" InformativeScreenshot="2ccd933da6092d49748539b92e5d3424" Selector="&lt;wnd app='explorer.exe' cls='CabinetWClass' title='Output' /&gt;&#xA;">
+                                        <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach to the current working directory" sap:VirtualizedContainerService.HintSize="590,2162" sap2010:WorkflowViewState.IdRef="WindowScope_4" InformativeScreenshot="2ccd933da6092d49748539b92e5d3424" Selector="&lt;wnd app='explorer.exe' cls='CabinetWClass' title='Output' /&gt;&#xA;">
                                           <ui:WindowScope.Body>
                                             <ActivityAction x:TypeArguments="x:Object">
                                               <ActivityAction.Argument>
                                                 <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                               </ActivityAction.Argument>
-                                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,1208" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="556,2016" sap2010:WorkflowViewState.IdRef="Sequence_16">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="434,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
+                                                <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="514,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
                                                   <ui:MultipleAssign.AssignOperations>
                                                     <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                                       <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
@@ -385,7 +385,7 @@
                                                     </scg:List>
                                                   </ui:MultipleAssign.AssignOperations>
                                                 </ui:MultipleAssign>
-                                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_DOUBLE" DisplayName="Double click the PDF file" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_DOUBLE" DisplayName="Double click the PDF file" sap:VirtualizedContainerService.HintSize="514,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
                                                   <ui:Click.CursorPosition>
                                                     <ui:CursorPosition Position="Center">
                                                       <ui:CursorPosition.OffsetX>
@@ -407,19 +407,19 @@
                                                     </ui:Target>
                                                   </ui:Click.Target>
                                                 </ui:Click>
-                                                <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach to the PDF file" sap:VirtualizedContainerService.HintSize="434,801" sap2010:WorkflowViewState.IdRef="WindowScope_5" InformativeScreenshot="8c74fe5443f58fb317fcb1747bfdb662" Selector="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='*- Adobe Acrobat Reader DC' /&gt;&#xA;">
+                                                <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach to the PDF file" sap:VirtualizedContainerService.HintSize="514,1609" sap2010:WorkflowViewState.IdRef="WindowScope_5" InformativeScreenshot="8c74fe5443f58fb317fcb1747bfdb662" Selector="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='*- Adobe Acrobat Reader DC' /&gt;&#xA;">
                                                   <ui:WindowScope.Body>
                                                     <ActivityAction x:TypeArguments="x:Object">
                                                       <ActivityAction.Argument>
                                                         <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                                       </ActivityAction.Argument>
-                                                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="242,655" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                                                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="480,1463" sap2010:WorkflowViewState.IdRef="Sequence_22">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
-                                                        <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" sap2010:Annotation.AnnotationText="Extra handling for when Adobe does not override the document zoom" DisplayName="Send 'Ctrl+0' command for standard zoom" sap:VirtualizedContainerService.HintSize="200,108" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="0" KeyModifiers="Ctrl">
+                                                        <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" sap2010:Annotation.AnnotationText="Extra handling for when Adobe does not override the document zoom" DisplayName="Send 'Ctrl+0' command for standard zoom" sap:VirtualizedContainerService.HintSize="438,108" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="0" KeyModifiers="Ctrl">
                                                           <ui:SendHotkey.Target>
                                                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
                                                               <ui:Target.TimeoutMS>
@@ -438,11 +438,85 @@
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
                                                         </ui:SendHotkey>
-                                                        <TryCatch DisplayName="Try Catch SKY Billing Statements" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                                                        <TryCatch sap2010:Annotation.AnnotationText="Update the timeout values to be: cint(in_Config(&quot;TimeoutShort&quot;).ToString) when connecting with the whole flow" DisplayName="Try Catch PLDT Billing Statement" sap:VirtualizedContainerService.HintSize="438,138" sap2010:WorkflowViewState.IdRef="TryCatch_6">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <TryCatch.Try>
+                                                            <Sequence sap:VirtualizedContainerService.HintSize="380,398" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                              <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find PLDT banner graphic" sap:VirtualizedContainerService.HintSize="338,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_3">
+                                                                <ui:WaitUiElementAppear.Target>
+                                                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="61e812141c3137b334b9b37d69a963d2" Selector="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&#xA;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&#xA;&lt;ctrl role='graphic' idx='2' /&gt;&#xA;" TimeoutMS="5000">
+                                                                    <ui:Target.WaitForReady>
+                                                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                                    </ui:Target.WaitForReady>
+                                                                  </ui:Target>
+                                                                </ui:WaitUiElementAppear.Target>
+                                                              </ui:WaitUiElementAppear>
+                                                              <ui:MultipleAssign DisplayName="Multiple Assign Bill variables" sap:VirtualizedContainerService.HintSize="338,160" sap2010:WorkflowViewState.IdRef="MultipleAssign_8">
+                                                                <ui:MultipleAssign.AssignOperations>
+                                                                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_20">
+                                                                      <ui:AssignOperation.To>
+                                                                        <OutArgument x:TypeArguments="x:String">[Statement_FileName]</OutArgument>
+                                                                      </ui:AssignOperation.To>
+                                                                      <ui:AssignOperation.Value>
+                                                                        <InArgument x:TypeArguments="x:String">[FileName]</InArgument>
+                                                                      </ui:AssignOperation.Value>
+                                                                    </ui:AssignOperation>
+                                                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_21">
+                                                                      <ui:AssignOperation.To>
+                                                                        <OutArgument x:TypeArguments="x:String">[Statement_Directory]</OutArgument>
+                                                                      </ui:AssignOperation.To>
+                                                                      <ui:AssignOperation.Value>
+                                                                        <InArgument x:TypeArguments="x:String">[Path.GetFullPath(FilesArray(FileNumber-1))]</InArgument>
+                                                                      </ui:AssignOperation.Value>
+                                                                    </ui:AssignOperation>
+                                                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_22">
+                                                                      <ui:AssignOperation.To>
+                                                                        <OutArgument x:TypeArguments="x:Boolean">[PLDT_Bill]</OutArgument>
+                                                                      </ui:AssignOperation.To>
+                                                                      <ui:AssignOperation.Value>
+                                                                        <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                                      </ui:AssignOperation.Value>
+                                                                    </ui:AssignOperation>
+                                                                  </scg:List>
+                                                                </ui:MultipleAssign.AssignOperations>
+                                                              </ui:MultipleAssign>
+                                                            </Sequence>
+                                                          </TryCatch.Try>
+                                                          <TryCatch.Catches>
+                                                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_6">
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                              <ActivityAction x:TypeArguments="s:Exception">
+                                                                <ActivityAction.Argument>
+                                                                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                                                </ActivityAction.Argument>
+                                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Not a PLDT bill.&quot;]" />
+                                                              </ActivityAction>
+                                                            </Catch>
+                                                          </TryCatch.Catches>
+                                                        </TryCatch>
+                                                        <TryCatch sap2010:Annotation.AnnotationText="Currently set to ignore these files by setting 'SKY_Bill = False'" DisplayName="Try Catch SKY Billing Statements" sap:VirtualizedContainerService.HintSize="438,108" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
                                                           <TryCatch.Try>
@@ -455,7 +529,7 @@
                                                               </sap:WorkflowViewStateService.ViewState>
                                                               <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find SKY Cable Corp banner graphic" sap:VirtualizedContainerService.HintSize="338,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
                                                                 <ui:WaitUiElementAppear.Target>
-                                                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="f36d6abeadf3e65a72b366122acd5e51" Selector="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='*Adobe Acrobat Reader DC' /&gt;&#xA;&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&#xA;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&#xA;&lt;ctrl name='SKY Cable Corporation*' role='text' /&gt;&#xA;" TimeoutMS="3000">
+                                                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="f36d6abeadf3e65a72b366122acd5e51" Selector="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='*Adobe Acrobat Reader DC' /&gt;&#xA;&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&#xA;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&#xA;&lt;ctrl name='SKY Cable Corporation*' role='text' /&gt;&#xA;" TimeoutMS="5000">
                                                                     <ui:Target.WaitForReady>
                                                                       <InArgument x:TypeArguments="ui:WaitForReady" />
                                                                     </ui:Target.WaitForReady>
@@ -518,23 +592,24 @@
                                                             </Catch>
                                                           </TryCatch.Catches>
                                                         </TryCatch>
-                                                        <TryCatch DisplayName="Try Catch SMART Billing Statements" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+                                                        <TryCatch sap2010:Annotation.AnnotationText="Currently set to ignore these files by setting 'SMART_Bill = False'" DisplayName="Try Catch SMART Billing Statements" sap:VirtualizedContainerService.HintSize="438,108" sap2010:WorkflowViewState.IdRef="TryCatch_5">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
                                                           <TryCatch.Try>
-                                                            <Sequence sap:VirtualizedContainerService.HintSize="380,343" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                                            <Sequence sap:VirtualizedContainerService.HintSize="380,398" sap2010:WorkflowViewState.IdRef="Sequence_20">
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
-                                                              <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find SMART Communications banner graphic" sap:VirtualizedContainerService.HintSize="338,51" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2">
+                                                              <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find SMART Communications banner graphic" sap:VirtualizedContainerService.HintSize="338,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2">
                                                                 <ui:WaitUiElementAppear.Target>
-                                                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="70be0be74f446f8b0009ca224f6e1774" Selector="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='http_Apr_SMART.pdf - Adobe Acrobat Reader DC' /&gt;&#xA;&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&#xA;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&#xA;&lt;ctrl role='document' /&gt;&#xA;&lt;ctrl name='SMART COMMUNICATIONS, INC.*' role='text' /&gt;&#xA;" TimeoutMS="3000">
+                                                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="70be0be74f446f8b0009ca224f6e1774" Selector="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='http_Apr_SMART.pdf - Adobe Acrobat Reader DC' /&gt;&#xA;&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&#xA;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&#xA;&lt;ctrl role='document' /&gt;&#xA;&lt;ctrl name='SMART COMMUNICATIONS, INC.*' role='text' /&gt;&#xA;" TimeoutMS="5000">
                                                                     <ui:Target.WaitForReady>
                                                                       <InArgument x:TypeArguments="ui:WaitForReady" />
                                                                     </ui:Target.WaitForReady>
@@ -542,7 +617,7 @@
                                                                 </ui:WaitUiElementAppear.Target>
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
@@ -603,83 +678,12 @@
                                                             </Catch>
                                                           </TryCatch.Catches>
                                                         </TryCatch>
-                                                        <TryCatch DisplayName="Try Catch PLDT Billing Statement" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+                                                        <TryCatch sap2010:Annotation.AnnotationText="Currently set to ignore these files by setting 'GLOBE_Bill = False'" DisplayName="Try Catch GLOBE Billing Statement" sap:VirtualizedContainerService.HintSize="438,108" sap2010:WorkflowViewState.IdRef="TryCatch_8">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                            </scg:Dictionary>
-                                                          </sap:WorkflowViewStateService.ViewState>
-                                                          <TryCatch.Try>
-                                                            <Sequence sap:VirtualizedContainerService.HintSize="380,398" sap2010:WorkflowViewState.IdRef="Sequence_23">
-                                                              <sap:WorkflowViewStateService.ViewState>
-                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                </scg:Dictionary>
-                                                              </sap:WorkflowViewStateService.ViewState>
-                                                              <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find PLDT banner graphic" sap:VirtualizedContainerService.HintSize="338,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_3">
-                                                                <ui:WaitUiElementAppear.Target>
-                                                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="61e812141c3137b334b9b37d69a963d2" Selector="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='0287550561_202004.pdf - Adobe Acrobat Reader DC' /&gt;&#xA;&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&#xA;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&#xA;&lt;ctrl idx='2' role='graphic' /&gt;&#xA;" TimeoutMS="3000">
-                                                                    <ui:Target.WaitForReady>
-                                                                      <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                                    </ui:Target.WaitForReady>
-                                                                  </ui:Target>
-                                                                </ui:WaitUiElementAppear.Target>
-                                                              </ui:WaitUiElementAppear>
-                                                              <ui:MultipleAssign DisplayName="Multiple Assign Bill variables" sap:VirtualizedContainerService.HintSize="338,160" sap2010:WorkflowViewState.IdRef="MultipleAssign_8">
-                                                                <ui:MultipleAssign.AssignOperations>
-                                                                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                                                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_20">
-                                                                      <ui:AssignOperation.To>
-                                                                        <OutArgument x:TypeArguments="x:String">[Statement_FileName]</OutArgument>
-                                                                      </ui:AssignOperation.To>
-                                                                      <ui:AssignOperation.Value>
-                                                                        <InArgument x:TypeArguments="x:String">[FileName]</InArgument>
-                                                                      </ui:AssignOperation.Value>
-                                                                    </ui:AssignOperation>
-                                                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_21">
-                                                                      <ui:AssignOperation.To>
-                                                                        <OutArgument x:TypeArguments="x:String">[Statement_Directory]</OutArgument>
-                                                                      </ui:AssignOperation.To>
-                                                                      <ui:AssignOperation.Value>
-                                                                        <InArgument x:TypeArguments="x:String">[Path.GetFullPath(FilesArray(FileNumber-1))]</InArgument>
-                                                                      </ui:AssignOperation.Value>
-                                                                    </ui:AssignOperation>
-                                                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_22">
-                                                                      <ui:AssignOperation.To>
-                                                                        <OutArgument x:TypeArguments="x:Boolean">[PLDT_Bill]</OutArgument>
-                                                                      </ui:AssignOperation.To>
-                                                                      <ui:AssignOperation.Value>
-                                                                        <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                                                      </ui:AssignOperation.Value>
-                                                                    </ui:AssignOperation>
-                                                                  </scg:List>
-                                                                </ui:MultipleAssign.AssignOperations>
-                                                              </ui:MultipleAssign>
-                                                            </Sequence>
-                                                          </TryCatch.Try>
-                                                          <TryCatch.Catches>
-                                                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_6">
-                                                              <sap:WorkflowViewStateService.ViewState>
-                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                </scg:Dictionary>
-                                                              </sap:WorkflowViewStateService.ViewState>
-                                                              <ActivityAction x:TypeArguments="s:Exception">
-                                                                <ActivityAction.Argument>
-                                                                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                                                                </ActivityAction.Argument>
-                                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Not a PLDT bill.&quot;]" />
-                                                              </ActivityAction>
-                                                            </Catch>
-                                                          </TryCatch.Catches>
-                                                        </TryCatch>
-                                                        <TryCatch DisplayName="Try Catch GLOBE Billing Statement" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_8">
-                                                          <sap:WorkflowViewStateService.ViewState>
-                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
                                                           <TryCatch.Try>
@@ -691,10 +695,7 @@
                                                               </sap:WorkflowViewStateService.ViewState>
                                                               <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find GLOBE banner graphic" sap:VirtualizedContainerService.HintSize="338,51" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_5">
                                                                 <ui:WaitUiElementAppear.Target>
-                                                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="59c5373aff5c32b3831ccf25d313cfdb" Selector="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&#xD;&#xA;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&#xD;&#xA;&lt;ctrl role='client' /&gt;&#xD;&#xA;&lt;ctrl name='*' role='graphic' /&gt;&#xD;&#xA;">
-                                                                    <ui:Target.TimeoutMS>
-                                                                      <InArgument x:TypeArguments="x:Int32" />
-                                                                    </ui:Target.TimeoutMS>
+                                                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="59c5373aff5c32b3831ccf25d313cfdb" Selector="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&#xA;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&#xA;&lt;ctrl role='client' /&gt;&#xA;&lt;ctrl name='*' role='graphic' /&gt;&#xA;" TimeoutMS="5000">
                                                                     <ui:Target.WaitForReady>
                                                                       <InArgument x:TypeArguments="ui:WaitForReady" />
                                                                     </ui:Target.WaitForReady>
@@ -756,11 +757,12 @@
                                                             </Catch>
                                                           </TryCatch.Catches>
                                                         </TryCatch>
-                                                        <TryCatch DisplayName="Try Catch CONVERGE Billing Statement" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_9">
+                                                        <TryCatch sap2010:Annotation.AnnotationText="Currently set to ignore these files by setting 'CONVERGE_Bill = False'" DisplayName="Try Catch CONVERGE Billing Statement" sap:VirtualizedContainerService.HintSize="438,601" sap2010:WorkflowViewState.IdRef="TryCatch_9">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
                                                           <TryCatch.Try>
@@ -773,10 +775,7 @@
                                                               </sap:WorkflowViewStateService.ViewState>
                                                               <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find CONVERGE banner graphic" sap:VirtualizedContainerService.HintSize="338,51" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_6">
                                                                 <ui:WaitUiElementAppear.Target>
-                                                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="71798850f656fcc24614a79571177fb1" Selector="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&#xD;&#xA;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&#xD;&#xA;&lt;ctrl role='client' /&gt;&#xD;&#xA;&lt;ctrl name='CONVERGE INFORMATION AND COMMUNICATIONS   TECHNOLOGY SOLUTIONS, *' role='text' /&gt;&#xD;&#xA;">
-                                                                    <ui:Target.TimeoutMS>
-                                                                      <InArgument x:TypeArguments="x:Int32" />
-                                                                    </ui:Target.TimeoutMS>
+                                                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="71798850f656fcc24614a79571177fb1" Selector="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&#xA;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&#xA;&lt;ctrl role='client' /&gt;&#xA;&lt;ctrl name='CONVERGE INFORMATION AND COMMUNICATIONS   TECHNOLOGY SOLUTIONS, *' role='text' /&gt;&#xA;" TimeoutMS="5000">
                                                                     <ui:Target.WaitForReady>
                                                                       <InArgument x:TypeArguments="ui:WaitForReady" />
                                                                     </ui:Target.WaitForReady>
@@ -880,7 +879,7 @@
                               </If>
                             </TryCatch.Try>
                             <TryCatch.Catches>
-                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1222,21" sap2010:WorkflowViewState.IdRef="Catch`1_7">
+                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1302,21" sap2010:WorkflowViewState.IdRef="Catch`1_7">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -906,7 +905,7 @@
                         </Sequence>
                       </TryCatch.Try>
                       <TryCatch.Catches>
-                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1302,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1382,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1067,7 +1066,7 @@
                       </State>
                     </Transition.To>
                   </Transition>
-                  <Transition DisplayName="No more billing statements found" sap2010:WorkflowViewState.IdRef="Transition_9">
+                  <Transition DisplayName="No more billing statements found" sap:VirtualizedContainerService.HintSize="658,505" sap2010:WorkflowViewState.IdRef="Transition_9">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <av:PointCollection x:Key="ConnectorLocation">474.5,265.2 737.5,265.2 737.5,612.2 512,612.2</av:PointCollection>
@@ -1078,6 +1077,13 @@
                     <Transition.To>
                       <x:Reference>__ReferenceID0</x:Reference>
                     </Transition.To>
+                    <Transition.Action>
+                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Close_Adobe_Acrobat_Application workflow" sap:VirtualizedContainerService.HintSize="379,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="eFinance System\Close_Adobe_Acrobat_Application.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                    </Transition.Action>
                     <Transition.Condition>[(PDF_Found AND Not(PLDT_Bill AND SKY_Bill AND SMART_Bill)) OR BusinessRuleException IsNot Nothing]</Transition.Condition>
                   </Transition>
                   <Transition DisplayName="Not a PDF file" sap:VirtualizedContainerService.HintSize="450,507" sap2010:WorkflowViewState.IdRef="Transition_3">
@@ -1390,11 +1396,9 @@
                         <x:Int32 x:Key="DestConnectionPointIndex">6</x:Int32>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Transition.Condition>
-                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="GLOBE_Bill AND PDF_Found" />
-                    </Transition.Condition>
+                    <Transition.Condition>[GLOBE_Bill AND PDF_Found]</Transition.Condition>
                     <Transition.To>
-                      <State x:Name="__ReferenceID5" DisplayName="GLOBE Bill Processing" sap:VirtualizedContainerService.HintSize="691,1205" sap2010:WorkflowViewState.IdRef="State_8">
+                      <State x:Name="__ReferenceID5" DisplayName="GLOBE Bill Processing" sap:VirtualizedContainerService.HintSize="173,62" sap2010:WorkflowViewState.IdRef="State_8">
                         <State.Entry>
                           <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach to the current Adobe Acrobat Window" sap:VirtualizedContainerService.HintSize="645,818" sap2010:WorkflowViewState.IdRef="WindowScope_9" InformativeScreenshot="5935b251bb891d99132e4f40e17f6838" Selector="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='*- Adobe Acrobat Reader DC' /&gt;&#xA;">
                             <ui:WindowScope.Body>
@@ -1488,9 +1492,7 @@
                             <Transition.To>
                               <x:Reference>__ReferenceID0</x:Reference>
                             </Transition.To>
-                            <Transition.Condition>
-                              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="FileNumber &gt; FilesArray.Length" />
-                            </Transition.Condition>
+                            <Transition.Condition>[FileNumber &gt; FilesArray.Length]</Transition.Condition>
                           </Transition>
                           <Transition DisplayName="Files to Process" sap2010:WorkflowViewState.IdRef="Transition_14">
                             <sap:WorkflowViewStateService.ViewState>
@@ -1503,9 +1505,7 @@
                             <Transition.To>
                               <x:Reference>__ReferenceID1</x:Reference>
                             </Transition.To>
-                            <Transition.Condition>
-                              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="FileNumber &lt;= FilesArray.Length" />
-                            </Transition.Condition>
+                            <Transition.Condition>[FileNumber &lt;= FilesArray.Length]</Transition.Condition>
                           </Transition>
                         </State.Transitions>
                       </State>
@@ -1527,15 +1527,6 @@
       <x:Reference>__ReferenceID2</x:Reference>
       <x:Reference>__ReferenceID3</x:Reference>
       <x:Reference>__ReferenceID4</x:Reference>
-      <State DisplayName="State" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_7">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:Point x:Key="ShapeLocation">593,279.5</av:Point>
-            <av:Size x:Key="ShapeSize">134,61</av:Size>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </State>
       <x:Reference>__ReferenceID5</x:Reference>
       <StateMachine.Variables>
         <Variable x:TypeArguments="x:String" Name="SystemException" />
