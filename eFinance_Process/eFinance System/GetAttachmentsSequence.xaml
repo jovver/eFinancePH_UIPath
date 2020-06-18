@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="GetAttachmentsSequence" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1453,2434" sap2010:WorkflowViewState.IdRef="GetAttachmentsSequence_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GetAttachmentsSequence" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1453,2565" sap2010:WorkflowViewState.IdRef="GetAttachmentsSequence_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -47,7 +47,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: This sequence will pre-screen the attachment of the current communication reimbursement entry opened.&#xA;&#xA;The current filters are:&#xA;Only two (2) files&#xA;One &quot;.pdf&quot; file and &quot;.jpg/.jpeg&quot; file&#xA;&#xA;The list variable &quot;AllowedFiles&quot; is to be updated to in_Config(&quot;SupportedFileFormats&quot;).ToString when connected to the whole flow" DisplayName="GetAttachmentsSequence" sap:VirtualizedContainerService.HintSize="1463,2269" sap2010:WorkflowViewState.IdRef="Sequence_17">
+  <Sequence sap2010:Annotation.AnnotationText="Description: This sequence will pre-screen the attachment of the current communication reimbursement entry opened.&#xA;&#xA;The current filters are:&#xA;Only two (2) files&#xA;One &quot;.pdf&quot; file and &quot;.jpg/.jpeg&quot; file&#xA;&#xA;The list variable &quot;AllowedFiles&quot; is to be updated to in_Config(&quot;SupportedFileFormats&quot;).ToString when connected to the whole flow" DisplayName="GetAttachmentsSequence" sap:VirtualizedContainerService.HintSize="1463,2400" sap2010:WorkflowViewState.IdRef="Sequence_17">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="ExtractDataTable" />
       <Variable x:TypeArguments="scg:List(x:String)" Default="[new List(Of String)({&quot;.pdf&quot;,&quot;.jpg&quot;,&quot;.jpeg&quot;,&quot;.png&quot;})]" Name="AllowedFiles" />
@@ -92,9 +92,9 @@
         </ui:BrowserScope.Body>
       </ui:BrowserScope>
     </Sequence>
-    <If Condition="[ExtractDataTable.Rows.Count() = 2]" DisplayName="If: Checking on the number of uploaded attachments" sap:VirtualizedContainerService.HintSize="1421,1584" sap2010:WorkflowViewState.IdRef="If_6">
+    <If Condition="[ExtractDataTable.Rows.Count() = 2]" DisplayName="If: Checking on the number of uploaded attachments" sap:VirtualizedContainerService.HintSize="1421,1715" sap2010:WorkflowViewState.IdRef="If_6">
       <If.Then>
-        <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="1176,1436" sap2010:WorkflowViewState.IdRef="Sequence_16">
+        <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="1176,1567" sap2010:WorkflowViewState.IdRef="Sequence_16">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -135,15 +135,15 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:ForEachRow>
-          <If Condition="[AttachmentFilesList.Contains(AllowedFiles(0)) And (AttachmentFilesList.Contains(AllowedFiles(1)) Or AttachmentFilesList.Contains(AllowedFiles(2))Or AttachmentFilesList.Contains(AllowedFiles(3)))]" DisplayName="If: Checking of allowed file combination" sap:VirtualizedContainerService.HintSize="1134,1107" sap2010:WorkflowViewState.IdRef="If_5">
+          <If Condition="[AttachmentFilesList.Contains(AllowedFiles(0)) And (AttachmentFilesList.Contains(AllowedFiles(1)) Or AttachmentFilesList.Contains(AllowedFiles(2))Or AttachmentFilesList.Contains(AllowedFiles(3)))]" DisplayName="If: Checking of allowed file combination" sap:VirtualizedContainerService.HintSize="1134,1238" sap2010:WorkflowViewState.IdRef="If_5">
             <If.Then>
-              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ExtractDataTable]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="889,959" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ExtractDataTable]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="889,1090" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd:DataRow">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="839,811" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="839,942" sap2010:WorkflowViewState.IdRef="Sequence_15">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="File" />
                       </Sequence.Variables>
@@ -204,7 +204,8 @@
                           </ui:Target>
                         </ui:Click.Target>
                       </ui:Click>
-                      <If Condition="[AttachmentFilesList.Contains(AllowedFiles(0))]" DisplayName="If Checking of file type to download" sap:VirtualizedContainerService.HintSize="797,327" sap2010:WorkflowViewState.IdRef="If_4">
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="797,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[AttachmentFilesList.Contains(&quot;.pdf&quot;)]" />
+                      <If Condition="[AttachmentFilesList(0).Contains(&quot;.pdf&quot;)]" DisplayName="If Checking of file type to download" sap:VirtualizedContainerService.HintSize="797,327" sap2010:WorkflowViewState.IdRef="If_4">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
