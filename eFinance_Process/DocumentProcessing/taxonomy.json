@@ -51,7 +51,17 @@
         "FieldId": "Images.MobileScreenshots.BDO.DocumentType",
         "FieldName": "Document Type"
       },
-      "Fields": []
+      "Fields": [
+        {
+          "FieldId": "Images.MobileScreenshots.BDO.TotalAmountPaid",
+          "FieldName": "TotalAmountPaid",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        }
+      ]
     },
     {
       "DocumentTypeId": "PDF.StatementOfAccounts.SkyBroadband",

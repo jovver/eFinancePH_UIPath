@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1209,1953</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>922,2023</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>BillingStatement_Compare_and_Process_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -71,7 +71,7 @@
       <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: This is the main flow for processing of Billing Statements and then extracts the total amount due present in the statement.&#xA;&#xA;This workflow consists of a sequence and another state machine&#xA;&#xA;Current list of supported Bills:&#xA;PLDT - Current PoC Scope. Regex Developed&#xA;SMART - Regex to be developed&#xA;SKY - Regex to be developed&#xA;GLOBE - Regex to be developed&#xA;CONVERGE - Regex to be developed&#xA;&#xA;Pre-Conditions:&#xA;The attachments have been downloaded to the Output folder.&#xA;Adobe Acrobat reader is installed and is configured to be the default PDF reader.&#xA;Checking for a presence of one or more PDF files, assumed to be the Billing Statement and/or OR, is done on a separate workflow. Thus this workflow assumes that the ones present in the '\Output' folder have been pre-screened.&#xA;Adobe Acrobat reader has been set-up properly: 'Fit To Page' is set, Readability settings have been adjusted. But the workflow contains the capability to adjust the zoom for robustness and consistentcy.&#xA;&#xA;Post-Conditions: Extracts the 'Total Amount Due' (or derivatives thereof) of various Billing Statements into out_TotalAmountDue&#xA;&#xA;Arguments:&#xA;in_Config: Dictionary{String,Object}&#xA;out_TotalAmountDue: Double&#xA;out_OR_NumberList: List[String] - Not yet implemented&#xA;out_SoABill_NumberList: List[String] - Not yet implemented" DisplayName="BillingStatement_Compare_and_Process" sap:VirtualizedContainerService.HintSize="699,1788" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description: This is the main flow for processing of Billing Statements and then extracts the total amount due present in the statement.&#xA;&#xA;This workflow consists of a sequence and another state machine&#xA;&#xA;Current list of supported Bills:&#xA;PLDT - Current PoC Scope. Regex Developed&#xA;SMART - Regex to be developed&#xA;SKY - Regex to be developed&#xA;GLOBE - Regex in progress&#xA;CONVERGE - Regex to be developed&#xA;&#xA;Pre-Conditions:&#xA;- The attachments have been downloaded to the Output folder.&#xA;- Checking for a presence of one or more PDF files, assumed to be the Billing Statement and/or OR, is done on a separate workflow. Thus this workflow assumes that the ones present in the '\Output' folder have been pre-screened.&#xA;- The workflow only opens pdf files&#xA;- Proper taxonomy has been set-up via the Taxonomy Manager&#xA;- The 'Classifiers.json' file has been set-up and trained via the '\DocumentProcessing\DocumentTraining.xaml'&#xA;&#xA;Post-Conditions: &#xA;- Extracts the 'Total Amount Due' (or derivatives thereof) of various Billing Statements into out_TotalAmountDue&#xA;&#xA;Arguments:&#xA;in_Config: Dictionary{String,Object}&#xA;out_TotalAmountDue: Double&#xA;out_OR_Number: String&#xA;out_SoABill_NumberList: List[String]&#xA;out_OR_Name: String&#xA;out_PaymentFile: String" DisplayName="BillingStatement_Compare_and_Process" sap:VirtualizedContainerService.HintSize="699,1818" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="CurrentDirectory" />
       <Variable x:TypeArguments="x:String" Name="WorkingDirectory" />
@@ -142,7 +142,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <StateMachine InitialState="{x:Reference __ReferenceID0}" sap2010:Annotation.AnnotationText="Description: This state machine is the main processing workflow. This workflow uses the most recent feature of UIPath as of the April release, that is the contracts and the IntelligentOCR features. This workflow digitizes the document and then extracts the relevant contents through a RegEx extractor. All done via the use of OCR.&#xD;&#xA;&#xD;&#xA;Pre-condition:&#xD;&#xA;- The following packages must be installed: UiPath.IntelligentOCR.Activities and UiPath.DocumentProcessing.Contracts" DisplayName="State Machine: Various Bill Statement Filter and Processing" sap:VirtualizedContainerService.HintSize="657,753" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+    <StateMachine InitialState="{x:Reference __ReferenceID0}" sap2010:Annotation.AnnotationText="Description: This state machine is the main processing workflow. This workflow uses the most recent feature of UIPath as of the April release, that is the contracts and the IntelligentOCR features. This workflow digitizes the document and then extracts the relevant contents through a RegEx extractor. All done via the use of OCR.&#xA;&#xA;Pre-condition:&#xA;- The following packages must be installed: UiPath.IntelligentOCR.Activities and UiPath.DocumentProcessing.Contracts" DisplayName="State Machine: Various Bill Statement Filter and Processing" sap:VirtualizedContainerService.HintSize="657,753" sap2010:WorkflowViewState.IdRef="StateMachine_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -177,13 +177,13 @@
       </State>
       <State x:Name="__ReferenceID0" DisplayName="Initial State. File pre-screening" sap:VirtualizedContainerService.HintSize="228,68" sap2010:WorkflowViewState.IdRef="State_2">
         <State.Entry>
-          <Sequence sap:VirtualizedContainerService.HintSize="476,535" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence sap:VirtualizedContainerService.HintSize="1050,1350" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="434,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_11">
+            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1008,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_11">
               <ui:MultipleAssign.AssignOperations>
                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_38">
@@ -205,7 +205,7 @@
                 </scg:List>
               </ui:MultipleAssign.AssignOperations>
             </ui:MultipleAssign>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,183" sap2010:WorkflowViewState.IdRef="TryCatch_10">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1008,998" sap2010:WorkflowViewState.IdRef="TryCatch_10">
               <TryCatch.Try>
                 <If Condition="[FileNumber &lt;= FilesArray.Length]" sap:VirtualizedContainerService.HintSize="970,771" sap2010:WorkflowViewState.IdRef="If_10">
                   <If.Then>
@@ -215,7 +215,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <If Condition="[Path.GetExtension(FilesArray(FileNumber-1)).Equals(&quot;.pdf&quot;)]" sap:VirtualizedContainerService.HintSize="683,531" sap2010:WorkflowViewState.IdRef="If_9">
+                      <If Condition="[Path.GetExtension(FilesArray(FileNumber-1)).ToLower.Equals(&quot;.pdf&quot;)]" sap:VirtualizedContainerService.HintSize="683,531" sap2010:WorkflowViewState.IdRef="If_9">
                         <If.Then>
                           <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_22">
                             <Assign.To>
@@ -261,7 +261,7 @@
                 </If>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_10">
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="974,21" sap2010:WorkflowViewState.IdRef="Catch`1_10">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -284,7 +284,7 @@
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="CommentOut_13">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1008,51" sap2010:WorkflowViewState.IdRef="CommentOut_13">
               <ui:CommentOut.Body>
                 <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="476,997" sap2010:WorkflowViewState.IdRef="Sequence_47">
                   <sap:WorkflowViewStateService.ViewState>
@@ -401,23 +401,23 @@
           <Transition DisplayName="PDF File Found" sap:VirtualizedContainerService.HintSize="450,505" sap2010:WorkflowViewState.IdRef="Transition_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <av:PointCollection x:Key="ConnectorLocation">207.4,184 207.4,214 245.85,214 245.85,289</av:PointCollection>
+                <av:PointCollection x:Key="ConnectorLocation">207.4,184 207.4,214 245.85,214 245.85,299</av:PointCollection>
                 <x:Int32 x:Key="SrcConnectionPointIndex">3</x:Int32>
                 <x:Int32 x:Key="DestConnectionPointIndex">10</x:Int32>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <Transition.To>
-              <State x:Name="__ReferenceID2" DisplayName="Digitize Document. Classify and Extract" sap:VirtualizedContainerService.HintSize="779,3212" sap2010:WorkflowViewState.IdRef="State_1">
+              <State x:Name="__ReferenceID2" DisplayName="Digitize Document. Classify and Extract" sap:VirtualizedContainerService.HintSize="779,3449" sap2010:WorkflowViewState.IdRef="State_1">
                 <State.Entry>
-                  <Sequence sap:VirtualizedContainerService.HintSize="733,2825" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                  <Sequence sap:VirtualizedContainerService.HintSize="733,3062" sap2010:WorkflowViewState.IdRef="Sequence_15">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="691,2733" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="691,2970" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                       <TryCatch.Try>
-                        <Sequence sap:VirtualizedContainerService.HintSize="653,2506" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                        <Sequence sap:VirtualizedContainerService.HintSize="653,2743" sap2010:WorkflowViewState.IdRef="Sequence_14">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="DocumentID" />
                           </Sequence.Variables>
@@ -460,7 +460,7 @@
                               </ActivityFunc>
                             </p:DigitizeDocument.OCREngine>
                           </p:DigitizeDocument>
-                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="611,51" sap2010:WorkflowViewState.IdRef="CommentOut_15">
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="611,192" sap2010:WorkflowViewState.IdRef="CommentOut_15">
                             <ui:CommentOut.Body>
                               <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_50">
                                 <sap:WorkflowViewStateService.ViewState>
@@ -473,12 +473,12 @@
                             </ui:CommentOut.Body>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:CommentOut>
-                          <p1:ClassifyDocumentScope ClassificationResults="[Classify_FileName_Result]" DisplayName="Classify Document Scope for ORs" DocumentObjectModel="[FileDOM]" DocumentPath="[File]" DocumentText="[FileText]" sap:VirtualizedContainerService.HintSize="611,192" sap2010:WorkflowViewState.IdRef="ClassifyDocumentScope_2" Taxonomy="[eFinanceTaxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UIda1c7bd0c54b4519b1aab7840f453063&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;PDF.StatementOfAccounts.PLDT&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.PLDT&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;Images.MobileScreenshots.BDO&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;Images.MobileScreenshots.BDO&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false},&quot;PDF.StatementOfAccounts.SkyBroadband&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.SkyBroadband&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false},&quot;PDF.StatementOfAccounts.Globe&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.Globe&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false},&quot;PDF.StatementOfAccounts.ConvergeICT&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.ConvergeICT&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false},&quot;PDF.StatementOfAccounts.SMARTCommunications&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.SMARTCommunications&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false}}}},&quot;ClassifierMinimumConfidence&quot;:{&quot;UIda1c7bd0c54b4519b1aab7840f453063&quot;:&quot;50&quot;}}">
+                          <p1:ClassifyDocumentScope ClassificationResults="[Classify_OR_Result]" DisplayName="Classify Document Scope for ORs" DocumentObjectModel="[FileDOM]" DocumentPath="[File]" DocumentText="[FileText]" sap:VirtualizedContainerService.HintSize="611,192" sap2010:WorkflowViewState.IdRef="ClassifyDocumentScope_2" Taxonomy="[eFinanceTaxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UIda1c7bd0c54b4519b1aab7840f453063&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;PDF.StatementOfAccounts.PLDT&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.PLDT&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;Images.MobileScreenshots.BDO&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;Images.MobileScreenshots.BDO&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false},&quot;PDF.StatementOfAccounts.SkyBroadband&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.SkyBroadband&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false},&quot;PDF.StatementOfAccounts.Globe&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.Globe&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false},&quot;PDF.StatementOfAccounts.ConvergeICT&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.ConvergeICT&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false},&quot;PDF.StatementOfAccounts.SMARTCommunications&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.SMARTCommunications&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false}}}},&quot;ClassifierMinimumConfidence&quot;:{&quot;UIda1c7bd0c54b4519b1aab7840f453063&quot;:&quot;50&quot;}}">
                             <p1:ClassifyDocumentScope.Classifiers>
                               <p1:KeywordBasedClassifier HumanValidatedData="{x:Null}" LearningData="{x:Null}" DisplayName="Keyword Based Classifier" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="KeywordBasedClassifier_2" LearningFilePath="DocumentProcessing\Classifiers.json" PersistenceId="UIda1c7bd0c54b4519b1aab7840f453063">
                                 <p1:KeywordBasedClassifier.ClassifierResult>
@@ -519,14 +519,14 @@
                               </p1:KeywordBasedClassifier>
                             </p1:ClassifyDocumentScope.Classifiers>
                           </p1:ClassifyDocumentScope>
-                          <If Condition="[Classify_FileName_Result.Length &gt; 0]" DisplayName="If the classifier was able to classify, continue" sap:VirtualizedContainerService.HintSize="611,362" sap2010:WorkflowViewState.IdRef="If_11">
+                          <If Condition="[Classify_OR_Result.Length &gt; 0]" DisplayName="If the classifier was able to classify, continue" sap:VirtualizedContainerService.HintSize="611,362" sap2010:WorkflowViewState.IdRef="If_11">
                             <If.Then>
                               <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_26">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[DocumentID]</OutArgument>
                                 </Assign.To>
                                 <Assign.Value>
-                                  <InArgument x:TypeArguments="x:String">[Classify_FileName_Result(0).DocumentTypeId]</InArgument>
+                                  <InArgument x:TypeArguments="x:String">[Classify_OR_Result(0).DocumentTypeId]</InArgument>
                                 </Assign.Value>
                               </Assign>
                             </If.Then>
@@ -549,9 +549,9 @@
                               </Sequence>
                             </If.Else>
                           </If>
-                          <p4:DataExtractionScope ClassificationResult="{x:Null}" DisplayName="Data Extraction Scope" DocumentObjectModel="[FileDOM]" DocumentPath="[File]" DocumentText="[FileText]" DocumentTypeId="[Classify_FileName_Result(0).DocumentTypeId]" ExtractionResult="[ExtractionResult]" FormatValuesIfPossible="True" sap:VirtualizedContainerService.HintSize="611,169" sap2010:WorkflowViewState.IdRef="DataExtractionScope_3" Taxonomy="[eFinanceTaxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UIf094be6d42754e4997f9403cbf6c2397&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;PDF.StatementOfAccounts.PLDT&quot;:{&quot;FieldMappings&quot;:{&quot;PDF.StatementOfAccounts.PLDT.Name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.PLDT.Name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;PDF.StatementOfAccounts.PLDT.TotalAmountDue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.PLDT.TotalAmountDue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;PDF.StatementOfAccounts.PLDT.SoANumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.PLDT.SoANumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;Images.MobileScreenshots.BDO&quot;:{&quot;FieldMappings&quot;:{},&quot;ExtractorDocumentTypeId&quot;:null},&quot;PDF.StatementOfAccounts.SkyBroadband&quot;:{&quot;FieldMappings&quot;:{&quot;PDF.StatementOfAccounts.SkyBroadband.Name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SkyBroadband.Name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.SkyBroadband.TotalAmountDue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SkyBroadband.TotalAmountDue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.SkyBroadband.SoANumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SkyBroadband.SoANumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;PDF.StatementOfAccounts.Globe&quot;:{&quot;FieldMappings&quot;:{&quot;PDF.StatementOfAccounts.Globe.Name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.Globe.Name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.Globe.TotalAmountDue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.Globe.TotalAmountDue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.Globe.SoANumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.Globe.SoANumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;PDF.StatementOfAccounts.ConvergeICT&quot;:{&quot;FieldMappings&quot;:{&quot;PDF.StatementOfAccounts.ConvergeICT.Name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.ConvergeICT.Name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.ConvergeICT.TotalAmountDue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.ConvergeICT.TotalAmountDue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.ConvergeICT.SoANumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.ConvergeICT.SoANumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;PDF.StatementOfAccounts.SMARTCommunications&quot;:{&quot;FieldMappings&quot;:{&quot;PDF.StatementOfAccounts.SMARTCommunications.Name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SMARTCommunications.Name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.SMARTCommunications.TotalAmountDue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SMARTCommunications.TotalAmountDue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.SMARTCommunications.SoANumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SMARTCommunications.SoANumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null}}}},&quot;ExtractorMinimumConfidence&quot;:{&quot;UIf094be6d42754e4997f9403cbf6c2397&quot;:&quot;0&quot;},&quot;DocumentTypeOptionsByExtractor&quot;:{&quot;UIf094be6d42754e4997f9403cbf6c2397&quot;:[]}}">
+                          <p4:DataExtractionScope ClassificationResult="{x:Null}" DisplayName="Data Extraction Scope for ORs/Bill Statement" DocumentObjectModel="[FileDOM]" DocumentPath="[File]" DocumentText="[FileText]" DocumentTypeId="[Classify_OR_Result(0).DocumentTypeId]" ExtractionResult="[ExtractionResult]" FormatValuesIfPossible="True" sap:VirtualizedContainerService.HintSize="611,169" sap2010:WorkflowViewState.IdRef="DataExtractionScope_3" Taxonomy="[eFinanceTaxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UIf094be6d42754e4997f9403cbf6c2397&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;PDF.StatementOfAccounts.PLDT&quot;:{&quot;FieldMappings&quot;:{&quot;PDF.StatementOfAccounts.PLDT.Name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.PLDT.Name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;PDF.StatementOfAccounts.PLDT.TotalAmountDue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.PLDT.TotalAmountDue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;PDF.StatementOfAccounts.PLDT.SoANumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.PLDT.SoANumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;Images.MobileScreenshots.BDO&quot;:{&quot;FieldMappings&quot;:{},&quot;ExtractorDocumentTypeId&quot;:null},&quot;PDF.StatementOfAccounts.SkyBroadband&quot;:{&quot;FieldMappings&quot;:{&quot;PDF.StatementOfAccounts.SkyBroadband.Name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SkyBroadband.Name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.SkyBroadband.TotalAmountDue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SkyBroadband.TotalAmountDue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.SkyBroadband.SoANumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SkyBroadband.SoANumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;PDF.StatementOfAccounts.Globe&quot;:{&quot;FieldMappings&quot;:{&quot;PDF.StatementOfAccounts.Globe.Name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.Globe.Name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.Globe.TotalAmountDue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.Globe.TotalAmountDue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.Globe.SoANumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.Globe.SoANumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;PDF.StatementOfAccounts.ConvergeICT&quot;:{&quot;FieldMappings&quot;:{&quot;PDF.StatementOfAccounts.ConvergeICT.Name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.ConvergeICT.Name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.ConvergeICT.TotalAmountDue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.ConvergeICT.TotalAmountDue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.ConvergeICT.SoANumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.ConvergeICT.SoANumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;PDF.StatementOfAccounts.SMARTCommunications&quot;:{&quot;FieldMappings&quot;:{&quot;PDF.StatementOfAccounts.SMARTCommunications.Name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SMARTCommunications.Name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.SMARTCommunications.TotalAmountDue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SMARTCommunications.TotalAmountDue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.SMARTCommunications.SoANumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SMARTCommunications.SoANumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null}}}},&quot;ExtractorMinimumConfidence&quot;:{&quot;UIf094be6d42754e4997f9403cbf6c2397&quot;:&quot;0&quot;},&quot;DocumentTypeOptionsByExtractor&quot;:{&quot;UIf094be6d42754e4997f9403cbf6c2397&quot;:[]}}">
                             <p4:DataExtractionScope.Extractors>
-                              <p4:RegexBasedExtractor Configuration="[&quot;[{&quot;&quot;DocumentTypeId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.PLDT&quot;&quot;,&quot;&quot;FieldConfiguration&quot;&quot;:[{&quot;&quot;FieldId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.PLDT.Name&quot;&quot;,&quot;&quot;Expression&quot;&quot;:&quot;&quot;Subscriber's Name . (.*)&quot;&quot;,&quot;&quot;Options&quot;&quot;:1,&quot;&quot;Model&quot;&quot;:null},{&quot;&quot;FieldId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.PLDT.TotalAmountDue&quot;&quot;,&quot;&quot;Expression&quot;&quot;:&quot;&quot;TOTAL AMOUNT DUE (\\d\\S*)&quot;&quot;,&quot;&quot;Options&quot;&quot;:1,&quot;&quot;Model&quot;&quot;:&quot;&quot;[{\&quot;&quot;Capture\&quot;&quot;:false,\&quot;&quot;Index\&quot;&quot;:0,\&quot;&quot;OperationID\&quot;&quot;:\&quot;&quot;ADV\&quot;&quot;,\&quot;&quot;OperationName\&quot;&quot;:\&quot;&quot;Advanced\&quot;&quot;,\&quot;&quot;OperationValue\&quot;&quot;:\&quot;&quot;TOTAL AMOUNT DUE (\\\\d\\\\S*)\&quot;&quot;,\&quot;&quot;QuantifierFirstValue\&quot;&quot;:\&quot;&quot;1\&quot;&quot;,\&quot;&quot;QuantifierID\&quot;&quot;:\&quot;&quot;EXT\&quot;&quot;,\&quot;&quot;QuantifierName\&quot;&quot;:\&quot;&quot;Exactly\&quot;&quot;,\&quot;&quot;QuantifierSecondValue\&quot;&quot;:null}]&quot;&quot;},{&quot;&quot;FieldId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.PLDT.SoANumber&quot;&quot;,&quot;&quot;Expression&quot;&quot;:&quot;&quot;Statement of Account No. (\\d*)&quot;&quot;,&quot;&quot;Options&quot;&quot;:1,&quot;&quot;Model&quot;&quot;:null}]},{&quot;&quot;DocumentTypeId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.Globe&quot;&quot;,&quot;&quot;FieldConfiguration&quot;&quot;:[{&quot;&quot;FieldId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.Globe.Name&quot;&quot;,&quot;&quot;Expression&quot;&quot;:&quot;&quot;M\\w\\.\\s(.*)&quot;&quot;,&quot;&quot;Options&quot;&quot;:1,&quot;&quot;Model&quot;&quot;:&quot;&quot;[{\&quot;&quot;Capture\&quot;&quot;:false,\&quot;&quot;Index\&quot;&quot;:0,\&quot;&quot;OperationID\&quot;&quot;:\&quot;&quot;ADV\&quot;&quot;,\&quot;&quot;OperationName\&quot;&quot;:\&quot;&quot;Advanced\&quot;&quot;,\&quot;&quot;OperationValue\&quot;&quot;:\&quot;&quot;M\\\\w\\\\.\\\\s(.*)\&quot;&quot;,\&quot;&quot;QuantifierFirstValue\&quot;&quot;:\&quot;&quot;1\&quot;&quot;,\&quot;&quot;QuantifierID\&quot;&quot;:\&quot;&quot;EXT\&quot;&quot;,\&quot;&quot;QuantifierName\&quot;&quot;:\&quot;&quot;Exactly\&quot;&quot;,\&quot;&quot;QuantifierSecondValue\&quot;&quot;:null}]&quot;&quot;},{&quot;&quot;FieldId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.Globe.TotalAmountDue&quot;&quot;,&quot;&quot;Expression&quot;&quot;:&quot;&quot;Php (.*)&quot;&quot;,&quot;&quot;Options&quot;&quot;:1,&quot;&quot;Model&quot;&quot;:&quot;&quot;[{\&quot;&quot;Capture\&quot;&quot;:false,\&quot;&quot;Index\&quot;&quot;:0,\&quot;&quot;OperationID\&quot;&quot;:\&quot;&quot;ADV\&quot;&quot;,\&quot;&quot;OperationName\&quot;&quot;:\&quot;&quot;Advanced\&quot;&quot;,\&quot;&quot;OperationValue\&quot;&quot;:\&quot;&quot;Php (.*)\&quot;&quot;,\&quot;&quot;QuantifierFirstValue\&quot;&quot;:\&quot;&quot;1\&quot;&quot;,\&quot;&quot;QuantifierID\&quot;&quot;:\&quot;&quot;EXT\&quot;&quot;,\&quot;&quot;QuantifierName\&quot;&quot;:\&quot;&quot;Exactly\&quot;&quot;,\&quot;&quot;QuantifierSecondValue\&quot;&quot;:null}]&quot;&quot;},{&quot;&quot;FieldId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.Globe.SoANumber&quot;&quot;,&quot;&quot;Expression&quot;&quot;:&quot;&quot;SoA No. (\\d*)&quot;&quot;,&quot;&quot;Options&quot;&quot;:1,&quot;&quot;Model&quot;&quot;:&quot;&quot;[{\&quot;&quot;Capture\&quot;&quot;:false,\&quot;&quot;Index\&quot;&quot;:0,\&quot;&quot;OperationID\&quot;&quot;:\&quot;&quot;ADV\&quot;&quot;,\&quot;&quot;OperationName\&quot;&quot;:\&quot;&quot;Advanced\&quot;&quot;,\&quot;&quot;OperationValue\&quot;&quot;:\&quot;&quot;SoA No. (\\\\d*)\&quot;&quot;,\&quot;&quot;QuantifierFirstValue\&quot;&quot;:\&quot;&quot;1\&quot;&quot;,\&quot;&quot;QuantifierID\&quot;&quot;:\&quot;&quot;EXT\&quot;&quot;,\&quot;&quot;QuantifierName\&quot;&quot;:\&quot;&quot;Exactly\&quot;&quot;,\&quot;&quot;QuantifierSecondValue\&quot;&quot;:null}]&quot;&quot;}]}]&quot;]" DisplayName="Regex Based Extractor for Bill Statements" sap:VirtualizedContainerService.HintSize="234,68" sap2010:WorkflowViewState.IdRef="RegexBasedExtractor_3" PersistenceId="UIf094be6d42754e4997f9403cbf6c2397" Timeout="2000" UseVisualAlignment="False">
+                              <p4:RegexBasedExtractor Configuration="[&quot;[{&quot;&quot;DocumentTypeId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.PLDT&quot;&quot;,&quot;&quot;FieldConfiguration&quot;&quot;:[{&quot;&quot;FieldId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.PLDT.Name&quot;&quot;,&quot;&quot;Expression&quot;&quot;:&quot;&quot;Subscriber's Name . (.*)&quot;&quot;,&quot;&quot;Options&quot;&quot;:1,&quot;&quot;Model&quot;&quot;:null},{&quot;&quot;FieldId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.PLDT.TotalAmountDue&quot;&quot;,&quot;&quot;Expression&quot;&quot;:&quot;&quot;TOTAL AMOUNT DUE (\\d\\S*)&quot;&quot;,&quot;&quot;Options&quot;&quot;:1,&quot;&quot;Model&quot;&quot;:&quot;&quot;[{\&quot;&quot;Capture\&quot;&quot;:false,\&quot;&quot;Index\&quot;&quot;:0,\&quot;&quot;OperationID\&quot;&quot;:\&quot;&quot;ADV\&quot;&quot;,\&quot;&quot;OperationName\&quot;&quot;:\&quot;&quot;Advanced\&quot;&quot;,\&quot;&quot;OperationValue\&quot;&quot;:\&quot;&quot;TOTAL AMOUNT DUE (\\\\d\\\\S*)\&quot;&quot;,\&quot;&quot;QuantifierFirstValue\&quot;&quot;:\&quot;&quot;1\&quot;&quot;,\&quot;&quot;QuantifierID\&quot;&quot;:\&quot;&quot;EXT\&quot;&quot;,\&quot;&quot;QuantifierName\&quot;&quot;:\&quot;&quot;Exactly\&quot;&quot;,\&quot;&quot;QuantifierSecondValue\&quot;&quot;:null}]&quot;&quot;},{&quot;&quot;FieldId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.PLDT.SoANumber&quot;&quot;,&quot;&quot;Expression&quot;&quot;:&quot;&quot;Statement of Account No. (\\d*)&quot;&quot;,&quot;&quot;Options&quot;&quot;:1,&quot;&quot;Model&quot;&quot;:null}]},{&quot;&quot;DocumentTypeId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.Globe&quot;&quot;,&quot;&quot;FieldConfiguration&quot;&quot;:[{&quot;&quot;FieldId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.Globe.Name&quot;&quot;,&quot;&quot;Expression&quot;&quot;:&quot;&quot;M\\w\\.\\s(.*)&quot;&quot;,&quot;&quot;Options&quot;&quot;:1,&quot;&quot;Model&quot;&quot;:&quot;&quot;[{\&quot;&quot;Capture\&quot;&quot;:false,\&quot;&quot;Index\&quot;&quot;:0,\&quot;&quot;OperationID\&quot;&quot;:\&quot;&quot;ADV\&quot;&quot;,\&quot;&quot;OperationName\&quot;&quot;:\&quot;&quot;Advanced\&quot;&quot;,\&quot;&quot;OperationValue\&quot;&quot;:\&quot;&quot;M\\\\w\\\\.\\\\s(.*)\&quot;&quot;,\&quot;&quot;QuantifierFirstValue\&quot;&quot;:\&quot;&quot;1\&quot;&quot;,\&quot;&quot;QuantifierID\&quot;&quot;:\&quot;&quot;EXT\&quot;&quot;,\&quot;&quot;QuantifierName\&quot;&quot;:\&quot;&quot;Exactly\&quot;&quot;,\&quot;&quot;QuantifierSecondValue\&quot;&quot;:null}]&quot;&quot;},{&quot;&quot;FieldId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.Globe.TotalAmountDue&quot;&quot;,&quot;&quot;Expression&quot;&quot;:&quot;&quot;Php (.*)&quot;&quot;,&quot;&quot;Options&quot;&quot;:1,&quot;&quot;Model&quot;&quot;:&quot;&quot;[{\&quot;&quot;Capture\&quot;&quot;:false,\&quot;&quot;Index\&quot;&quot;:0,\&quot;&quot;OperationID\&quot;&quot;:\&quot;&quot;ADV\&quot;&quot;,\&quot;&quot;OperationName\&quot;&quot;:\&quot;&quot;Advanced\&quot;&quot;,\&quot;&quot;OperationValue\&quot;&quot;:\&quot;&quot;Php (.*)\&quot;&quot;,\&quot;&quot;QuantifierFirstValue\&quot;&quot;:\&quot;&quot;1\&quot;&quot;,\&quot;&quot;QuantifierID\&quot;&quot;:\&quot;&quot;EXT\&quot;&quot;,\&quot;&quot;QuantifierName\&quot;&quot;:\&quot;&quot;Exactly\&quot;&quot;,\&quot;&quot;QuantifierSecondValue\&quot;&quot;:null}]&quot;&quot;},{&quot;&quot;FieldId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.Globe.SoANumber&quot;&quot;,&quot;&quot;Expression&quot;&quot;:&quot;&quot;SoA No. (\\d*)&quot;&quot;,&quot;&quot;Options&quot;&quot;:1,&quot;&quot;Model&quot;&quot;:&quot;&quot;[{\&quot;&quot;Capture\&quot;&quot;:false,\&quot;&quot;Index\&quot;&quot;:0,\&quot;&quot;OperationID\&quot;&quot;:\&quot;&quot;ADV\&quot;&quot;,\&quot;&quot;OperationName\&quot;&quot;:\&quot;&quot;Advanced\&quot;&quot;,\&quot;&quot;OperationValue\&quot;&quot;:\&quot;&quot;SoA No. (\\\\d*)\&quot;&quot;,\&quot;&quot;QuantifierFirstValue\&quot;&quot;:\&quot;&quot;1\&quot;&quot;,\&quot;&quot;QuantifierID\&quot;&quot;:\&quot;&quot;EXT\&quot;&quot;,\&quot;&quot;QuantifierName\&quot;&quot;:\&quot;&quot;Exactly\&quot;&quot;,\&quot;&quot;QuantifierSecondValue\&quot;&quot;:null}]&quot;&quot;}]}]&quot;]" DisplayName="Regex Extractor for OR/Bill Statements" sap:VirtualizedContainerService.HintSize="234,68" sap2010:WorkflowViewState.IdRef="RegexBasedExtractor_3" PersistenceId="UIf094be6d42754e4997f9403cbf6c2397" Timeout="2000" UseVisualAlignment="False">
                                 <p4:RegexBasedExtractor.DocumentBounds>
                                   <InArgument x:TypeArguments="p5:ResultsDocumentBounds">
                                     <DelegateArgumentValue x:TypeArguments="p5:ResultsDocumentBounds">
@@ -594,10 +594,16 @@
                                     </DelegateArgumentReference>
                                   </OutArgument>
                                 </p4:RegexBasedExtractor.ExtractorResult>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
                               </p4:RegexBasedExtractor>
                             </p4:DataExtractionScope.Extractors>
                           </p4:DataExtractionScope>
-                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="611,51" sap2010:WorkflowViewState.IdRef="CommentOut_16">
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="611,192" sap2010:WorkflowViewState.IdRef="CommentOut_16">
                             <ui:CommentOut.Body>
                               <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_51">
                                 <sap:WorkflowViewStateService.ViewState>
@@ -610,7 +616,7 @@
                             </ui:CommentOut.Body>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
@@ -643,8 +649,13 @@
                               </Assign>
                             </If.Else>
                           </If>
-                          <ui:Comment sap:VirtualizedContainerService.HintSize="611,151" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// The following 'Add To Collection' activities can be reworked to be a String argument if the one OR PDF only file policy is enforced.&#xD;&#xA;&#xD;&#xA;The following argument are List type arguments:&#xD;&#xA;- out_OR_SoA_NumberList" />
-                          <AddToCollection x:TypeArguments="x:String" Collection="[out_OR_SoA_NumberList]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="611,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_1" Item="[ExtractDataSet.Tables(0).Rows(0).Item(2).ToString]" />
+                          <AddToCollection x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="This activity can be reworked to be an 'Assign' activity when its been enforced that each communication reimbursement entry must only have one OR/Bill PDF file.&#xD;&#xA;&#xD;&#xA;The following argument are List type arguments:&#xD;&#xA;- outORSoA_NumberList&#xD;&#xA;&#xD;&#xA;and should be converted to a String variable when reworked" Collection="[out_OR_SoA_NumberList]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="611,259" sap2010:WorkflowViewState.IdRef="AddToCollection`1_1" Item="[ExtractDataSet.Tables(0).Rows(0).Item(2).ToString]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </AddToCollection>
                           <Assign sap:VirtualizedContainerService.HintSize="611,60" sap2010:WorkflowViewState.IdRef="Assign_30">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[out_OR_Name]</OutArgument>
@@ -661,807 +672,10 @@
                               <InArgument x:TypeArguments="x:Int32">[FileNumber + 1]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="611,51" sap2010:WorkflowViewState.IdRef="CommentOut_14">
-                            <ui:CommentOut.Body>
-                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="1300,2110" sap2010:WorkflowViewState.IdRef="Sequence_48">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1258,2018" sap2010:WorkflowViewState.IdRef="TryCatch_7">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <TryCatch.Try>
-                                    <If Condition="[FileNumber &lt;= FilesArray.Length]" sap:VirtualizedContainerService.HintSize="1220,1791" sap2010:WorkflowViewState.IdRef="If_3">
-                                      <If.Then>
-                                        <Sequence sap:VirtualizedContainerService.HintSize="975,1644" sap2010:WorkflowViewState.IdRef="Sequence_17">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <If Condition="[Path.GetExtension(FilesArray(FileNumber-1)).Equals(&quot;.pdf&quot;)]" sap:VirtualizedContainerService.HintSize="933,1552" sap2010:WorkflowViewState.IdRef="If_4">
-                                            <If.Then>
-                                              <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach to the current working directory" sap:VirtualizedContainerService.HintSize="512,1405" sap2010:WorkflowViewState.IdRef="WindowScope_4" InformativeScreenshot="2ccd933da6092d49748539b92e5d3424" Selector="&lt;wnd app='explorer.exe' cls='CabinetWClass' title='Output' /&gt;&#xA;">
-                                                <ui:WindowScope.Body>
-                                                  <ActivityAction x:TypeArguments="x:Object">
-                                                    <ActivityAction.Argument>
-                                                      <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
-                                                    </ActivityAction.Argument>
-                                                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="478,1259" sap2010:WorkflowViewState.IdRef="Sequence_16">
-                                                      <sap:WorkflowViewStateService.ViewState>
-                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                        </scg:Dictionary>
-                                                      </sap:WorkflowViewStateService.ViewState>
-                                                      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="436,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
-                                                        <ui:MultipleAssign.AssignOperations>
-                                                          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
-                                                              <ui:AssignOperation.To>
-                                                                <OutArgument x:TypeArguments="x:String">[FileName]</OutArgument>
-                                                              </ui:AssignOperation.To>
-                                                              <ui:AssignOperation.Value>
-                                                                <InArgument x:TypeArguments="x:String">[Path.GetFileNameWithoutExtension(FilesArray(FIleNumber-1))]</InArgument>
-                                                              </ui:AssignOperation.Value>
-                                                            </ui:AssignOperation>
-                                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
-                                                              <ui:AssignOperation.To>
-                                                                <OutArgument x:TypeArguments="x:Boolean">[PDF_Found]</OutArgument>
-                                                              </ui:AssignOperation.To>
-                                                              <ui:AssignOperation.Value>
-                                                                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                                              </ui:AssignOperation.Value>
-                                                            </ui:AssignOperation>
-                                                          </scg:List>
-                                                        </ui:MultipleAssign.AssignOperations>
-                                                      </ui:MultipleAssign>
-                                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="436,91" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Info" Message="[Classify_FileName_Result(0).DocumentTypeId]" />
-                                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,51" sap2010:WorkflowViewState.IdRef="CommentOut_12">
-                                                        <ui:CommentOut.Body>
-                                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="791,335" sap2010:WorkflowViewState.IdRef="Sequence_44">
-                                                            <sap:WorkflowViewStateService.ViewState>
-                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                              </scg:Dictionary>
-                                                            </sap:WorkflowViewStateService.ViewState>
-                                                            <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[Classify_FileName_Result(0).DocumentTypeId.Substring(Classify_FileName_Result(0).DocumentTypeId.LastIndexOf(&quot;.&quot;)+1)]" sap:VirtualizedContainerService.HintSize="749,137" sap2010:WorkflowViewState.IdRef="Switch`1_1">
-                                                              <Switch.Default>
-                                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="Info" Message="[&quot;PLDT BIll&quot;]" />
-                                                              </Switch.Default>
-                                                              <ui:LogMessage x:Key="Globe" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[&quot;Not a PLDT Bill&quot;]" />
-                                                            </Switch>
-                                                          </Sequence>
-                                                        </ui:CommentOut.Body>
-                                                        <sap:WorkflowViewStateService.ViewState>
-                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                          </scg:Dictionary>
-                                                        </sap:WorkflowViewStateService.ViewState>
-                                                      </ui:CommentOut>
-                                                      <p4:DataExtractionScope ClassificationResult="{x:Null}" DisplayName="Data Extraction Scope" DocumentObjectModel="[FileDOM]" DocumentPath="[File]" DocumentText="[FileText]" DocumentTypeId="[Classify_FileName_Result(0).DocumentTypeId]" ExtractionResult="[ExtractionResult]" FormatValuesIfPossible="True" sap:VirtualizedContainerService.HintSize="436,169" sap2010:WorkflowViewState.IdRef="DataExtractionScope_2" Taxonomy="[eFinanceTaxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UIf094be6d42754e4997f9403cbf6c2397&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;PDF.StatementOfAccounts.PLDT&quot;:{&quot;FieldMappings&quot;:{&quot;PDF.StatementOfAccounts.PLDT.Name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.PLDT.Name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;PDF.StatementOfAccounts.PLDT.TotalAmountDue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.PLDT.TotalAmountDue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;PDF.StatementOfAccounts.PLDT.SoANumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.PLDT.SoANumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;Images.MobileScreenshots.BDO&quot;:{&quot;FieldMappings&quot;:{},&quot;ExtractorDocumentTypeId&quot;:null},&quot;PDF.StatementOfAccounts.SkyBroadband&quot;:{&quot;FieldMappings&quot;:{&quot;PDF.StatementOfAccounts.SkyBroadband.Name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SkyBroadband.Name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.SkyBroadband.TotalAmountDue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SkyBroadband.TotalAmountDue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.SkyBroadband.SoANumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SkyBroadband.SoANumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;PDF.StatementOfAccounts.Globe&quot;:{&quot;FieldMappings&quot;:{&quot;PDF.StatementOfAccounts.Globe.Name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.Globe.Name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.Globe.TotalAmountDue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.Globe.TotalAmountDue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.Globe.SoANumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.Globe.SoANumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;PDF.StatementOfAccounts.ConvergeICT&quot;:{&quot;FieldMappings&quot;:{&quot;PDF.StatementOfAccounts.ConvergeICT.Name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.ConvergeICT.Name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.ConvergeICT.TotalAmountDue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.ConvergeICT.TotalAmountDue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.ConvergeICT.SoANumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.ConvergeICT.SoANumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;PDF.StatementOfAccounts.SMARTCommunications&quot;:{&quot;FieldMappings&quot;:{&quot;PDF.StatementOfAccounts.SMARTCommunications.Name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SMARTCommunications.Name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.SMARTCommunications.TotalAmountDue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SMARTCommunications.TotalAmountDue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.SMARTCommunications.SoANumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SMARTCommunications.SoANumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null}}}},&quot;ExtractorMinimumConfidence&quot;:{&quot;UIf094be6d42754e4997f9403cbf6c2397&quot;:&quot;0&quot;},&quot;DocumentTypeOptionsByExtractor&quot;:{&quot;UIf094be6d42754e4997f9403cbf6c2397&quot;:[]}}">
-                                                        <p4:DataExtractionScope.Extractors>
-                                                          <p4:RegexBasedExtractor Configuration="[&quot;[{&quot;&quot;DocumentTypeId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.PLDT&quot;&quot;,&quot;&quot;FieldConfiguration&quot;&quot;:[{&quot;&quot;FieldId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.PLDT.Name&quot;&quot;,&quot;&quot;Expression&quot;&quot;:&quot;&quot;Subscriber's Name . (.*)&quot;&quot;,&quot;&quot;Options&quot;&quot;:1,&quot;&quot;Model&quot;&quot;:null},{&quot;&quot;FieldId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.PLDT.TotalAmountDue&quot;&quot;,&quot;&quot;Expression&quot;&quot;:&quot;&quot;TOTAL AMOUNT DUE (\\d\\S*)&quot;&quot;,&quot;&quot;Options&quot;&quot;:1,&quot;&quot;Model&quot;&quot;:&quot;&quot;[{\&quot;&quot;Capture\&quot;&quot;:false,\&quot;&quot;Index\&quot;&quot;:0,\&quot;&quot;OperationID\&quot;&quot;:\&quot;&quot;ADV\&quot;&quot;,\&quot;&quot;OperationName\&quot;&quot;:\&quot;&quot;Advanced\&quot;&quot;,\&quot;&quot;OperationValue\&quot;&quot;:\&quot;&quot;TOTAL AMOUNT DUE (\\\\d\\\\S*)\&quot;&quot;,\&quot;&quot;QuantifierFirstValue\&quot;&quot;:\&quot;&quot;1\&quot;&quot;,\&quot;&quot;QuantifierID\&quot;&quot;:\&quot;&quot;EXT\&quot;&quot;,\&quot;&quot;QuantifierName\&quot;&quot;:\&quot;&quot;Exactly\&quot;&quot;,\&quot;&quot;QuantifierSecondValue\&quot;&quot;:null}]&quot;&quot;},{&quot;&quot;FieldId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.PLDT.SoANumber&quot;&quot;,&quot;&quot;Expression&quot;&quot;:&quot;&quot;Statement of Account No. (\\d*)&quot;&quot;,&quot;&quot;Options&quot;&quot;:1,&quot;&quot;Model&quot;&quot;:null}]}]&quot;]" DisplayName="Regex Based Extractor" sap:VirtualizedContainerService.HintSize="234,68" sap2010:WorkflowViewState.IdRef="RegexBasedExtractor_2" PersistenceId="UIf094be6d42754e4997f9403cbf6c2397" Timeout="2000" UseVisualAlignment="False">
-                                                            <p4:RegexBasedExtractor.DocumentBounds>
-                                                              <InArgument x:TypeArguments="p5:ResultsDocumentBounds">
-                                                                <DelegateArgumentValue x:TypeArguments="p5:ResultsDocumentBounds">
-                                                                  <DelegateInArgument x:TypeArguments="p5:ResultsDocumentBounds" Name="DocumentBounds" />
-                                                                </DelegateArgumentValue>
-                                                              </InArgument>
-                                                            </p4:RegexBasedExtractor.DocumentBounds>
-                                                            <p4:RegexBasedExtractor.DocumentObjectModel>
-                                                              <InArgument x:TypeArguments="p3:Document">
-                                                                <DelegateArgumentValue x:TypeArguments="p3:Document">
-                                                                  <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
-                                                                </DelegateArgumentValue>
-                                                              </InArgument>
-                                                            </p4:RegexBasedExtractor.DocumentObjectModel>
-                                                            <p4:RegexBasedExtractor.DocumentPath>
-                                                              <InArgument x:TypeArguments="x:String">
-                                                                <DelegateArgumentValue x:TypeArguments="x:String">
-                                                                  <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
-                                                                </DelegateArgumentValue>
-                                                              </InArgument>
-                                                            </p4:RegexBasedExtractor.DocumentPath>
-                                                            <p4:RegexBasedExtractor.DocumentText>
-                                                              <InArgument x:TypeArguments="x:String">
-                                                                <DelegateArgumentValue x:TypeArguments="x:String">
-                                                                  <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
-                                                                </DelegateArgumentValue>
-                                                              </InArgument>
-                                                            </p4:RegexBasedExtractor.DocumentText>
-                                                            <p4:RegexBasedExtractor.ExtractorDocumentType>
-                                                              <InArgument x:TypeArguments="p6:ExtractorDocumentType">
-                                                                <DelegateArgumentValue x:TypeArguments="p6:ExtractorDocumentType">
-                                                                  <DelegateInArgument x:TypeArguments="p6:ExtractorDocumentType" Name="ExtractorDocumentType" />
-                                                                </DelegateArgumentValue>
-                                                              </InArgument>
-                                                            </p4:RegexBasedExtractor.ExtractorDocumentType>
-                                                            <p4:RegexBasedExtractor.ExtractorResult>
-                                                              <OutArgument x:TypeArguments="p6:ExtractorResult">
-                                                                <DelegateArgumentReference x:TypeArguments="p6:ExtractorResult">
-                                                                  <DelegateOutArgument x:TypeArguments="p6:ExtractorResult" Name="ExtractorResult" />
-                                                                </DelegateArgumentReference>
-                                                              </OutArgument>
-                                                            </p4:RegexBasedExtractor.ExtractorResult>
-                                                          </p4:RegexBasedExtractor>
-                                                        </p4:DataExtractionScope.Extractors>
-                                                      </p4:DataExtractionScope>
-                                                      <p4:ExportExtractionResults DataSet="[ExtractDataSet]" DisplayName="Export Extraction Results" ExtractionResult="[ExtractionResult]" sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="ExportExtractionResults_1" IncludeConfidence="False" />
-                                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="436,91" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Info" Message="[ExtractDataSet.Tables.Item(1).Rows(1)]" />
-                                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,192" sap2010:WorkflowViewState.IdRef="CommentOut_11">
-                                                        <ui:CommentOut.Body>
-                                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_43">
-                                                            <sap:WorkflowViewStateService.ViewState>
-                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                              </scg:Dictionary>
-                                                            </sap:WorkflowViewStateService.ViewState>
-                                                            <p:PresentValidationStation ValidatedExtractionResults="{x:Null}" AutomaticExtractionResults="[ExtractionResult]" DisplayName="Present Validation Station" DocumentObjectModel="[FileDOM]" DocumentPath="[File]" DocumentText="[FileText]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="PresentValidationStation_2" Taxonomy="[eFinanceTaxonomy]" />
-                                                          </Sequence>
-                                                        </ui:CommentOut.Body>
-                                                      </ui:CommentOut>
-                                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,51" sap2010:WorkflowViewState.IdRef="CommentOut_7">
-                                                        <ui:CommentOut.Body>
-                                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_39">
-                                                            <sap:WorkflowViewStateService.ViewState>
-                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                              </scg:Dictionary>
-                                                            </sap:WorkflowViewStateService.ViewState>
-                                                            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_DOUBLE" DisplayName="Double click the PDF file" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
-                                                              <ui:Click.CursorPosition>
-                                                                <ui:CursorPosition Position="Center">
-                                                                  <ui:CursorPosition.OffsetX>
-                                                                    <InArgument x:TypeArguments="x:Int32" />
-                                                                  </ui:CursorPosition.OffsetX>
-                                                                  <ui:CursorPosition.OffsetY>
-                                                                    <InArgument x:TypeArguments="x:Int32" />
-                                                                  </ui:CursorPosition.OffsetY>
-                                                                </ui:CursorPosition>
-                                                              </ui:Click.CursorPosition>
-                                                              <ui:Click.Target>
-                                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="56268b1bfc84586747be84f72d633beb" Selector="&lt;wnd aaname='Shell Folder View' cls='SHELLDLL_DefView' title='ShellView' /&gt;&#xA;&lt;wnd aaname='Items View' cls='DirectUIHWND' /&gt;&#xA;&lt;ctrl name='Items View' role='list' /&gt;&#xA;&lt;ctrl automationid='System.ItemNameDisplay' text='{{FileName}}' /&gt;&#xA;">
-                                                                  <ui:Target.TimeoutMS>
-                                                                    <InArgument x:TypeArguments="x:Int32" />
-                                                                  </ui:Target.TimeoutMS>
-                                                                  <ui:Target.WaitForReady>
-                                                                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                                  </ui:Target.WaitForReady>
-                                                                </ui:Target>
-                                                              </ui:Click.Target>
-                                                            </ui:Click>
-                                                          </Sequence>
-                                                        </ui:CommentOut.Body>
-                                                        <sap:WorkflowViewStateService.ViewState>
-                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                          </scg:Dictionary>
-                                                        </sap:WorkflowViewStateService.ViewState>
-                                                      </ui:CommentOut>
-                                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,51" sap2010:WorkflowViewState.IdRef="CommentOut_8">
-                                                        <ui:CommentOut.Body>
-                                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="634,143" sap2010:WorkflowViewState.IdRef="Sequence_40">
-                                                            <sap:WorkflowViewStateService.ViewState>
-                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                              </scg:Dictionary>
-                                                            </sap:WorkflowViewStateService.ViewState>
-                                                            <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach to the PDF file" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="WindowScope_5" InformativeScreenshot="8c74fe5443f58fb317fcb1747bfdb662" Selector="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='*- Adobe Acrobat Reader DC' /&gt;&#xA;">
-                                                              <ui:WindowScope.Body>
-                                                                <ActivityAction x:TypeArguments="x:Object">
-                                                                  <ActivityAction.Argument>
-                                                                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
-                                                                  </ActivityAction.Argument>
-                                                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="558,655" sap2010:WorkflowViewState.IdRef="Sequence_22">
-                                                                    <sap:WorkflowViewStateService.ViewState>
-                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                      </scg:Dictionary>
-                                                                    </sap:WorkflowViewStateService.ViewState>
-                                                                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" sap2010:Annotation.AnnotationText="Extra handling for when Adobe does not override the document zoom" DisplayName="Send 'Ctrl+0' command for standard zoom" sap:VirtualizedContainerService.HintSize="516,108" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="0" KeyModifiers="Ctrl">
-                                                                      <ui:SendHotkey.Target>
-                                                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
-                                                                          <ui:Target.TimeoutMS>
-                                                                            <InArgument x:TypeArguments="x:Int32" />
-                                                                          </ui:Target.TimeoutMS>
-                                                                          <ui:Target.WaitForReady>
-                                                                            <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                                          </ui:Target.WaitForReady>
-                                                                        </ui:Target>
-                                                                      </ui:SendHotkey.Target>
-                                                                      <sap:WorkflowViewStateService.ViewState>
-                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                        </scg:Dictionary>
-                                                                      </sap:WorkflowViewStateService.ViewState>
-                                                                    </ui:SendHotkey>
-                                                                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="516,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-                                                                      <ui:CommentOut.Body>
-                                                                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="480,230" sap2010:WorkflowViewState.IdRef="Sequence_33">
-                                                                          <sap:WorkflowViewStateService.ViewState>
-                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                            </scg:Dictionary>
-                                                                          </sap:WorkflowViewStateService.ViewState>
-                                                                          <TryCatch sap2010:Annotation.AnnotationText="Update the timeout values to be: cint(in_Config(&quot;TimeoutShort&quot;).ToString) when connecting with the whole flow" DisplayName="Try Catch PLDT Billing Statement" sap:VirtualizedContainerService.HintSize="200,138" sap2010:WorkflowViewState.IdRef="TryCatch_6">
-                                                                            <sap:WorkflowViewStateService.ViewState>
-                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                                              </scg:Dictionary>
-                                                                            </sap:WorkflowViewStateService.ViewState>
-                                                                            <TryCatch.Try>
-                                                                              <Sequence sap:VirtualizedContainerService.HintSize="380,398" sap2010:WorkflowViewState.IdRef="Sequence_23">
-                                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                  </scg:Dictionary>
-                                                                                </sap:WorkflowViewStateService.ViewState>
-                                                                                <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find PLDT banner graphic" sap:VirtualizedContainerService.HintSize="338,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_3">
-                                                                                  <ui:WaitUiElementAppear.Target>
-                                                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="61e812141c3137b334b9b37d69a963d2" Selector="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&#xA;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&#xA;&lt;ctrl role='graphic' idx='2' /&gt;&#xA;" TimeoutMS="5000">
-                                                                                      <ui:Target.WaitForReady>
-                                                                                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                                                      </ui:Target.WaitForReady>
-                                                                                    </ui:Target>
-                                                                                  </ui:WaitUiElementAppear.Target>
-                                                                                </ui:WaitUiElementAppear>
-                                                                                <ui:MultipleAssign DisplayName="Multiple Assign Bill variables" sap:VirtualizedContainerService.HintSize="338,160" sap2010:WorkflowViewState.IdRef="MultipleAssign_8">
-                                                                                  <ui:MultipleAssign.AssignOperations>
-                                                                                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                                                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_20">
-                                                                                        <ui:AssignOperation.To>
-                                                                                          <OutArgument x:TypeArguments="x:String">[Statement_FileName]</OutArgument>
-                                                                                        </ui:AssignOperation.To>
-                                                                                        <ui:AssignOperation.Value>
-                                                                                          <InArgument x:TypeArguments="x:String">[FileName]</InArgument>
-                                                                                        </ui:AssignOperation.Value>
-                                                                                      </ui:AssignOperation>
-                                                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_21">
-                                                                                        <ui:AssignOperation.To>
-                                                                                          <OutArgument x:TypeArguments="x:String">[Statement_Directory]</OutArgument>
-                                                                                        </ui:AssignOperation.To>
-                                                                                        <ui:AssignOperation.Value>
-                                                                                          <InArgument x:TypeArguments="x:String">[Path.GetFullPath(FilesArray(FileNumber-1))]</InArgument>
-                                                                                        </ui:AssignOperation.Value>
-                                                                                      </ui:AssignOperation>
-                                                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_22">
-                                                                                        <ui:AssignOperation.To>
-                                                                                          <OutArgument x:TypeArguments="x:Boolean">[PLDT_Bill]</OutArgument>
-                                                                                        </ui:AssignOperation.To>
-                                                                                        <ui:AssignOperation.Value>
-                                                                                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                                                                        </ui:AssignOperation.Value>
-                                                                                      </ui:AssignOperation>
-                                                                                    </scg:List>
-                                                                                  </ui:MultipleAssign.AssignOperations>
-                                                                                </ui:MultipleAssign>
-                                                                              </Sequence>
-                                                                            </TryCatch.Try>
-                                                                            <TryCatch.Catches>
-                                                                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_6">
-                                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                  </scg:Dictionary>
-                                                                                </sap:WorkflowViewStateService.ViewState>
-                                                                                <ActivityAction x:TypeArguments="s:Exception">
-                                                                                  <ActivityAction.Argument>
-                                                                                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                                                                                  </ActivityAction.Argument>
-                                                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Not a PLDT bill.&quot;]" />
-                                                                                </ActivityAction>
-                                                                              </Catch>
-                                                                            </TryCatch.Catches>
-                                                                          </TryCatch>
-                                                                        </Sequence>
-                                                                      </ui:CommentOut.Body>
-                                                                      <sap:WorkflowViewStateService.ViewState>
-                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                        </scg:Dictionary>
-                                                                      </sap:WorkflowViewStateService.ViewState>
-                                                                    </ui:CommentOut>
-                                                                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="516,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-                                                                      <ui:CommentOut.Body>
-                                                                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,200" sap2010:WorkflowViewState.IdRef="Sequence_34">
-                                                                          <sap:WorkflowViewStateService.ViewState>
-                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                            </scg:Dictionary>
-                                                                          </sap:WorkflowViewStateService.ViewState>
-                                                                          <TryCatch sap2010:Annotation.AnnotationText="Currently set to ignore these files by setting 'SKY_Bill = False'" DisplayName="Try Catch SKY Billing Statements" sap:VirtualizedContainerService.HintSize="200,108" sap2010:WorkflowViewState.IdRef="TryCatch_4">
-                                                                            <sap:WorkflowViewStateService.ViewState>
-                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                                              </scg:Dictionary>
-                                                                            </sap:WorkflowViewStateService.ViewState>
-                                                                            <TryCatch.Try>
-                                                                              <Sequence sap:VirtualizedContainerService.HintSize="380,398" sap2010:WorkflowViewState.IdRef="Sequence_18">
-                                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                  </scg:Dictionary>
-                                                                                </sap:WorkflowViewStateService.ViewState>
-                                                                                <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find SKY Cable Corp banner graphic" sap:VirtualizedContainerService.HintSize="338,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
-                                                                                  <ui:WaitUiElementAppear.Target>
-                                                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="f36d6abeadf3e65a72b366122acd5e51" Selector="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='*Adobe Acrobat Reader DC' /&gt;&#xA;&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&#xA;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&#xA;&lt;ctrl name='SKY Cable Corporation*' role='text' /&gt;&#xA;" TimeoutMS="5000">
-                                                                                      <ui:Target.WaitForReady>
-                                                                                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                                                      </ui:Target.WaitForReady>
-                                                                                    </ui:Target>
-                                                                                  </ui:WaitUiElementAppear.Target>
-                                                                                </ui:WaitUiElementAppear>
-                                                                                <ui:MultipleAssign DisplayName="Multiple Assign Bill variables" sap:VirtualizedContainerService.HintSize="338,160" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
-                                                                                  <ui:MultipleAssign.AssignOperations>
-                                                                                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                                                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
-                                                                                        <ui:AssignOperation.To>
-                                                                                          <OutArgument x:TypeArguments="x:String">[Statement_FileName]</OutArgument>
-                                                                                        </ui:AssignOperation.To>
-                                                                                        <ui:AssignOperation.Value>
-                                                                                          <InArgument x:TypeArguments="x:String">[FileName]</InArgument>
-                                                                                        </ui:AssignOperation.Value>
-                                                                                      </ui:AssignOperation>
-                                                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_15">
-                                                                                        <ui:AssignOperation.To>
-                                                                                          <OutArgument x:TypeArguments="x:String">[Statement_Directory]</OutArgument>
-                                                                                        </ui:AssignOperation.To>
-                                                                                        <ui:AssignOperation.Value>
-                                                                                          <InArgument x:TypeArguments="x:String">[Path.GetFullPath(FilesArray(FileNumber-1))]</InArgument>
-                                                                                        </ui:AssignOperation.Value>
-                                                                                      </ui:AssignOperation>
-                                                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
-                                                                                        <ui:AssignOperation.To>
-                                                                                          <OutArgument x:TypeArguments="x:Boolean">[SKY_Bill]</OutArgument>
-                                                                                        </ui:AssignOperation.To>
-                                                                                        <ui:AssignOperation.Value>
-                                                                                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                                                                        </ui:AssignOperation.Value>
-                                                                                      </ui:AssignOperation>
-                                                                                    </scg:List>
-                                                                                  </ui:MultipleAssign.AssignOperations>
-                                                                                </ui:MultipleAssign>
-                                                                              </Sequence>
-                                                                            </TryCatch.Try>
-                                                                            <TryCatch.Catches>
-                                                                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_4">
-                                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                  </scg:Dictionary>
-                                                                                </sap:WorkflowViewStateService.ViewState>
-                                                                                <ActivityAction x:TypeArguments="s:Exception">
-                                                                                  <ActivityAction.Argument>
-                                                                                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                                                                                  </ActivityAction.Argument>
-                                                                                  <Sequence sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_19">
-                                                                                    <sap:WorkflowViewStateService.ViewState>
-                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                      </scg:Dictionary>
-                                                                                    </sap:WorkflowViewStateService.ViewState>
-                                                                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Not a SKY Broadband bill.&quot;]" />
-                                                                                  </Sequence>
-                                                                                </ActivityAction>
-                                                                              </Catch>
-                                                                            </TryCatch.Catches>
-                                                                          </TryCatch>
-                                                                        </Sequence>
-                                                                      </ui:CommentOut.Body>
-                                                                      <sap:WorkflowViewStateService.ViewState>
-                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                        </scg:Dictionary>
-                                                                      </sap:WorkflowViewStateService.ViewState>
-                                                                    </ui:CommentOut>
-                                                                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="516,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
-                                                                      <ui:CommentOut.Body>
-                                                                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,200" sap2010:WorkflowViewState.IdRef="Sequence_35">
-                                                                          <sap:WorkflowViewStateService.ViewState>
-                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                            </scg:Dictionary>
-                                                                          </sap:WorkflowViewStateService.ViewState>
-                                                                          <TryCatch sap2010:Annotation.AnnotationText="Currently set to ignore these files by setting 'SMART_Bill = False'" DisplayName="Try Catch SMART Billing Statements" sap:VirtualizedContainerService.HintSize="200,108" sap2010:WorkflowViewState.IdRef="TryCatch_5">
-                                                                            <sap:WorkflowViewStateService.ViewState>
-                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                                              </scg:Dictionary>
-                                                                            </sap:WorkflowViewStateService.ViewState>
-                                                                            <TryCatch.Try>
-                                                                              <Sequence sap:VirtualizedContainerService.HintSize="380,398" sap2010:WorkflowViewState.IdRef="Sequence_20">
-                                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                  </scg:Dictionary>
-                                                                                </sap:WorkflowViewStateService.ViewState>
-                                                                                <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find SMART Communications banner graphic" sap:VirtualizedContainerService.HintSize="338,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2">
-                                                                                  <ui:WaitUiElementAppear.Target>
-                                                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="70be0be74f446f8b0009ca224f6e1774" Selector="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='http_Apr_SMART.pdf - Adobe Acrobat Reader DC' /&gt;&#xA;&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&#xA;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&#xA;&lt;ctrl role='document' /&gt;&#xA;&lt;ctrl name='SMART COMMUNICATIONS, INC.*' role='text' /&gt;&#xA;" TimeoutMS="5000">
-                                                                                      <ui:Target.WaitForReady>
-                                                                                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                                                      </ui:Target.WaitForReady>
-                                                                                    </ui:Target>
-                                                                                  </ui:WaitUiElementAppear.Target>
-                                                                                  <sap:WorkflowViewStateService.ViewState>
-                                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                    </scg:Dictionary>
-                                                                                  </sap:WorkflowViewStateService.ViewState>
-                                                                                </ui:WaitUiElementAppear>
-                                                                                <ui:MultipleAssign DisplayName="Multiple Assign Bill variables" sap:VirtualizedContainerService.HintSize="338,160" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
-                                                                                  <ui:MultipleAssign.AssignOperations>
-                                                                                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                                                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_17">
-                                                                                        <ui:AssignOperation.To>
-                                                                                          <OutArgument x:TypeArguments="x:String">[Statement_FileName]</OutArgument>
-                                                                                        </ui:AssignOperation.To>
-                                                                                        <ui:AssignOperation.Value>
-                                                                                          <InArgument x:TypeArguments="x:String">[FileName]</InArgument>
-                                                                                        </ui:AssignOperation.Value>
-                                                                                      </ui:AssignOperation>
-                                                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_18">
-                                                                                        <ui:AssignOperation.To>
-                                                                                          <OutArgument x:TypeArguments="x:String">[Statement_Directory]</OutArgument>
-                                                                                        </ui:AssignOperation.To>
-                                                                                        <ui:AssignOperation.Value>
-                                                                                          <InArgument x:TypeArguments="x:String">[Path.GetFullPath(FilesArray(FileNumber-1))]</InArgument>
-                                                                                        </ui:AssignOperation.Value>
-                                                                                      </ui:AssignOperation>
-                                                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_19">
-                                                                                        <ui:AssignOperation.To>
-                                                                                          <OutArgument x:TypeArguments="x:Boolean">[SMART_Bill]</OutArgument>
-                                                                                        </ui:AssignOperation.To>
-                                                                                        <ui:AssignOperation.Value>
-                                                                                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                                                                        </ui:AssignOperation.Value>
-                                                                                      </ui:AssignOperation>
-                                                                                    </scg:List>
-                                                                                  </ui:MultipleAssign.AssignOperations>
-                                                                                </ui:MultipleAssign>
-                                                                              </Sequence>
-                                                                            </TryCatch.Try>
-                                                                            <TryCatch.Catches>
-                                                                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_5">
-                                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                  </scg:Dictionary>
-                                                                                </sap:WorkflowViewStateService.ViewState>
-                                                                                <ActivityAction x:TypeArguments="s:Exception">
-                                                                                  <ActivityAction.Argument>
-                                                                                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                                                                                  </ActivityAction.Argument>
-                                                                                  <Sequence sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_21">
-                                                                                    <sap:WorkflowViewStateService.ViewState>
-                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                      </scg:Dictionary>
-                                                                                    </sap:WorkflowViewStateService.ViewState>
-                                                                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Not a SMART Communication bill.&quot;]" />
-                                                                                  </Sequence>
-                                                                                </ActivityAction>
-                                                                              </Catch>
-                                                                            </TryCatch.Catches>
-                                                                          </TryCatch>
-                                                                        </Sequence>
-                                                                      </ui:CommentOut.Body>
-                                                                      <sap:WorkflowViewStateService.ViewState>
-                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                        </scg:Dictionary>
-                                                                      </sap:WorkflowViewStateService.ViewState>
-                                                                    </ui:CommentOut>
-                                                                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="516,51" sap2010:WorkflowViewState.IdRef="CommentOut_4">
-                                                                      <ui:CommentOut.Body>
-                                                                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="480,174" sap2010:WorkflowViewState.IdRef="Sequence_36">
-                                                                          <sap:WorkflowViewStateService.ViewState>
-                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                            </scg:Dictionary>
-                                                                          </sap:WorkflowViewStateService.ViewState>
-                                                                          <TryCatch sap2010:Annotation.AnnotationText="Currently set to ignore these files by setting 'GLOBE_Bill = False'" DisplayName="Try Catch GLOBE Billing Statement" sap:VirtualizedContainerService.HintSize="200,108" sap2010:WorkflowViewState.IdRef="TryCatch_8">
-                                                                            <sap:WorkflowViewStateService.ViewState>
-                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                                              </scg:Dictionary>
-                                                                            </sap:WorkflowViewStateService.ViewState>
-                                                                            <TryCatch.Try>
-                                                                              <Sequence sap:VirtualizedContainerService.HintSize="380,343" sap2010:WorkflowViewState.IdRef="Sequence_30">
-                                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                  </scg:Dictionary>
-                                                                                </sap:WorkflowViewStateService.ViewState>
-                                                                                <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find GLOBE banner graphic" sap:VirtualizedContainerService.HintSize="338,51" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_5">
-                                                                                  <ui:WaitUiElementAppear.Target>
-                                                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="59c5373aff5c32b3831ccf25d313cfdb" Selector="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&#xA;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&#xA;&lt;ctrl role='client' /&gt;&#xA;&lt;ctrl name='*' role='graphic' /&gt;&#xA;" TimeoutMS="5000">
-                                                                                      <ui:Target.WaitForReady>
-                                                                                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                                                      </ui:Target.WaitForReady>
-                                                                                    </ui:Target>
-                                                                                  </ui:WaitUiElementAppear.Target>
-                                                                                  <sap:WorkflowViewStateService.ViewState>
-                                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                    </scg:Dictionary>
-                                                                                  </sap:WorkflowViewStateService.ViewState>
-                                                                                </ui:WaitUiElementAppear>
-                                                                                <ui:MultipleAssign DisplayName="Multiple Assign Bill variables" sap:VirtualizedContainerService.HintSize="338,160" sap2010:WorkflowViewState.IdRef="MultipleAssign_9">
-                                                                                  <ui:MultipleAssign.AssignOperations>
-                                                                                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                                                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_29">
-                                                                                        <ui:AssignOperation.To>
-                                                                                          <OutArgument x:TypeArguments="x:String">[Statement_FileName]</OutArgument>
-                                                                                        </ui:AssignOperation.To>
-                                                                                        <ui:AssignOperation.Value>
-                                                                                          <InArgument x:TypeArguments="x:String">[FileName]</InArgument>
-                                                                                        </ui:AssignOperation.Value>
-                                                                                      </ui:AssignOperation>
-                                                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_30">
-                                                                                        <ui:AssignOperation.To>
-                                                                                          <OutArgument x:TypeArguments="x:String">[Statement_Directory]</OutArgument>
-                                                                                        </ui:AssignOperation.To>
-                                                                                        <ui:AssignOperation.Value>
-                                                                                          <InArgument x:TypeArguments="x:String">[Path.GetFullPath(FilesArray(FileNumber-1))]</InArgument>
-                                                                                        </ui:AssignOperation.Value>
-                                                                                      </ui:AssignOperation>
-                                                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_31">
-                                                                                        <ui:AssignOperation.To>
-                                                                                          <OutArgument x:TypeArguments="x:Boolean">[GLOBE_Bill]</OutArgument>
-                                                                                        </ui:AssignOperation.To>
-                                                                                        <ui:AssignOperation.Value>
-                                                                                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                                                                        </ui:AssignOperation.Value>
-                                                                                      </ui:AssignOperation>
-                                                                                    </scg:List>
-                                                                                  </ui:MultipleAssign.AssignOperations>
-                                                                                </ui:MultipleAssign>
-                                                                              </Sequence>
-                                                                            </TryCatch.Try>
-                                                                            <TryCatch.Catches>
-                                                                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_8">
-                                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                  </scg:Dictionary>
-                                                                                </sap:WorkflowViewStateService.ViewState>
-                                                                                <ActivityAction x:TypeArguments="s:Exception">
-                                                                                  <ActivityAction.Argument>
-                                                                                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                                                                                  </ActivityAction.Argument>
-                                                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;Not a GLOBE bill.&quot;]" />
-                                                                                </ActivityAction>
-                                                                              </Catch>
-                                                                            </TryCatch.Catches>
-                                                                          </TryCatch>
-                                                                        </Sequence>
-                                                                      </ui:CommentOut.Body>
-                                                                      <sap:WorkflowViewStateService.ViewState>
-                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                        </scg:Dictionary>
-                                                                      </sap:WorkflowViewStateService.ViewState>
-                                                                    </ui:CommentOut>
-                                                                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_5">
-                                                                      <ui:CommentOut.Body>
-                                                                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="480,174" sap2010:WorkflowViewState.IdRef="Sequence_37">
-                                                                          <sap:WorkflowViewStateService.ViewState>
-                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                            </scg:Dictionary>
-                                                                          </sap:WorkflowViewStateService.ViewState>
-                                                                          <TryCatch sap2010:Annotation.AnnotationText="Currently set to ignore these files by setting 'CONVERGE_Bill = False'" DisplayName="Try Catch CONVERGE Billing Statement" sap:VirtualizedContainerService.HintSize="200,108" sap2010:WorkflowViewState.IdRef="TryCatch_9">
-                                                                            <sap:WorkflowViewStateService.ViewState>
-                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                                              </scg:Dictionary>
-                                                                            </sap:WorkflowViewStateService.ViewState>
-                                                                            <TryCatch.Try>
-                                                                              <Sequence sap:VirtualizedContainerService.HintSize="380,343" sap2010:WorkflowViewState.IdRef="Sequence_31">
-                                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                  </scg:Dictionary>
-                                                                                </sap:WorkflowViewStateService.ViewState>
-                                                                                <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find CONVERGE banner graphic" sap:VirtualizedContainerService.HintSize="338,51" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_6">
-                                                                                  <ui:WaitUiElementAppear.Target>
-                                                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="71798850f656fcc24614a79571177fb1" Selector="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&#xA;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&#xA;&lt;ctrl role='client' /&gt;&#xA;&lt;ctrl name='CONVERGE INFORMATION AND COMMUNICATIONS   TECHNOLOGY SOLUTIONS, *' role='text' /&gt;&#xA;" TimeoutMS="5000">
-                                                                                      <ui:Target.WaitForReady>
-                                                                                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                                                      </ui:Target.WaitForReady>
-                                                                                    </ui:Target>
-                                                                                  </ui:WaitUiElementAppear.Target>
-                                                                                  <sap:WorkflowViewStateService.ViewState>
-                                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                    </scg:Dictionary>
-                                                                                  </sap:WorkflowViewStateService.ViewState>
-                                                                                </ui:WaitUiElementAppear>
-                                                                                <ui:MultipleAssign DisplayName="Multiple Assign Bill variables" sap:VirtualizedContainerService.HintSize="338,160" sap2010:WorkflowViewState.IdRef="MultipleAssign_10">
-                                                                                  <ui:MultipleAssign.AssignOperations>
-                                                                                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                                                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_32">
-                                                                                        <ui:AssignOperation.To>
-                                                                                          <OutArgument x:TypeArguments="x:String">[Statement_FileName]</OutArgument>
-                                                                                        </ui:AssignOperation.To>
-                                                                                        <ui:AssignOperation.Value>
-                                                                                          <InArgument x:TypeArguments="x:String">[FileName]</InArgument>
-                                                                                        </ui:AssignOperation.Value>
-                                                                                      </ui:AssignOperation>
-                                                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_33">
-                                                                                        <ui:AssignOperation.To>
-                                                                                          <OutArgument x:TypeArguments="x:String">[Statement_Directory]</OutArgument>
-                                                                                        </ui:AssignOperation.To>
-                                                                                        <ui:AssignOperation.Value>
-                                                                                          <InArgument x:TypeArguments="x:String">[Path.GetFullPath(FilesArray(FileNumber-1))]</InArgument>
-                                                                                        </ui:AssignOperation.Value>
-                                                                                      </ui:AssignOperation>
-                                                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_34">
-                                                                                        <ui:AssignOperation.To>
-                                                                                          <OutArgument x:TypeArguments="x:Boolean">[CONVERGE_Bill]</OutArgument>
-                                                                                        </ui:AssignOperation.To>
-                                                                                        <ui:AssignOperation.Value>
-                                                                                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                                                                        </ui:AssignOperation.Value>
-                                                                                      </ui:AssignOperation>
-                                                                                    </scg:List>
-                                                                                  </ui:MultipleAssign.AssignOperations>
-                                                                                </ui:MultipleAssign>
-                                                                              </Sequence>
-                                                                            </TryCatch.Try>
-                                                                            <TryCatch.Catches>
-                                                                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_9">
-                                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                  </scg:Dictionary>
-                                                                                </sap:WorkflowViewStateService.ViewState>
-                                                                                <ActivityAction x:TypeArguments="s:Exception">
-                                                                                  <ActivityAction.Argument>
-                                                                                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                                                                                  </ActivityAction.Argument>
-                                                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[&quot;Not a CONVERGE bill.&quot;]" />
-                                                                                </ActivityAction>
-                                                                              </Catch>
-                                                                            </TryCatch.Catches>
-                                                                          </TryCatch>
-                                                                        </Sequence>
-                                                                      </ui:CommentOut.Body>
-                                                                      <sap:WorkflowViewStateService.ViewState>
-                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                        </scg:Dictionary>
-                                                                      </sap:WorkflowViewStateService.ViewState>
-                                                                    </ui:CommentOut>
-                                                                  </Sequence>
-                                                                </ActivityAction>
-                                                              </ui:WindowScope.Body>
-                                                              <sap:WorkflowViewStateService.ViewState>
-                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                </scg:Dictionary>
-                                                              </sap:WorkflowViewStateService.ViewState>
-                                                            </ui:WindowScope>
-                                                          </Sequence>
-                                                        </ui:CommentOut.Body>
-                                                        <sap:WorkflowViewStateService.ViewState>
-                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                          </scg:Dictionary>
-                                                        </sap:WorkflowViewStateService.ViewState>
-                                                      </ui:CommentOut>
-                                                    </Sequence>
-                                                  </ActivityAction>
-                                                </ui:WindowScope.Body>
-                                                <sap:WorkflowViewStateService.ViewState>
-                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                  </scg:Dictionary>
-                                                </sap:WorkflowViewStateService.ViewState>
-                                              </ui:WindowScope>
-                                            </If.Then>
-                                            <If.Else>
-                                              <Sequence sap:VirtualizedContainerService.HintSize="376,283" sap2010:WorkflowViewState.IdRef="Sequence_25">
-                                                <sap:WorkflowViewStateService.ViewState>
-                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                  </scg:Dictionary>
-                                                </sap:WorkflowViewStateService.ViewState>
-                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;File is not a PDF file. Moving on to the next file.&quot;]" />
-                                                <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_10">
-                                                  <Assign.To>
-                                                    <OutArgument x:TypeArguments="x:Int32">[FileNumber]</OutArgument>
-                                                  </Assign.To>
-                                                  <Assign.Value>
-                                                    <InArgument x:TypeArguments="x:Int32">[FileNumber + 1]</InArgument>
-                                                  </Assign.Value>
-                                                </Assign>
-                                              </Sequence>
-                                            </If.Else>
-                                          </If>
-                                        </Sequence>
-                                      </If.Then>
-                                      <If.Else>
-                                        <Throw DisplayName="Throw BRE: No more files" Exception="[new BusinessRuleException(&quot;No more files.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
-                                      </If.Else>
-                                    </If>
-                                  </TryCatch.Try>
-                                  <TryCatch.Catches>
-                                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1224,21" sap2010:WorkflowViewState.IdRef="Catch`1_7">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                      <ActivityAction x:TypeArguments="s:Exception">
-                                        <ActivityAction.Argument>
-                                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                                        </ActivityAction.Argument>
-                                        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_15">
-                                          <Assign.To>
-                                            <OutArgument x:TypeArguments="s:Exception">[BusinessRuleException]</OutArgument>
-                                          </Assign.To>
-                                          <Assign.Value>
-                                            <InArgument x:TypeArguments="s:Exception">[exception]</InArgument>
-                                          </Assign.Value>
-                                        </Assign>
-                                      </ActivityAction>
-                                    </Catch>
-                                  </TryCatch.Catches>
-                                </TryCatch>
-                              </Sequence>
-                            </ui:CommentOut.Body>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </ui:CommentOut>
                         </Sequence>
                       </TryCatch.Try>
                       <TryCatch.Catches>
-                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="657,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1488,7 +702,7 @@
                 </State.Entry>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <av:Point x:Key="ShapeLocation">205.5,289</av:Point>
+                    <av:Point x:Key="ShapeLocation">205.5,299</av:Point>
                     <av:Size x:Key="ShapeSize">269,62</av:Size>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     <x:Double x:Key="StateContainerWidth">235</x:Double>
@@ -1499,7 +713,7 @@
                   <Transition DisplayName="Unsupported Service Provider" sap:VirtualizedContainerService.HintSize="450,505" sap2010:WorkflowViewState.IdRef="Transition_17">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:PointCollection x:Key="ConnectorLocation">447.6,289 447.6,259 310,259 310,184</av:PointCollection>
+                        <av:PointCollection x:Key="ConnectorLocation">447.6,299 447.6,269 310,269 310,184</av:PointCollection>
                         <x:Int32 x:Key="SrcConnectionPointIndex">70</x:Int32>
                         <x:Int32 x:Key="DestConnectionPointIndex">39</x:Int32>
                       </scg:Dictionary>
@@ -1514,7 +728,7 @@
                   <Transition DisplayName="Next file" sap:VirtualizedContainerService.HintSize="450,505" sap2010:WorkflowViewState.IdRef="Transition_18">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:PointCollection x:Key="ConnectorLocation">474.5,301.4 504.5,301.4 504.5,173.8 424,173.8</av:PointCollection>
+                        <av:PointCollection x:Key="ConnectorLocation">474.5,311.4 504.5,311.4 504.5,173.8 424,173.8</av:PointCollection>
                         <x:Int32 x:Key="SrcConnectionPointIndex">12</x:Int32>
                         <x:Int32 x:Key="DestConnectionPointIndex">64</x:Int32>
                       </scg:Dictionary>
@@ -1522,9 +736,7 @@
                     <Transition.To>
                       <x:Reference>__ReferenceID0</x:Reference>
                     </Transition.To>
-                    <Transition.Condition>
-                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="BusinessRuleException is Nothing" />
-                    </Transition.Condition>
+                    <Transition.Condition>[BusinessRuleException is Nothing]</Transition.Condition>
                   </Transition>
                 </State.Transitions>
                 <State.Variables>
@@ -1533,7 +745,7 @@
                   <Variable x:TypeArguments="x:String" Name="FileName" />
                   <Variable x:TypeArguments="p3:Document" Name="FileDOM" />
                   <Variable x:TypeArguments="x:String" Name="FileText" />
-                  <Variable x:TypeArguments="p5:ClassificationResult[]" Name="Classify_FileName_Result" />
+                  <Variable x:TypeArguments="p5:ClassificationResult[]" Name="Classify_OR_Result" />
                   <Variable x:TypeArguments="p5:ExtractionResult" Name="ExtractionResult" />
                   <Variable x:TypeArguments="sd1:DataSet" Name="ExtractDataSet" />
                 </State.Variables>
