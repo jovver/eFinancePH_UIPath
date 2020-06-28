@@ -1,0 +1,341 @@
+﻿{
+  "DataContractVersion": "1.0",
+  "DocumentTypes": [
+    {
+      "DocumentTypeId": "PDF.StatementOfAccounts.PLDT",
+      "Group": "PDF",
+      "Category": "StatementOfAccounts",
+      "Name": "PLDT",
+      "OptionalUniqueIdentifier": "PLDTSoA",
+      "TypeField": {
+        "FieldId": "PDF.StatementOfAccounts.PLDT.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": [
+        {
+          "FieldId": "PDF.StatementOfAccounts.PLDT.Name",
+          "FieldName": "Name",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "PDF.StatementOfAccounts.PLDT.TotalAmountDue",
+          "FieldName": "TotalAmountDue",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "PDF.StatementOfAccounts.PLDT.SoANumber",
+          "FieldName": "SoANumber",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        }
+      ]
+    },
+    {
+      "DocumentTypeId": "Images.MobileScreenshots.BDO",
+      "Group": "Images",
+      "Category": "MobileScreenshots",
+      "Name": "BDO",
+      "OptionalUniqueIdentifier": "BDOMobile",
+      "TypeField": {
+        "FieldId": "Images.MobileScreenshots.BDO.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": []
+    },
+    {
+      "DocumentTypeId": "PDF.StatementOfAccounts.SkyBroadband",
+      "Group": "PDF",
+      "Category": "StatementOfAccounts",
+      "Name": "Sky Broadband",
+      "OptionalUniqueIdentifier": "SkySoA",
+      "TypeField": {
+        "FieldId": "PDF.StatementOfAccounts.SkyBroadband.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": [
+        {
+          "FieldId": "PDF.StatementOfAccounts.SkyBroadband.Name",
+          "FieldName": "Name",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "PDF.StatementOfAccounts.SkyBroadband.TotalAmountDue",
+          "FieldName": "TotalAmountDue",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "PDF.StatementOfAccounts.SkyBroadband.SoANumber",
+          "FieldName": "SoANumber",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        }
+      ]
+    },
+    {
+      "DocumentTypeId": "PDF.StatementOfAccounts.Globe",
+      "Group": "PDF",
+      "Category": "StatementOfAccounts",
+      "Name": "Globe",
+      "OptionalUniqueIdentifier": "GlobeSoA",
+      "TypeField": {
+        "FieldId": "PDF.StatementOfAccounts.Globe.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": [
+        {
+          "FieldId": "PDF.StatementOfAccounts.Globe.Name",
+          "FieldName": "Name",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "PDF.StatementOfAccounts.Globe.TotalAmountDue",
+          "FieldName": "TotalAmountDue",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "PDF.StatementOfAccounts.Globe.SoANumber",
+          "FieldName": "SoANumber",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        }
+      ]
+    },
+    {
+      "DocumentTypeId": "PDF.StatementOfAccounts.ConvergeICT",
+      "Group": "PDF",
+      "Category": "StatementOfAccounts",
+      "Name": "ConvergeICT",
+      "OptionalUniqueIdentifier": "ConvergeSoA",
+      "TypeField": {
+        "FieldId": "PDF.StatementOfAccounts.ConvergeICT.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": [
+        {
+          "FieldId": "PDF.StatementOfAccounts.ConvergeICT.Name",
+          "FieldName": "Name",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "PDF.StatementOfAccounts.ConvergeICT.TotalAmountDue",
+          "FieldName": "TotalAmountDue",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "PDF.StatementOfAccounts.ConvergeICT.SoANumber",
+          "FieldName": "SoANumber",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        }
+      ]
+    },
+    {
+      "DocumentTypeId": "PDF.StatementOfAccounts.SMARTCommunications",
+      "Group": "PDF",
+      "Category": "StatementOfAccounts",
+      "Name": "SMART Communications",
+      "OptionalUniqueIdentifier": "SMARTSoA",
+      "TypeField": {
+        "FieldId": "PDF.StatementOfAccounts.SMARTCommunications.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": [
+        {
+          "FieldId": "PDF.StatementOfAccounts.SMARTCommunications.Name",
+          "FieldName": "Name",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "PDF.StatementOfAccounts.SMARTCommunications.TotalAmountDue",
+          "FieldName": "TotalAmountDue",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "PDF.StatementOfAccounts.SMARTCommunications.SoANumber",
+          "FieldName": "SoANumber",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        }
+      ]
+    }
+  ],
+  "Groups": [
+    {
+      "Name": "Images",
+      "Categories": [
+        "MobileScreenshots"
+      ]
+    },
+    {
+      "Name": "PDF",
+      "Categories": [
+        "StatementOfAccounts"
+      ]
+    }
+  ],
+  "SupportedLanguages": [
+    {
+      "Name": "Undetermined Language",
+      "Code": "und"
+    },
+    {
+      "Name": "Bulgarian",
+      "Code": "bul"
+    },
+    {
+      "Name": "Cantonese",
+      "Code": "yue"
+    },
+    {
+      "Name": "Danish",
+      "Code": "dan"
+    },
+    {
+      "Name": "Dutch",
+      "Code": "nld"
+    },
+    {
+      "Name": "English",
+      "Code": "eng"
+    },
+    {
+      "Name": "French",
+      "Code": "fra"
+    },
+    {
+      "Name": "Georgian",
+      "Code": "kat"
+    },
+    {
+      "Name": "German",
+      "Code": "deu"
+    },
+    {
+      "Name": "Greek",
+      "Code": "ell"
+    },
+    {
+      "Name": "Hebrew",
+      "Code": "heb"
+    },
+    {
+      "Name": "Hindi",
+      "Code": "hin"
+    },
+    {
+      "Name": "Italian",
+      "Code": "ita"
+    },
+    {
+      "Name": "Japanese",
+      "Code": "jpn"
+    },
+    {
+      "Name": "Korean",
+      "Code": "kor"
+    },
+    {
+      "Name": "Macedonian",
+      "Code": "mkd"
+    },
+    {
+      "Name": "Mandarin",
+      "Code": "zho"
+    },
+    {
+      "Name": "Marathi",
+      "Code": "mar"
+    },
+    {
+      "Name": "Norwegian",
+      "Code": "nor"
+    },
+    {
+      "Name": "Polish",
+      "Code": "pol"
+    },
+    {
+      "Name": "Portuguese",
+      "Code": "por"
+    },
+    {
+      "Name": "Romanian",
+      "Code": "ron"
+    },
+    {
+      "Name": "Russian",
+      "Code": "rus"
+    },
+    {
+      "Name": "Serbian",
+      "Code": "srp"
+    },
+    {
+      "Name": "Spanish",
+      "Code": "spa"
+    },
+    {
+      "Name": "Swedish",
+      "Code": "swe"
+    },
+    {
+      "Name": "Telugu",
+      "Code": "tel"
+    }
+  ]
+}
