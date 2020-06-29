@@ -97,7 +97,7 @@
                 <InArgument x:TypeArguments="x:String">[strExtractedFile.ToString.Trim + item(12).ToString]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke DownloadAttachments" sap:VirtualizedContainerService.HintSize="569,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="eFinance System/DownloadAttachments.xaml">
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke DownloadAttachments" sap:VirtualizedContainerService.HintSize="569,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Archives/DownloadAttachments.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="x:String" x:Key="strExtractedFile">[strExtractedFile]</InArgument>
                 <InOutArgument x:TypeArguments="x:String" x:Key="strPath">[strPath]</InOutArgument>
