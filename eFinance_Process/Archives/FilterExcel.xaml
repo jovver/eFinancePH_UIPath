@@ -156,14 +156,14 @@
                       <InArgument x:TypeArguments="x:String" x:Key="in_ID">[item(12).ToString]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
-                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Read PDF workflow" sap:VirtualizedContainerService.HintSize="569,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="eFinance System/Read PDF.xaml">
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Read PDF workflow" sap:VirtualizedContainerService.HintSize="569,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Archives/Read PDF.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <OutArgument x:TypeArguments="x:String" x:Key="out_TotalAmountDue">[strTotalAmountPDF]</OutArgument>
                       <OutArgument x:TypeArguments="x:String" x:Key="out_AccountNumber">[strAccountNumberPDF]</OutArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_PDFPath">[strPath + ".pdf"]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
-                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Read Picture workflow" sap:VirtualizedContainerService.HintSize="569,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="eFinance System/Read Picture.xaml">
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Read Picture workflow" sap:VirtualizedContainerService.HintSize="569,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Archives/Read Picture.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="in_Path">[strPath + ".png"]</InArgument>
                       <OutArgument x:TypeArguments="x:String" x:Key="out_Result">[strResult]</OutArgument>
