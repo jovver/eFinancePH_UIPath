@@ -2,7 +2,7 @@
   <x:Members>
     <x:Property Name="in_URL" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1208,672</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1119,672</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="17">
@@ -43,7 +43,7 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: &#xD;&#xA;Opens the Communication Reimbursement &gt; All Items page. Launches an IE browser&#xD;&#xA;&#xD;&#xA;Pre-Conditions: Access to the webpage&#xD;&#xA;&#xD;&#xA;Post-Conditions: N/A&#xD;&#xA;&#xD;&#xA;Arguments:&#xD;&#xA;in_URL: String" DisplayName="Launch IE" sap:VirtualizedContainerService.HintSize="476,467" sap2010:WorkflowViewState.IdRef="Sequence_8">
+  <Sequence sap2010:Annotation.AnnotationText="Description: &#xA;Opens the Communication Reimbursement &gt; All Items page. Launches an IE browser&#xA;&#xA;Pre-Conditions: Access to the webpage&#xA;&#xA;Post-Conditions: N/A&#xA;&#xA;Arguments:&#xA;in_URL: String" DisplayName="Launch IE" sap:VirtualizedContainerService.HintSize="476,467" sap2010:WorkflowViewState.IdRef="Sequence_8">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
