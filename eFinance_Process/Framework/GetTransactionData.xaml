@@ -152,7 +152,7 @@
               <OutArgument x:TypeArguments="x:String">[out_TransactionField2]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[out_TransactionItem.Item("ApplicationID").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String">[out_TransactionItem.Item("Application ID").ToString]</InArgument>
             </Assign.Value>
           </Assign>
         </Sequence>
