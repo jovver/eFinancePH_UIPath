@@ -1,13 +1,15 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="PaymentFile_Filter_and_Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:p1="http://schemas.uipath.com/workflow/activities/intelligentocr/classification" xmlns:p2="http://schemas.uipath.com/workflow/activities/document-processing-contracts/classification" xmlns:p3="http://schemas.uipath.com/workflow/activities/document-processing-contracts/dom" xmlns:p4="http://schemas.uipath.com/workflow/activities/intelligentocr/extraction" xmlns:p5="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p6="http://schemas.uipath.com/workflow/activities/document-processing-contracts/extraction" xmlns:p7="http://schemas.uipath.com/workflow/activities/document-processing-contracts/taxonomy" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:sd1="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="PaymentFile_Filter_and_Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:p1="http://schemas.uipath.com/workflow/activities/intelligentocr/classification" xmlns:p2="http://schemas.uipath.com/workflow/activities/document-processing-contracts/classification" xmlns:p3="http://schemas.uipath.com/workflow/activities/document-processing-contracts/dom" xmlns:p4="http://schemas.uipath.com/workflow/activities/intelligentocr/extraction" xmlns:p5="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p6="http://schemas.uipath.com/workflow/activities/document-processing-contracts/extraction" xmlns:p7="http://schemas.uipath.com/workflow/activities/document-processing-contracts/taxonomy" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_PaymentFile" Type="InArgument(x:String)" />
     <x:Property Name="out_TotalAmountPaid" Type="OutArgument(x:Double)" />
+    <x:Property Name="in_TransactionItem" Type="InArgument(sd:DataRow)" />
+    <x:Property Name="io_dt_Exceptiondata" Type="InOutArgument(sd:DataTable)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>922,2773</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1119,2835</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PaymentFile_Filter_and_Process_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -69,7 +71,7 @@
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: This is the main flow for processing of Payment files and then extracts the TotalAmountPaid from the document&#xA;&#xA;This workflow consists of a sequence and another state machine&#xA;&#xA;Current list of supported Bills:&#xA;BDO Mobile Screenshot- Current PoC Scope. Regex Developed&#xA;BDO Desktop - N/A&#xA;BPI Mobile and Desktop - N/A&#xA;Metrobank Mobile and Desktop - N/A&#xA;All other banks and permutations - N/A&#xA;&#xA;Pre-Conditions:&#xA;- The attachments have been downloaded to the Output folder.&#xA;- Only the file returned from the '\eFinance System\BillingStatement_Filter and Process.xaml' will be processed by this workflow, again adhering to the scope of one OR PDF and one payment file that is an image (.png, .jpg, .jpeg)&#xA;- Pre-screening of files present in the Output folder is done by a separate workflow&#xA;&#xA;Post-Conditions:&#xA;- Extracts the 'Total Amount Paid' (or derivatives thereof) of various Payment file/Proof of Payment&#xA;&#xA;Arguments:&#xA;in_Config: Dictionary{String,Object}&#xA;in_PaymentFile: String (= out_PaymentFile from '\eFinance System\BillingStatement_Filter and Process.xaml')&#xA;out_TotalAmountPaid: Double" DisplayName="PaymentFile_Filter_and_Process" sap:VirtualizedContainerService.HintSize="591,2568" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description: This is the main flow for processing of Payment files and then extracts the TotalAmountPaid from the document&#xA;&#xA;This workflow consists of a sequence and another state machine&#xA;&#xA;Current list of supported Bills:&#xA;BDO Mobile Screenshot- Current PoC Scope. Regex Developed&#xA;BDO Desktop - N/A&#xA;BPI Mobile and Desktop - N/A&#xA;Metrobank Mobile and Desktop - N/A&#xA;All other banks and permutations - N/A&#xA;&#xA;Pre-Conditions:&#xA;- The attachments have been downloaded to the Output folder.&#xA;- Only the file returned from the '\eFinance System\BillingStatement_Filter and Process.xaml' will be processed by this workflow, again adhering to the scope of one OR PDF and one payment file that is an image (.png, .jpg, .jpeg)&#xA;- Pre-screening of files present in the Output folder is done by a separate workflow&#xA;&#xA;Post-Conditions:&#xA;- Extracts the 'Total Amount Paid' (or derivatives thereof) of various Payment file/Proof of Payment&#xA;&#xA;Arguments:&#xA;in_Config: Dictionary{String,Object}&#xA;in_PaymentFile: String (= out_PaymentFile from '\eFinance System\BillingStatement_Filter and Process.xaml')&#xA;out_TotalAmountPaid: Double" DisplayName="PaymentFile_Filter_and_Process" sap:VirtualizedContainerService.HintSize="591,2630" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="CurrentDirectory" />
       <Variable x:TypeArguments="x:String" Name="WorkingDirectory" />
@@ -80,7 +82,7 @@
       <Variable x:TypeArguments="p5:ClassificationResult[]" Name="Classify_Payment_Result" />
       <Variable x:TypeArguments="x:String" Name="DocumentID" />
       <Variable x:TypeArguments="p5:ExtractionResult" Name="ExtractionResult" />
-      <Variable x:TypeArguments="sd1:DataSet" Name="ExtractDataSet" />
+      <Variable x:TypeArguments="sd:DataSet" Name="ExtractDataSet" />
       <Variable x:TypeArguments="x:String" Name="File" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -89,7 +91,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign sap2010:Annotation.AnnotationText="WorkingDirectory is currently hardcoded but an entry is already placed in the config.xlsx file&#xA;&#xA;Update &quot;\Output&quot; to in_Config(&quot;Download_Directory&quot;).ToString&#xD;&#xA;&#xD;&#xA;'File' variable is to be removed when integrating and replaced by 'in_PaymentFile'" DisplayName="Multiple Assign for initialization" sap:VirtualizedContainerService.HintSize="549,354" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign sap2010:Annotation.AnnotationText="WorkingDirectory is currently hardcoded but an entry is already placed in the config.xlsx file&#xA;&#xA;Update &quot;\Output&quot; to in_Config(&quot;Download_Directory&quot;).ToString&#xA;&#xA;'File' variable is to be removed when integrating and replaced by 'in_PaymentFile'" DisplayName="Multiple Assign for initialization" sap:VirtualizedContainerService.HintSize="549,354" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -144,9 +146,9 @@
     <p:LoadTaxonomy DisplayName="Load Taxonomy" sap:VirtualizedContainerService.HintSize="549,22" sap2010:WorkflowViewState.IdRef="LoadTaxonomy_1" Taxonomy="[eFinanceTaxonomy]" />
     <p:DigitizeDocument sap2010:Annotation.AnnotationText="File should be changed to &quot;in_Paymentfile&quot; when integrated" DegreeOfParallelism="1" DisplayName="Digitize Document" DocumentObjectModel="[PaymentFileDOM]" DocumentPath="[File]" DocumentText="[PaymentFileText]" ForceApplyOCR="False" sap:VirtualizedContainerService.HintSize="549,173" sap2010:WorkflowViewState.IdRef="DigitizeDocument_1">
       <p:DigitizeDocument.OCREngine>
-        <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+        <ActivityFunc x:TypeArguments="sd1:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
           <ActivityFunc.Argument>
-            <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+            <DelegateInArgument x:TypeArguments="sd1:Image" Name="Image" />
           </ActivityFunc.Argument>
           <ui:MicrosoftOCR FilterRegion="{x:Null}" Language="{x:Null}" Output="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Microsoft OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="MicrosoftOCR_1" Image="[Image]" />
         </ActivityFunc>
@@ -198,7 +200,7 @@
         </p1:KeywordBasedClassifier>
       </p1:ClassifyDocumentScope.Classifiers>
     </p1:ClassifyDocumentScope>
-    <If Condition="[Classify_Payment_Result.Length &gt; 0]" DisplayName="If the classifier was able to classify, continue" sap:VirtualizedContainerService.HintSize="549,262" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[Classify_Payment_Result.Length &gt; 0]" DisplayName="If the classifier was able to classify, continue" sap:VirtualizedContainerService.HintSize="549,324" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
         <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
           <Assign.To>
@@ -210,12 +212,13 @@
         </Assign>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="242,176" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
+          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_TransactionItem(&quot;Username&quot;).ToString, in_TransactionItem(&quot;Application ID&quot;).ToString, &quot;Unsupported Payment Channel/Method&quot;, in_TransactionItem(&quot;ID&quot;).ToString}]" DataTable="[io_dt_Exceptiondata]" DisplayName="Add Data Row  to io_dt_Exceptiondata" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
           <Throw DisplayName="Unsupported Payment Channel" Exception="[new BusinessRuleException(&quot;Unsupported Payment Channel/Method&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
         </Sequence>
       </If.Else>
