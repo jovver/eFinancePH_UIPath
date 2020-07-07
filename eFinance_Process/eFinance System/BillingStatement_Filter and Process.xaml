@@ -5,7 +5,6 @@
     <x:Property Name="out_PaymentFile" Type="OutArgument(x:String)" />
     <x:Property Name="out_OR_Name" Type="OutArgument(x:String)" />
     <x:Property Name="out_OR_SoA_NumberList" Type="OutArgument(scg:List(x:String))" />
-    <x:Property Name="io_dt_Exceptiondata" Type="InOutArgument(sd:DataTable)" />
     <x:Property Name="in_TransactionItem" Type="InArgument(sd:DataRow)" />
   </x:Members>
   <mva:VisualBasic.Settings>
@@ -409,17 +408,17 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <Transition.To>
-              <State x:Name="__ReferenceID2" DisplayName="Digitize Document. Classify and Extract" sap:VirtualizedContainerService.HintSize="779,3229" sap2010:WorkflowViewState.IdRef="State_1">
+              <State x:Name="__ReferenceID2" DisplayName="Digitize Document. Classify and Extract" sap:VirtualizedContainerService.HintSize="779,3167" sap2010:WorkflowViewState.IdRef="State_1">
                 <State.Entry>
-                  <Sequence sap:VirtualizedContainerService.HintSize="733,2842" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                  <Sequence sap:VirtualizedContainerService.HintSize="733,2780" sap2010:WorkflowViewState.IdRef="Sequence_15">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="691,2750" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="691,2688" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                       <TryCatch.Try>
-                        <Sequence sap:VirtualizedContainerService.HintSize="653,2523" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                        <Sequence sap:VirtualizedContainerService.HintSize="653,2461" sap2010:WorkflowViewState.IdRef="Sequence_14">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="DocumentID" />
                           </Sequence.Variables>
@@ -521,7 +520,7 @@
                               </p1:KeywordBasedClassifier>
                             </p1:ClassifyDocumentScope.Classifiers>
                           </p1:ClassifyDocumentScope>
-                          <If Condition="[Classify_OR_Result.Length &gt; 0]" DisplayName="If the classifier was able to classify, continue" sap:VirtualizedContainerService.HintSize="611,424" sap2010:WorkflowViewState.IdRef="If_11">
+                          <If Condition="[Classify_OR_Result.Length &gt; 0]" DisplayName="If the classifier was able to classify, continue" sap:VirtualizedContainerService.HintSize="611,362" sap2010:WorkflowViewState.IdRef="If_11">
                             <If.Then>
                               <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_26">
                                 <Assign.To>
@@ -533,7 +532,7 @@
                               </Assign>
                             </If.Then>
                             <If.Else>
-                              <Sequence sap:VirtualizedContainerService.HintSize="304,276" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                              <Sequence sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_49">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -547,7 +546,6 @@
                                     <InArgument x:TypeArguments="x:Int32">[FileNumber + 1]</InArgument>
                                   </Assign.Value>
                                 </Assign>
-                                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_TransactionItem(&quot;Username&quot;).ToString, in_TransactionItem(&quot;Application ID&quot;).ToString, &quot;Unsupported Service Provider (not PLDT)&quot;, in_TransactionItem(&quot;ID&quot;).ToString}]" DataTable="[io_dt_Exceptiondata]" DisplayName="Add Data Row to io_dt_Exceptiondata" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
                                 <Throw DisplayName="Unsupported Service Provider" Exception="[new BusinessRuleException(&quot;Unsupported Service Provider&quot;)]" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Throw_4" />
                               </Sequence>
                             </If.Else>

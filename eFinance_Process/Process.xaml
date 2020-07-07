@@ -5,13 +5,11 @@
     <x:Property Name="in_TransactionID" Type="InArgument(x:String)" />
     <x:Property Name="in_TransactionField1" Type="InArgument(x:String)" />
     <x:Property Name="in_TransactionField2" Type="InArgument(x:String)" />
-    <x:Property Name="io_dt_Successdata" Type="InOutArgument(sd:DataTable)" />
-    <x:Property Name="io_dt_Exceptiondata" Type="InOutArgument(sd:DataTable)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1119,2276</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1119,2160</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -65,16 +63,12 @@
       <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="526,2071" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="526,1955" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Double" Name="TotalAmountDue" />
       <Variable x:TypeArguments="x:String" Name="PaymentFile" />
       <Variable x:TypeArguments="x:String" Name="OR_Name" />
-      <Variable x:TypeArguments="scg:List(x:String)" Name="OR_SoA_NumberList">
-        <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="new List(Of String)()" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="scg:List(x:String)" Default="[new List(Of String)()]" Name="OR_SoA_NumberList" />
       <Variable x:TypeArguments="x:Double" Name="TotalAmountPaid" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -84,6 +78,16 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="484,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
+    <If sap2010:Annotation.AnnotationText="This activity will throw the business exception whenever we encounter an application whose username is set to blank / null. &#xA;" Condition="[in_TransactionField1 = &quot;&quot;]" sap:VirtualizedContainerService.HintSize="484,265" sap2010:WorkflowViewState.IdRef="If_3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Throw DisplayName="No username set" Exception="[new BusinessRuleException(&quot;No username set&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_4" />
+      </If.Then>
+    </If>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="This launches a specific entry supplied by the extracted ID. Uses the &quot;Comm_EntryPage&quot; config." DisplayName="Invoke LaunchIE workflow" sap:VirtualizedContainerService.HintSize="484,129" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="eFinance System\LaunchIE.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_URL">[in_Config("Comm_EntryPage").ToString + in_TransactionID]</InArgument>
@@ -99,9 +103,6 @@
         <InArgument x:TypeArguments="sd:DataRow" x:Key="in_TransactionItem">
           <mva:VisualBasicValue x:TypeArguments="sd:DataRow" ExpressionText="in_TransactionItem" />
         </InArgument>
-        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_Exceptiondata">
-          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="io_dt_Exceptiondata" />
-        </InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke BillingStatement_Filter and Process workflow" sap:VirtualizedContainerService.HintSize="484,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="eFinance System\BillingStatement_Filter and Process.xaml">
@@ -121,9 +122,6 @@
         <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="out_OR_SoA_NumberList">
           <mva:VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="OR_SoA_NumberList" />
         </OutArgument>
-        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_Exceptiondata">
-          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="io_dt_Exceptiondata" />
-        </InOutArgument>
         <InArgument x:TypeArguments="sd:DataRow" x:Key="in_TransactionItem">
           <mva:VisualBasicValue x:TypeArguments="sd:DataRow" ExpressionText="in_TransactionItem" />
         </InArgument>
@@ -143,29 +141,16 @@
         <InArgument x:TypeArguments="sd:DataRow" x:Key="in_TransactionItem">
           <mva:VisualBasicValue x:TypeArguments="sd:DataRow" ExpressionText="in_TransactionItem" />
         </InArgument>
-        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_Exceptiondata">
-          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="io_dt_Exceptiondata" />
-        </InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Update Status Column workflow" sap:VirtualizedContainerService.HintSize="484,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="eFinance System\Update Status Column.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="sd:DataRow" x:Key="in_TransactionItem">
-          <mva:VisualBasicValue x:TypeArguments="sd:DataRow" ExpressionText="in_TransactionItem" />
-        </InArgument>
+        <InArgument x:TypeArguments="sd:DataRow" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <If Condition="[TotalAmountPaid &gt;= TotalAmountDue]" sap:VirtualizedContainerService.HintSize="484,324" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[TotalAmountPaid &gt;= TotalAmountDue]" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="242,176" sap2010:WorkflowViewState.IdRef="Sequence_2">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_TransactionItem(&quot;Username&quot;).ToString,in_TransactionItem(&quot;Application ID&quot;).ToString,&quot;Paid less than what was due.&quot;, in_TransactionItem(&quot;ID&quot;).ToString}]" DataTable="[io_dt_Exceptiondata]" DisplayName="Add Data Row to io_dt_Exceptiondata" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
-          <Throw DisplayName="Paid less than what was due" Exception="[new BusinessRuleException(&quot;Paid less than what was due.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
-        </Sequence>
+        <Throw DisplayName="Paid less than what was due" Exception="[new BusinessRuleException(&quot;Paid less than what was due.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
       </If.Else>
     </If>
     <WriteLine sap2010:Annotation.AnnotationText="This is a temporary activity to check if transaction data has been passed correctly for debugging purpose only. &#xA;" DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="484,148" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[in_TransactionItem.ToString]">
@@ -178,15 +163,5 @@
     <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[in_TransactionID.ToString]" />
     <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[in_TransactionField1.ToString]" />
     <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[in_TransactionField2.ToString]" />
-    <If sap2010:Annotation.AnnotationText="This activity will throw the business exception whenever we encounter an application whose username is set to blank / null. &#xA;" Condition="[in_TransactionField1 = &quot;&quot;]" sap:VirtualizedContainerService.HintSize="484,265" sap2010:WorkflowViewState.IdRef="If_1">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <If.Then>
-        <Throw Exception="[new BusinessRuleException(&quot;No username set&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
-      </If.Then>
-    </If>
   </Sequence>
 </Activity>
