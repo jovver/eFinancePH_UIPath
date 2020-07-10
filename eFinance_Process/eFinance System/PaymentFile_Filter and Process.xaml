@@ -106,7 +106,7 @@
               <OutArgument x:TypeArguments="x:String">[WorkingDirectory]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">\Output</InArgument>
+              <InArgument x:TypeArguments="x:String">[in_Config("Download_Directory").ToString]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
@@ -130,7 +130,7 @@
               <OutArgument x:TypeArguments="x:String">[File]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">Output\File.jpg</InArgument>
+              <InArgument x:TypeArguments="x:String">[in_PaymentFile]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
         </scg:List>

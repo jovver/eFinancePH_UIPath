@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1119,2160</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1119,2503</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -63,13 +63,14 @@
       <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="526,1955" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="526,2338" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Double" Name="TotalAmountDue" />
       <Variable x:TypeArguments="x:String" Name="PaymentFile" />
       <Variable x:TypeArguments="x:String" Name="OR_Name" />
       <Variable x:TypeArguments="scg:List(x:String)" Default="[new List(Of String)()]" Name="OR_SoA_NumberList" />
       <Variable x:TypeArguments="x:Double" Name="TotalAmountPaid" />
+      <Variable x:TypeArguments="x:String" Name="Entry_BillNumber" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -98,11 +99,17 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GetAttachmentsSequence workflow" sap:VirtualizedContainerService.HintSize="484,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="eFinance System\GetAttachmentsSequence.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GetAttachmentsSequence workflow" sap:VirtualizedContainerService.HintSize="484,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="eFinance System/Get_Attachments_and_BillNumber_Sequence.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="sd:DataRow" x:Key="in_TransactionItem">
           <mva:VisualBasicValue x:TypeArguments="sd:DataRow" ExpressionText="in_TransactionItem" />
         </InArgument>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+          <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+        </InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_BillNumber">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Entry_BillNumber" />
+        </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke BillingStatement_Filter and Process workflow" sap:VirtualizedContainerService.HintSize="484,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="eFinance System\BillingStatement_Filter and Process.xaml">
@@ -143,14 +150,16 @@
         </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Update Status Column workflow" sap:VirtualizedContainerService.HintSize="484,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="eFinance System\Update Status Column.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="sd:DataRow" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Paid: &quot; + TotalAmountPaid.ToString + Environment.NewLine + &quot;Amount Due: &quot; + TotalAmountDue.ToString]" />
     <If Condition="[TotalAmountPaid &gt;= TotalAmountDue]" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Else>
         <Throw DisplayName="Paid less than what was due" Exception="[new BusinessRuleException(&quot;Paid less than what was due.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
+      </If.Else>
+    </If>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Entry: &quot; + Entry_BillNumber + Environment.NewLine + &quot;Extracted: &quot; + OR_SoA_NumberList(0).ToString]" />
+    <If Condition="[OR_SoA_NumberList.Contains(Entry_BillNumber)]" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_4">
+      <If.Else>
+        <Throw DisplayName="Bill numbers do not match" Exception="[New BusinessRuleException(&quot;Bill numbers do not match.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_5" />
       </If.Else>
     </If>
     <WriteLine sap2010:Annotation.AnnotationText="This is a temporary activity to check if transaction data has been passed correctly for debugging purpose only. &#xA;" DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="484,148" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[in_TransactionItem.ToString]">

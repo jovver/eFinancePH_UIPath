@@ -100,7 +100,7 @@
               <OutArgument x:TypeArguments="x:String">[WorkingDirectory]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">\Output</InArgument>
+              <InArgument x:TypeArguments="x:String">[in_Config("Download_Directory").ToString]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -408,7 +408,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <Transition.To>
-              <State x:Name="__ReferenceID2" DisplayName="Digitize Document. Classify and Extract" sap:VirtualizedContainerService.HintSize="779,3167" sap2010:WorkflowViewState.IdRef="State_1">
+              <State x:Name="__ReferenceID2" DisplayName="Digitize Document. Classify and Extract" sap:VirtualizedContainerService.HintSize="269,62" sap2010:WorkflowViewState.IdRef="State_1">
                 <State.Entry>
                   <Sequence sap:VirtualizedContainerService.HintSize="733,2780" sap2010:WorkflowViewState.IdRef="Sequence_15">
                     <sap:WorkflowViewStateService.ViewState>
