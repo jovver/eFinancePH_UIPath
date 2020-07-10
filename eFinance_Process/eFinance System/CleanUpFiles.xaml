@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1119,1223</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1119,1263</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CleanUpFiles_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -33,7 +33,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="17">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="34">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -51,12 +51,15 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: This sequence cleans up the contents of the current download directory (or working directory) where all the files are downloaded and handles instance where there are or aren't any files present in the working directory&#xD;&#xA;&#xD;&#xA;Pre-condition: Download directory has been created&#xD;&#xA;&#xD;&#xA;Post condition: Cleans up the files present, if any&#xD;&#xA;&#xD;&#xA;Arguments:&#xD;&#xA;in_Config: Dictionary(String, Object)" DisplayName="CleanUpFiles" sap:VirtualizedContainerService.HintSize="797,1058" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description: This sequence cleans up the contents of the current download directory (or working directory) where all the files are downloaded and handles instance where there are or aren't any files present in the working directory&#xA;&#xA;Pre-condition: Download directory has been created&#xA;&#xA;Post condition: Cleans up the files present, if any&#xA;&#xA;Arguments:&#xA;in_Config: Dictionary(String, Object)" DisplayName="CleanUpFiles" sap:VirtualizedContainerService.HintSize="797,1058" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="CurrentDirectory" />
-      <Variable x:TypeArguments="x:String" Name="WorkingDirectory" />
+      <Variable x:TypeArguments="x:String" Name="CleanUpDirectory" />
       <Variable x:TypeArguments="s:String[]" Name="FilesArray" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -78,7 +81,7 @@
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[WorkingDirectory]</OutArgument>
+              <OutArgument x:TypeArguments="x:String">[CleanUpDirectory]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:String">[in_Config("Download_Directory").ToString]</InArgument>
@@ -89,7 +92,7 @@
               <OutArgument x:TypeArguments="s:String[]">[FilesArray]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(CurrentDirectory + WorkingDirectory,".",SearchOption.TopDirectoryOnly)]</InArgument>
+              <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(CurrentDirectory + CleanUpDirectory,".",SearchOption.TopDirectoryOnly)]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
         </scg:List>

@@ -1,13 +1,12 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="GetAttachmentsSequence" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_TransactionItem" Type="InArgument(sd:DataRow)" />
-    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="out_BillNumber" Type="OutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1453,2549</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1453,2992</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetAttachmentsSequence_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -59,15 +58,15 @@
       <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: This sequence will pre-screen the attachment of the current communication reimbursement entry opened. It will also extract the bill number inputted to the entry.&#xA;&#xA;The current filters are:&#xA;Only two (2) files&#xA;One &quot;.pdf&quot; file and &quot;.jpg/.jpeg&quot; OR &quot;.png&quot; file&#xA;&#xA;The list variable &quot;AllowedFiles&quot; is to be updated to in_Config(&quot;SupportedFileFormats&quot;).ToString when connected to the whole flow&#xA;&#xA;Arguments:&#xA;in_Config: Dictionary(String, Object)&#xA;in_TransactionItem: DataRow&#xA;out_BillNumber: String" DisplayName="Get_Attachments_and_BillNumber_Sequence" sap:VirtualizedContainerService.HintSize="1463,2344" sap2010:WorkflowViewState.IdRef="Sequence_17">
+  <Sequence sap2010:Annotation.AnnotationText="Description: This sequence will pre-screen the attachment of the current communication reimbursement entry opened. It will also extract the bill number inputted to the entry.&#xA;&#xA;The current filters are:&#xA;Only two (2) files&#xA;One &quot;.pdf&quot; file and &quot;.jpg/.jpeg&quot; OR &quot;.png&quot; file&#xA;&#xA;Arguments:&#xA;in_Config: Dictionary(String, Object)&#xA;in_TransactionItem: DataRow&#xA;out_BillNumber: String" DisplayName="Get_Attachments_and_BillNumber_Sequence" sap:VirtualizedContainerService.HintSize="1463,2787" sap2010:WorkflowViewState.IdRef="Sequence_17">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="ExtractDataTable" />
+      <Variable x:TypeArguments="scg:List(x:String)" Default="[new List(Of String)()]" Name="AttachmentFilesList" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="AllowedFiles">
         <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="new List(Of String)({in_Config(&quot;SupportedFileFormats&quot;).ToString})" />
+          <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="new List(Of String)({&quot;.pdf&quot;,&quot;.jpg&quot;,&quot;.jpeg&quot;,&quot;.png&quot;})" />
         </Variable.Default>
       </Variable>
-      <Variable x:TypeArguments="scg:List(x:String)" Default="[new List(Of String)]" Name="AttachmentFilesList" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -123,15 +122,15 @@
         </ui:BrowserScope.Body>
       </ui:BrowserScope>
     </Sequence>
-    <If Condition="[ExtractDataTable.Rows.Count() = 2]" DisplayName="If: Checking on the number of uploaded attachments" sap:VirtualizedContainerService.HintSize="1421,1438" sap2010:WorkflowViewState.IdRef="If_6">
+    <If Condition="[ExtractDataTable.Rows.Count() = 2]" DisplayName="If: Checking on the number of uploaded attachments" sap:VirtualizedContainerService.HintSize="1421,1911" sap2010:WorkflowViewState.IdRef="If_6">
       <If.Then>
-        <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="1176,1290" sap2010:WorkflowViewState.IdRef="Sequence_16">
+        <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="1176,1763" sap2010:WorkflowViewState.IdRef="Sequence_16">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ExtractDataTable]" DisplayName="For Each Row, extract file type" sap:VirtualizedContainerService.HintSize="1134,51" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+          <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ExtractDataTable]" DisplayName="For Each Row, extract file type" sap:VirtualizedContainerService.HintSize="1134,493" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
                 <ActivityAction.Argument>
@@ -161,12 +160,17 @@
             </ui:ForEachRow.Body>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:ForEachRow>
-          <If Condition="[AttachmentFilesList.Contains(AllowedFiles(0)) And (AttachmentFilesList.Contains(AllowedFiles(1)) Or AttachmentFilesList.Contains(AllowedFiles(2))Or AttachmentFilesList.Contains(AllowedFiles(3)))]" DisplayName="If: Checking of allowed file combination" sap:VirtualizedContainerService.HintSize="1134,1107" sap2010:WorkflowViewState.IdRef="If_5">
+          <If sap2010:Annotation.AnnotationText="There could be a better way to code the condition. But given the scope, this is the best that can be done for now." Condition="[AttachmentFilesList.Contains(AllowedFiles(0)) And (AttachmentFilesList.Contains(AllowedFiles(1)) Or AttachmentFilesList.Contains(AllowedFiles(2))Or AttachmentFilesList.Contains(AllowedFiles(3)))]" DisplayName="If: Checking of allowed file combination" sap:VirtualizedContainerService.HintSize="1134,1138" sap2010:WorkflowViewState.IdRef="If_5">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
             <If.Then>
               <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ExtractDataTable]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="889,959" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
                 <ui:ForEachRow.Body>
