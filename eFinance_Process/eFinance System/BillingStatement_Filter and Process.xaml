@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1119,1983</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1221,2023</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>BillingStatement_Compare_and_Process_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -408,303 +408,61 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <Transition.To>
-              <State x:Name="__ReferenceID2" DisplayName="Digitize Document. Classify and Extract" sap:VirtualizedContainerService.HintSize="741,3031" sap2010:WorkflowViewState.IdRef="State_1">
+              <State x:Name="__ReferenceID2" DisplayName="Digitize Document. Classify and Extract" sap:VirtualizedContainerService.HintSize="699,3127" sap2010:WorkflowViewState.IdRef="State_1">
                 <State.Entry>
-                  <Sequence sap:VirtualizedContainerService.HintSize="695,2644" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                  <Sequence sap:VirtualizedContainerService.HintSize="653,2740" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="DocumentID" />
+                    </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence sap:VirtualizedContainerService.HintSize="653,2461" sap2010:WorkflowViewState.IdRef="Sequence_14">
-                      <Sequence.Variables>
-                        <Variable x:TypeArguments="x:String" Name="DocumentID" />
-                      </Sequence.Variables>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <ui:MultipleAssign DisplayName="Multiple Assign for initialization" sap:VirtualizedContainerService.HintSize="611,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
-                        <ui:MultipleAssign.AssignOperations>
-                          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
-                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
-                              <ui:AssignOperation.To>
-                                <OutArgument x:TypeArguments="s:Exception">[BusinessRuleException]</OutArgument>
-                              </ui:AssignOperation.To>
-                              <ui:AssignOperation.Value>
-                                <InArgument x:TypeArguments="s:Exception">[Nothing]</InArgument>
-                              </ui:AssignOperation.Value>
-                            </ui:AssignOperation>
-                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_40">
-                              <ui:AssignOperation.To>
-                                <OutArgument x:TypeArguments="x:String">[File]</OutArgument>
-                              </ui:AssignOperation.To>
-                              <ui:AssignOperation.Value>
-                                <InArgument x:TypeArguments="x:String">[FilesArray(FileNumber-1)]</InArgument>
-                              </ui:AssignOperation.Value>
-                            </ui:AssignOperation>
-                          </scg:List>
-                        </ui:MultipleAssign.AssignOperations>
-                      </ui:MultipleAssign>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="611,91" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;Processing file number: &quot; + FileNumber.ToString]" />
-                      <p:LoadTaxonomy DisplayName="Load eFinance Taxonomy" sap:VirtualizedContainerService.HintSize="611,22" sap2010:WorkflowViewState.IdRef="LoadTaxonomy_2" Taxonomy="[eFinanceTaxonomy]" />
-                      <p:DigitizeDocument DegreeOfParallelism="2" DisplayName="Digitize Document" DocumentObjectModel="[FileDOM]" DocumentPath="[File]" DocumentText="[FileText]" ForceApplyOCR="False" sap:VirtualizedContainerService.HintSize="611,131" sap2010:WorkflowViewState.IdRef="DigitizeDocument_2">
-                        <p:DigitizeDocument.OCREngine>
-                          <ActivityFunc x:TypeArguments="sd1:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
-                            <ActivityFunc.Argument>
-                              <DelegateInArgument x:TypeArguments="sd1:Image" Name="Image" />
-                            </ActivityFunc.Argument>
-                            <ui:MicrosoftOCR FilterRegion="{x:Null}" Language="{x:Null}" Output="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Microsoft OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="MicrosoftOCR_2" Image="[Image]" />
-                          </ActivityFunc>
-                        </p:DigitizeDocument.OCREngine>
-                      </p:DigitizeDocument>
-                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="611,51" sap2010:WorkflowViewState.IdRef="CommentOut_15">
-                        <ui:CommentOut.Body>
-                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_50">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <p:PresentValidationStation AutomaticExtractionResults="{x:Null}" ValidatedExtractionResults="{x:Null}" DisplayName="Present Validation Station" DocumentObjectModel="[FileDOM]" DocumentPath="[File]" DocumentText="[FileText]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="PresentValidationStation_3" Taxonomy="[eFinanceTaxonomy]" />
-                          </Sequence>
-                        </ui:CommentOut.Body>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </ui:CommentOut>
-                      <p1:ClassifyDocumentScope ClassificationResults="[Classify_OR_Result]" DisplayName="Classify Document Scope for ORs" DocumentObjectModel="[FileDOM]" DocumentPath="[File]" DocumentText="[FileText]" sap:VirtualizedContainerService.HintSize="611,192" sap2010:WorkflowViewState.IdRef="ClassifyDocumentScope_2" Taxonomy="[eFinanceTaxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UIda1c7bd0c54b4519b1aab7840f453063&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;PDF.StatementOfAccounts.PLDT&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.PLDT&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;Images.MobileScreenshots.BDO&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;Images.MobileScreenshots.BDO&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false},&quot;PDF.StatementOfAccounts.SkyBroadband&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.SkyBroadband&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false},&quot;PDF.StatementOfAccounts.Globe&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.Globe&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false},&quot;PDF.StatementOfAccounts.ConvergeICT&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.ConvergeICT&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false},&quot;PDF.StatementOfAccounts.SMARTCommunications&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.SMARTCommunications&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false}}}},&quot;ClassifierMinimumConfidence&quot;:{&quot;UIda1c7bd0c54b4519b1aab7840f453063&quot;:&quot;50&quot;}}">
-                        <p1:ClassifyDocumentScope.Classifiers>
-                          <p1:KeywordBasedClassifier HumanValidatedData="{x:Null}" LearningData="{x:Null}" DisplayName="Keyword Based Classifier" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="KeywordBasedClassifier_2" LearningFilePath="DocumentProcessing\Classifiers.json" PersistenceId="UIda1c7bd0c54b4519b1aab7840f453063">
-                            <p1:KeywordBasedClassifier.ClassifierResult>
-                              <OutArgument x:TypeArguments="p2:ClassifierResult">
-                                <DelegateArgumentReference x:TypeArguments="p2:ClassifierResult">
-                                  <DelegateOutArgument x:TypeArguments="p2:ClassifierResult" Name="ClassificationResult" />
-                                </DelegateArgumentReference>
-                              </OutArgument>
-                            </p1:KeywordBasedClassifier.ClassifierResult>
-                            <p1:KeywordBasedClassifier.DocumentObjectModel>
-                              <InArgument x:TypeArguments="p3:Document">
-                                <DelegateArgumentValue x:TypeArguments="p3:Document">
-                                  <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
-                                </DelegateArgumentValue>
-                              </InArgument>
-                            </p1:KeywordBasedClassifier.DocumentObjectModel>
-                            <p1:KeywordBasedClassifier.DocumentPath>
-                              <InArgument x:TypeArguments="x:String">
-                                <DelegateArgumentValue x:TypeArguments="x:String">
-                                  <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
-                                </DelegateArgumentValue>
-                              </InArgument>
-                            </p1:KeywordBasedClassifier.DocumentPath>
-                            <p1:KeywordBasedClassifier.DocumentText>
-                              <InArgument x:TypeArguments="x:String">
-                                <DelegateArgumentValue x:TypeArguments="x:String">
-                                  <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
-                                </DelegateArgumentValue>
-                              </InArgument>
-                            </p1:KeywordBasedClassifier.DocumentText>
-                            <p1:KeywordBasedClassifier.DocumentTypes>
-                              <InArgument x:TypeArguments="p2:ClassifierDocumentType[]">
-                                <DelegateArgumentValue x:TypeArguments="p2:ClassifierDocumentType[]">
-                                  <DelegateInArgument x:TypeArguments="p2:ClassifierDocumentType[]" Name="DocumentTypes" />
-                                </DelegateArgumentValue>
-                              </InArgument>
-                            </p1:KeywordBasedClassifier.DocumentTypes>
-                          </p1:KeywordBasedClassifier>
-                        </p1:ClassifyDocumentScope.Classifiers>
-                      </p1:ClassifyDocumentScope>
-                      <If Condition="[Classify_OR_Result.Length &gt; 0]" DisplayName="If the classifier was able to classify, continue" sap:VirtualizedContainerService.HintSize="611,362" sap2010:WorkflowViewState.IdRef="If_11">
-                        <If.Then>
-                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_26">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:String">[DocumentID]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:String">[Classify_OR_Result(0).DocumentTypeId]</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                        </If.Then>
-                        <If.Else>
-                          <Sequence sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_49">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_27">
-                              <Assign.To>
-                                <OutArgument x:TypeArguments="x:Int32">[FileNumber]</OutArgument>
-                              </Assign.To>
-                              <Assign.Value>
-                                <InArgument x:TypeArguments="x:Int32">[FileNumber + 1]</InArgument>
-                              </Assign.Value>
-                            </Assign>
-                            <Throw DisplayName="Unsupported Service Provider" Exception="[new BusinessRuleException(&quot;Unsupported Service Provider&quot;)]" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Throw_4" />
-                          </Sequence>
-                        </If.Else>
-                      </If>
-                      <p4:DataExtractionScope ClassificationResult="{x:Null}" DisplayName="Data Extraction Scope for ORs/Bill Statement" DocumentObjectModel="[FileDOM]" DocumentPath="[File]" DocumentText="[FileText]" DocumentTypeId="[Classify_OR_Result(0).DocumentTypeId]" ExtractionResult="[ExtractionResult]" FormatValuesIfPossible="True" sap:VirtualizedContainerService.HintSize="611,169" sap2010:WorkflowViewState.IdRef="DataExtractionScope_3" Taxonomy="[eFinanceTaxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UIf094be6d42754e4997f9403cbf6c2397&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;PDF.StatementOfAccounts.PLDT&quot;:{&quot;FieldMappings&quot;:{&quot;PDF.StatementOfAccounts.PLDT.Name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.PLDT.Name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;PDF.StatementOfAccounts.PLDT.TotalAmountDue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.PLDT.TotalAmountDue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;PDF.StatementOfAccounts.PLDT.SoANumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.PLDT.SoANumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;Images.MobileScreenshots.BDO&quot;:{&quot;FieldMappings&quot;:{},&quot;ExtractorDocumentTypeId&quot;:null},&quot;PDF.StatementOfAccounts.SkyBroadband&quot;:{&quot;FieldMappings&quot;:{&quot;PDF.StatementOfAccounts.SkyBroadband.Name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SkyBroadband.Name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.SkyBroadband.TotalAmountDue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SkyBroadband.TotalAmountDue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.SkyBroadband.SoANumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SkyBroadband.SoANumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;PDF.StatementOfAccounts.Globe&quot;:{&quot;FieldMappings&quot;:{&quot;PDF.StatementOfAccounts.Globe.Name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.Globe.Name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.Globe.TotalAmountDue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.Globe.TotalAmountDue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.Globe.SoANumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.Globe.SoANumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;PDF.StatementOfAccounts.ConvergeICT&quot;:{&quot;FieldMappings&quot;:{&quot;PDF.StatementOfAccounts.ConvergeICT.Name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.ConvergeICT.Name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.ConvergeICT.TotalAmountDue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.ConvergeICT.TotalAmountDue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.ConvergeICT.SoANumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.ConvergeICT.SoANumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;PDF.StatementOfAccounts.SMARTCommunications&quot;:{&quot;FieldMappings&quot;:{&quot;PDF.StatementOfAccounts.SMARTCommunications.Name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SMARTCommunications.Name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.SMARTCommunications.TotalAmountDue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SMARTCommunications.TotalAmountDue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.SMARTCommunications.SoANumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SMARTCommunications.SoANumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null}}}},&quot;ExtractorMinimumConfidence&quot;:{&quot;UIf094be6d42754e4997f9403cbf6c2397&quot;:&quot;0&quot;},&quot;DocumentTypeOptionsByExtractor&quot;:{&quot;UIf094be6d42754e4997f9403cbf6c2397&quot;:[]}}">
-                        <p4:DataExtractionScope.Extractors>
-                          <p4:RegexBasedExtractor Configuration="[&quot;[{&quot;&quot;DocumentTypeId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.PLDT&quot;&quot;,&quot;&quot;FieldConfiguration&quot;&quot;:[{&quot;&quot;FieldId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.PLDT.Name&quot;&quot;,&quot;&quot;Expression&quot;&quot;:&quot;&quot;Subscriber's Name . (.*)&quot;&quot;,&quot;&quot;Options&quot;&quot;:1,&quot;&quot;Model&quot;&quot;:null},{&quot;&quot;FieldId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.PLDT.TotalAmountDue&quot;&quot;,&quot;&quot;Expression&quot;&quot;:&quot;&quot;TOTAL AMOUNT DUE (\\d\\S*)&quot;&quot;,&quot;&quot;Options&quot;&quot;:1,&quot;&quot;Model&quot;&quot;:&quot;&quot;[{\&quot;&quot;Capture\&quot;&quot;:false,\&quot;&quot;Index\&quot;&quot;:0,\&quot;&quot;OperationID\&quot;&quot;:\&quot;&quot;ADV\&quot;&quot;,\&quot;&quot;OperationName\&quot;&quot;:\&quot;&quot;Advanced\&quot;&quot;,\&quot;&quot;OperationValue\&quot;&quot;:\&quot;&quot;TOTAL AMOUNT DUE (\\\\d\\\\S*)\&quot;&quot;,\&quot;&quot;QuantifierFirstValue\&quot;&quot;:\&quot;&quot;1\&quot;&quot;,\&quot;&quot;QuantifierID\&quot;&quot;:\&quot;&quot;EXT\&quot;&quot;,\&quot;&quot;QuantifierName\&quot;&quot;:\&quot;&quot;Exactly\&quot;&quot;,\&quot;&quot;QuantifierSecondValue\&quot;&quot;:null}]&quot;&quot;},{&quot;&quot;FieldId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.PLDT.SoANumber&quot;&quot;,&quot;&quot;Expression&quot;&quot;:&quot;&quot;Statement of Account No. (\\d*)&quot;&quot;,&quot;&quot;Options&quot;&quot;:1,&quot;&quot;Model&quot;&quot;:null}]},{&quot;&quot;DocumentTypeId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.Globe&quot;&quot;,&quot;&quot;FieldConfiguration&quot;&quot;:[{&quot;&quot;FieldId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.Globe.Name&quot;&quot;,&quot;&quot;Expression&quot;&quot;:&quot;&quot;M\\w\\.\\s(.*)&quot;&quot;,&quot;&quot;Options&quot;&quot;:1,&quot;&quot;Model&quot;&quot;:&quot;&quot;[{\&quot;&quot;Capture\&quot;&quot;:false,\&quot;&quot;Index\&quot;&quot;:0,\&quot;&quot;OperationID\&quot;&quot;:\&quot;&quot;ADV\&quot;&quot;,\&quot;&quot;OperationName\&quot;&quot;:\&quot;&quot;Advanced\&quot;&quot;,\&quot;&quot;OperationValue\&quot;&quot;:\&quot;&quot;M\\\\w\\\\.\\\\s(.*)\&quot;&quot;,\&quot;&quot;QuantifierFirstValue\&quot;&quot;:\&quot;&quot;1\&quot;&quot;,\&quot;&quot;QuantifierID\&quot;&quot;:\&quot;&quot;EXT\&quot;&quot;,\&quot;&quot;QuantifierName\&quot;&quot;:\&quot;&quot;Exactly\&quot;&quot;,\&quot;&quot;QuantifierSecondValue\&quot;&quot;:null}]&quot;&quot;},{&quot;&quot;FieldId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.Globe.TotalAmountDue&quot;&quot;,&quot;&quot;Expression&quot;&quot;:&quot;&quot;Php (.*)&quot;&quot;,&quot;&quot;Options&quot;&quot;:1,&quot;&quot;Model&quot;&quot;:&quot;&quot;[{\&quot;&quot;Capture\&quot;&quot;:false,\&quot;&quot;Index\&quot;&quot;:0,\&quot;&quot;OperationID\&quot;&quot;:\&quot;&quot;ADV\&quot;&quot;,\&quot;&quot;OperationName\&quot;&quot;:\&quot;&quot;Advanced\&quot;&quot;,\&quot;&quot;OperationValue\&quot;&quot;:\&quot;&quot;Php (.*)\&quot;&quot;,\&quot;&quot;QuantifierFirstValue\&quot;&quot;:\&quot;&quot;1\&quot;&quot;,\&quot;&quot;QuantifierID\&quot;&quot;:\&quot;&quot;EXT\&quot;&quot;,\&quot;&quot;QuantifierName\&quot;&quot;:\&quot;&quot;Exactly\&quot;&quot;,\&quot;&quot;QuantifierSecondValue\&quot;&quot;:null}]&quot;&quot;},{&quot;&quot;FieldId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.Globe.SoANumber&quot;&quot;,&quot;&quot;Expression&quot;&quot;:&quot;&quot;SoA No. (\\d*)&quot;&quot;,&quot;&quot;Options&quot;&quot;:1,&quot;&quot;Model&quot;&quot;:&quot;&quot;[{\&quot;&quot;Capture\&quot;&quot;:false,\&quot;&quot;Index\&quot;&quot;:0,\&quot;&quot;OperationID\&quot;&quot;:\&quot;&quot;ADV\&quot;&quot;,\&quot;&quot;OperationName\&quot;&quot;:\&quot;&quot;Advanced\&quot;&quot;,\&quot;&quot;OperationValue\&quot;&quot;:\&quot;&quot;SoA No. (\\\\d*)\&quot;&quot;,\&quot;&quot;QuantifierFirstValue\&quot;&quot;:\&quot;&quot;1\&quot;&quot;,\&quot;&quot;QuantifierID\&quot;&quot;:\&quot;&quot;EXT\&quot;&quot;,\&quot;&quot;QuantifierName\&quot;&quot;:\&quot;&quot;Exactly\&quot;&quot;,\&quot;&quot;QuantifierSecondValue\&quot;&quot;:null}]&quot;&quot;}]}]&quot;]" DisplayName="Regex Extractor for OR/Bill Statements" sap:VirtualizedContainerService.HintSize="234,68" sap2010:WorkflowViewState.IdRef="RegexBasedExtractor_3" PersistenceId="UIf094be6d42754e4997f9403cbf6c2397" Timeout="2000" UseVisualAlignment="False">
-                            <p4:RegexBasedExtractor.DocumentBounds>
-                              <InArgument x:TypeArguments="p5:ResultsDocumentBounds">
-                                <DelegateArgumentValue x:TypeArguments="p5:ResultsDocumentBounds">
-                                  <DelegateInArgument x:TypeArguments="p5:ResultsDocumentBounds" Name="DocumentBounds" />
-                                </DelegateArgumentValue>
-                              </InArgument>
-                            </p4:RegexBasedExtractor.DocumentBounds>
-                            <p4:RegexBasedExtractor.DocumentObjectModel>
-                              <InArgument x:TypeArguments="p3:Document">
-                                <DelegateArgumentValue x:TypeArguments="p3:Document">
-                                  <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
-                                </DelegateArgumentValue>
-                              </InArgument>
-                            </p4:RegexBasedExtractor.DocumentObjectModel>
-                            <p4:RegexBasedExtractor.DocumentPath>
-                              <InArgument x:TypeArguments="x:String">
-                                <DelegateArgumentValue x:TypeArguments="x:String">
-                                  <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
-                                </DelegateArgumentValue>
-                              </InArgument>
-                            </p4:RegexBasedExtractor.DocumentPath>
-                            <p4:RegexBasedExtractor.DocumentText>
-                              <InArgument x:TypeArguments="x:String">
-                                <DelegateArgumentValue x:TypeArguments="x:String">
-                                  <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
-                                </DelegateArgumentValue>
-                              </InArgument>
-                            </p4:RegexBasedExtractor.DocumentText>
-                            <p4:RegexBasedExtractor.ExtractorDocumentType>
-                              <InArgument x:TypeArguments="p6:ExtractorDocumentType">
-                                <DelegateArgumentValue x:TypeArguments="p6:ExtractorDocumentType">
-                                  <DelegateInArgument x:TypeArguments="p6:ExtractorDocumentType" Name="ExtractorDocumentType" />
-                                </DelegateArgumentValue>
-                              </InArgument>
-                            </p4:RegexBasedExtractor.ExtractorDocumentType>
-                            <p4:RegexBasedExtractor.ExtractorResult>
-                              <OutArgument x:TypeArguments="p6:ExtractorResult">
-                                <DelegateArgumentReference x:TypeArguments="p6:ExtractorResult">
-                                  <DelegateOutArgument x:TypeArguments="p6:ExtractorResult" Name="ExtractorResult" />
-                                </DelegateArgumentReference>
-                              </OutArgument>
-                            </p4:RegexBasedExtractor.ExtractorResult>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </p4:RegexBasedExtractor>
-                        </p4:DataExtractionScope.Extractors>
-                      </p4:DataExtractionScope>
-                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="611,51" sap2010:WorkflowViewState.IdRef="CommentOut_16">
-                        <ui:CommentOut.Body>
-                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_51">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <p:PresentValidationStation ValidatedExtractionResults="{x:Null}" AutomaticExtractionResults="[ExtractionResult]" DisplayName="Present Validation Station" DocumentObjectModel="[FileDOM]" DocumentPath="[File]" DocumentText="[FileText]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="PresentValidationStation_4" Taxonomy="[eFinanceTaxonomy]" />
-                          </Sequence>
-                        </ui:CommentOut.Body>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </ui:CommentOut>
-                      <p4:ExportExtractionResults DataSet="[ExtractDataSet]" DisplayName="Export Extraction Results" ExtractionResult="[ExtractionResult]" sap:VirtualizedContainerService.HintSize="611,22" sap2010:WorkflowViewState.IdRef="ExportExtractionResults_2" IncludeConfidence="False" />
-                      <If sap2010:Annotation.AnnotationText="This 'If' statement can be removed if the PH Finance deparment proceeds with enforcing the one OR PDF policy per entry" Condition="[out_TotalAmountDue = 0]" sap:VirtualizedContainerService.HintSize="611,250" sap2010:WorkflowViewState.IdRef="If_12">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <If.Then>
-                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_28">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:Double">[out_TotalAmountDue]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:Double">[CDbl(ExtractDataSet.Tables(0).Rows(0).Item(1))]</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                        </If.Then>
-                        <If.Else>
-                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_29">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:Double">[out_TotalAmountDue]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:Double">[out_TotalAmountDue + CDbl(ExtractDataSet.Tables(0).Rows(0).Item(1))]</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                        </If.Else>
-                      </If>
-                      <AddToCollection x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="This activity can be reworked to be an 'Assign' activity when its been enforced that each communication reimbursement entry must only have one OR/Bill PDF file.&#xA;&#xA;The following argument are List type arguments:&#xA;- outORSoA_NumberList&#xA;&#xA;and should be converted to a String variable when reworked" Collection="[out_OR_SoA_NumberList]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="611,259" sap2010:WorkflowViewState.IdRef="AddToCollection`1_1" Item="[ExtractDataSet.Tables(0).Rows(0).Item(2).ToString]">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </AddToCollection>
-                      <Assign sap:VirtualizedContainerService.HintSize="611,60" sap2010:WorkflowViewState.IdRef="Assign_30">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="x:String">[out_OR_Name]</OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[ExtractDataSet.Tables(0).Rows(0).Item(0).ToString]</InArgument>
-                        </Assign.Value>
-                      </Assign>
-                      <Assign sap:VirtualizedContainerService.HintSize="611,60" sap2010:WorkflowViewState.IdRef="Assign_31">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="x:Int32">[FileNumber]</OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="x:Int32">[FileNumber + 1]</InArgument>
-                        </Assign.Value>
-                      </Assign>
-                    </Sequence>
-                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="653,51" sap2010:WorkflowViewState.IdRef="CommentOut_17">
+                    <ui:MultipleAssign DisplayName="Multiple Assign for initialization" sap:VirtualizedContainerService.HintSize="611,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_12">
+                      <ui:MultipleAssign.AssignOperations>
+                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_41">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="s:Exception">[BusinessRuleException]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="s:Exception">[Nothing]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_42">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[File]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">[FilesArray(FileNumber-1)]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                        </scg:List>
+                      </ui:MultipleAssign.AssignOperations>
+                    </ui:MultipleAssign>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="611,91" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="Info" Message="[&quot;Processing file number: &quot; + FileNumber.ToString]" />
+                    <p:LoadTaxonomy DisplayName="Load eFinance Taxonomy" sap:VirtualizedContainerService.HintSize="611,22" sap2010:WorkflowViewState.IdRef="LoadTaxonomy_3" Taxonomy="[eFinanceTaxonomy]" />
+                    <p:DigitizeDocument DegreeOfParallelism="2" DisplayName="Digitize Document" DocumentObjectModel="[FileDOM]" DocumentPath="[File]" DocumentText="[FileText]" ForceApplyOCR="False" sap:VirtualizedContainerService.HintSize="611,131" sap2010:WorkflowViewState.IdRef="DigitizeDocument_3">
+                      <p:DigitizeDocument.OCREngine>
+                        <ActivityFunc x:TypeArguments="sd1:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+                          <ActivityFunc.Argument>
+                            <DelegateInArgument x:TypeArguments="sd1:Image" Name="Image" />
+                          </ActivityFunc.Argument>
+                          <ui:MicrosoftOCR FilterRegion="{x:Null}" Language="{x:Null}" Output="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Microsoft OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="MicrosoftOCR_3" Image="[Image]" />
+                        </ActivityFunc>
+                      </p:DigitizeDocument.OCREngine>
+                    </p:DigitizeDocument>
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="611,51" sap2010:WorkflowViewState.IdRef="CommentOut_20">
                       <ui:CommentOut.Body>
-                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="480,379" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_57">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,287" sap2010:WorkflowViewState.IdRef="TryCatch_3">
-                            <TryCatch.Catches>
-                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <ActivityAction x:TypeArguments="s:Exception">
-                                  <ActivityAction.Argument>
-                                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                                  </ActivityAction.Argument>
-                                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
-                                    <Assign.To>
-                                      <OutArgument x:TypeArguments="s:Exception">[BusinessRuleException]</OutArgument>
-                                    </Assign.To>
-                                    <Assign.Value>
-                                      <InArgument x:TypeArguments="s:Exception">[exception]</InArgument>
-                                    </Assign.Value>
-                                  </Assign>
-                                </ActivityAction>
-                              </Catch>
-                            </TryCatch.Catches>
-                          </TryCatch>
+                          <p:PresentValidationStation AutomaticExtractionResults="{x:Null}" ValidatedExtractionResults="{x:Null}" DisplayName="Present Validation Station" DocumentObjectModel="[FileDOM]" DocumentPath="[File]" DocumentText="[FileText]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="PresentValidationStation_5" Taxonomy="[eFinanceTaxonomy]" />
                         </Sequence>
                       </ui:CommentOut.Body>
                       <sap:WorkflowViewStateService.ViewState>
@@ -714,6 +472,210 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:CommentOut>
+                    <p1:ClassifyDocumentScope ClassificationResults="[Classify_OR_Result]" DisplayName="Classify Document Scope for ORs" DocumentObjectModel="[FileDOM]" DocumentPath="[File]" DocumentText="[FileText]" sap:VirtualizedContainerService.HintSize="611,192" sap2010:WorkflowViewState.IdRef="ClassifyDocumentScope_3" Taxonomy="[eFinanceTaxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UIda1c7bd0c54b4519b1aab7840f453063&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;PDF.StatementOfAccounts.PLDT&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.PLDT&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;Images.MobileScreenshots.BDO&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;Images.MobileScreenshots.BDO&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;PDF.StatementOfAccounts.SkyBroadband&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.SkyBroadband&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;PDF.StatementOfAccounts.Globe&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.Globe&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;PDF.StatementOfAccounts.ConvergeICT&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.ConvergeICT&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;PDF.StatementOfAccounts.SMARTCommunications&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.SMARTCommunications&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true}}}},&quot;ClassifierMinimumConfidence&quot;:{&quot;UIda1c7bd0c54b4519b1aab7840f453063&quot;:&quot;50&quot;}}">
+                      <p1:ClassifyDocumentScope.Classifiers>
+                        <p1:KeywordBasedClassifier HumanValidatedData="{x:Null}" LearningData="{x:Null}" DisplayName="Keyword Based Classifier" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="KeywordBasedClassifier_3" LearningFilePath="DocumentProcessing\Classifiers.json" PersistenceId="UIda1c7bd0c54b4519b1aab7840f453063">
+                          <p1:KeywordBasedClassifier.ClassifierResult>
+                            <OutArgument x:TypeArguments="p2:ClassifierResult">
+                              <DelegateArgumentReference x:TypeArguments="p2:ClassifierResult">
+                                <DelegateOutArgument x:TypeArguments="p2:ClassifierResult" Name="ClassificationResult" />
+                              </DelegateArgumentReference>
+                            </OutArgument>
+                          </p1:KeywordBasedClassifier.ClassifierResult>
+                          <p1:KeywordBasedClassifier.DocumentObjectModel>
+                            <InArgument x:TypeArguments="p3:Document">
+                              <DelegateArgumentValue x:TypeArguments="p3:Document">
+                                <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
+                              </DelegateArgumentValue>
+                            </InArgument>
+                          </p1:KeywordBasedClassifier.DocumentObjectModel>
+                          <p1:KeywordBasedClassifier.DocumentPath>
+                            <InArgument x:TypeArguments="x:String">
+                              <DelegateArgumentValue x:TypeArguments="x:String">
+                                <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                              </DelegateArgumentValue>
+                            </InArgument>
+                          </p1:KeywordBasedClassifier.DocumentPath>
+                          <p1:KeywordBasedClassifier.DocumentText>
+                            <InArgument x:TypeArguments="x:String">
+                              <DelegateArgumentValue x:TypeArguments="x:String">
+                                <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                              </DelegateArgumentValue>
+                            </InArgument>
+                          </p1:KeywordBasedClassifier.DocumentText>
+                          <p1:KeywordBasedClassifier.DocumentTypes>
+                            <InArgument x:TypeArguments="p2:ClassifierDocumentType[]">
+                              <DelegateArgumentValue x:TypeArguments="p2:ClassifierDocumentType[]">
+                                <DelegateInArgument x:TypeArguments="p2:ClassifierDocumentType[]" Name="DocumentTypes" />
+                              </DelegateArgumentValue>
+                            </InArgument>
+                          </p1:KeywordBasedClassifier.DocumentTypes>
+                        </p1:KeywordBasedClassifier>
+                      </p1:ClassifyDocumentScope.Classifiers>
+                    </p1:ClassifyDocumentScope>
+                    <If Condition="[Classify_OR_Result.Length &gt; 0]" DisplayName="If the classifier was able to classify, continue" sap:VirtualizedContainerService.HintSize="611,362" sap2010:WorkflowViewState.IdRef="If_13">
+                      <If.Then>
+                        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_32">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[DocumentID]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[Classify_OR_Result(0).DocumentTypeId]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_33">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int32">[FileNumber]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int32">[FileNumber + 1]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Throw DisplayName="Unsupported Service Provider" Exception="[new BusinessRuleException(&quot;Unsupported Service Provider&quot;)]" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Throw_5" />
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <If sap2010:Annotation.AnnotationText="This check can be removed when we expand the scope of this automation." Condition="[DocumentID.Contains(&quot;PLDT&quot;)]" sap:VirtualizedContainerService.HintSize="611,239" sap2010:WorkflowViewState.IdRef="If_15">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Else>
+                        <Throw DisplayName="Service Provider Out of Scope" Exception="[New BusinessRuleException(DocumentID.ToString + &quot; service provider out of scope.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_6" />
+                      </If.Else>
+                    </If>
+                    <p4:DataExtractionScope ClassificationResult="{x:Null}" DisplayName="Data Extraction Scope for ORs/Bill Statement" DocumentObjectModel="[FileDOM]" DocumentPath="[File]" DocumentText="[FileText]" DocumentTypeId="[Classify_OR_Result(0).DocumentTypeId]" ExtractionResult="[ExtractionResult]" FormatValuesIfPossible="True" sap:VirtualizedContainerService.HintSize="611,169" sap2010:WorkflowViewState.IdRef="DataExtractionScope_4" Taxonomy="[eFinanceTaxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UIf094be6d42754e4997f9403cbf6c2397&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;PDF.StatementOfAccounts.PLDT&quot;:{&quot;FieldMappings&quot;:{&quot;PDF.StatementOfAccounts.PLDT.Name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.PLDT.Name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;PDF.StatementOfAccounts.PLDT.TotalAmountDue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.PLDT.TotalAmountDue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;PDF.StatementOfAccounts.PLDT.SoANumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.PLDT.SoANumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;Images.MobileScreenshots.BDO&quot;:{&quot;FieldMappings&quot;:{},&quot;ExtractorDocumentTypeId&quot;:null},&quot;PDF.StatementOfAccounts.SkyBroadband&quot;:{&quot;FieldMappings&quot;:{&quot;PDF.StatementOfAccounts.SkyBroadband.Name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SkyBroadband.Name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.SkyBroadband.TotalAmountDue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SkyBroadband.TotalAmountDue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.SkyBroadband.SoANumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SkyBroadband.SoANumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;PDF.StatementOfAccounts.Globe&quot;:{&quot;FieldMappings&quot;:{&quot;PDF.StatementOfAccounts.Globe.Name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.Globe.Name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.Globe.TotalAmountDue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.Globe.TotalAmountDue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.Globe.SoANumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.Globe.SoANumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;PDF.StatementOfAccounts.ConvergeICT&quot;:{&quot;FieldMappings&quot;:{&quot;PDF.StatementOfAccounts.ConvergeICT.Name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.ConvergeICT.Name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.ConvergeICT.TotalAmountDue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.ConvergeICT.TotalAmountDue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.ConvergeICT.SoANumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.ConvergeICT.SoANumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;PDF.StatementOfAccounts.SMARTCommunications&quot;:{&quot;FieldMappings&quot;:{&quot;PDF.StatementOfAccounts.SMARTCommunications.Name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SMARTCommunications.Name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.SMARTCommunications.TotalAmountDue&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SMARTCommunications.TotalAmountDue&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;PDF.StatementOfAccounts.SMARTCommunications.SoANumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;PDF.StatementOfAccounts.SMARTCommunications.SoANumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null}}}},&quot;ExtractorMinimumConfidence&quot;:{&quot;UIf094be6d42754e4997f9403cbf6c2397&quot;:&quot;0&quot;},&quot;DocumentTypeOptionsByExtractor&quot;:{&quot;UIf094be6d42754e4997f9403cbf6c2397&quot;:[]}}">
+                      <p4:DataExtractionScope.Extractors>
+                        <p4:RegexBasedExtractor Configuration="[&quot;[{&quot;&quot;DocumentTypeId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.PLDT&quot;&quot;,&quot;&quot;FieldConfiguration&quot;&quot;:[{&quot;&quot;FieldId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.PLDT.Name&quot;&quot;,&quot;&quot;Expression&quot;&quot;:&quot;&quot;Subscriber's Name . (.*)&quot;&quot;,&quot;&quot;Options&quot;&quot;:1,&quot;&quot;Model&quot;&quot;:null},{&quot;&quot;FieldId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.PLDT.TotalAmountDue&quot;&quot;,&quot;&quot;Expression&quot;&quot;:&quot;&quot;TOTAL AMOUNT DUE (\\d\\S*)&quot;&quot;,&quot;&quot;Options&quot;&quot;:1,&quot;&quot;Model&quot;&quot;:&quot;&quot;[{\&quot;&quot;Capture\&quot;&quot;:false,\&quot;&quot;Index\&quot;&quot;:0,\&quot;&quot;OperationID\&quot;&quot;:\&quot;&quot;ADV\&quot;&quot;,\&quot;&quot;OperationName\&quot;&quot;:\&quot;&quot;Advanced\&quot;&quot;,\&quot;&quot;OperationValue\&quot;&quot;:\&quot;&quot;TOTAL AMOUNT DUE (\\\\d\\\\S*)\&quot;&quot;,\&quot;&quot;QuantifierFirstValue\&quot;&quot;:\&quot;&quot;1\&quot;&quot;,\&quot;&quot;QuantifierID\&quot;&quot;:\&quot;&quot;EXT\&quot;&quot;,\&quot;&quot;QuantifierName\&quot;&quot;:\&quot;&quot;Exactly\&quot;&quot;,\&quot;&quot;QuantifierSecondValue\&quot;&quot;:null}]&quot;&quot;},{&quot;&quot;FieldId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.PLDT.SoANumber&quot;&quot;,&quot;&quot;Expression&quot;&quot;:&quot;&quot;Statement of Account No. (\\d*)&quot;&quot;,&quot;&quot;Options&quot;&quot;:1,&quot;&quot;Model&quot;&quot;:null}]},{&quot;&quot;DocumentTypeId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.Globe&quot;&quot;,&quot;&quot;FieldConfiguration&quot;&quot;:[{&quot;&quot;FieldId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.Globe.Name&quot;&quot;,&quot;&quot;Expression&quot;&quot;:&quot;&quot;M\\w\\.\\s(.*)&quot;&quot;,&quot;&quot;Options&quot;&quot;:1,&quot;&quot;Model&quot;&quot;:&quot;&quot;[{\&quot;&quot;Capture\&quot;&quot;:false,\&quot;&quot;Index\&quot;&quot;:0,\&quot;&quot;OperationID\&quot;&quot;:\&quot;&quot;ADV\&quot;&quot;,\&quot;&quot;OperationName\&quot;&quot;:\&quot;&quot;Advanced\&quot;&quot;,\&quot;&quot;OperationValue\&quot;&quot;:\&quot;&quot;M\\\\w\\\\.\\\\s(.*)\&quot;&quot;,\&quot;&quot;QuantifierFirstValue\&quot;&quot;:\&quot;&quot;1\&quot;&quot;,\&quot;&quot;QuantifierID\&quot;&quot;:\&quot;&quot;EXT\&quot;&quot;,\&quot;&quot;QuantifierName\&quot;&quot;:\&quot;&quot;Exactly\&quot;&quot;,\&quot;&quot;QuantifierSecondValue\&quot;&quot;:null}]&quot;&quot;},{&quot;&quot;FieldId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.Globe.TotalAmountDue&quot;&quot;,&quot;&quot;Expression&quot;&quot;:&quot;&quot;Php (.*)&quot;&quot;,&quot;&quot;Options&quot;&quot;:1,&quot;&quot;Model&quot;&quot;:&quot;&quot;[{\&quot;&quot;Capture\&quot;&quot;:false,\&quot;&quot;Index\&quot;&quot;:0,\&quot;&quot;OperationID\&quot;&quot;:\&quot;&quot;ADV\&quot;&quot;,\&quot;&quot;OperationName\&quot;&quot;:\&quot;&quot;Advanced\&quot;&quot;,\&quot;&quot;OperationValue\&quot;&quot;:\&quot;&quot;Php (.*)\&quot;&quot;,\&quot;&quot;QuantifierFirstValue\&quot;&quot;:\&quot;&quot;1\&quot;&quot;,\&quot;&quot;QuantifierID\&quot;&quot;:\&quot;&quot;EXT\&quot;&quot;,\&quot;&quot;QuantifierName\&quot;&quot;:\&quot;&quot;Exactly\&quot;&quot;,\&quot;&quot;QuantifierSecondValue\&quot;&quot;:null}]&quot;&quot;},{&quot;&quot;FieldId&quot;&quot;:&quot;&quot;PDF.StatementOfAccounts.Globe.SoANumber&quot;&quot;,&quot;&quot;Expression&quot;&quot;:&quot;&quot;SoA No. (\\d*)&quot;&quot;,&quot;&quot;Options&quot;&quot;:1,&quot;&quot;Model&quot;&quot;:&quot;&quot;[{\&quot;&quot;Capture\&quot;&quot;:false,\&quot;&quot;Index\&quot;&quot;:0,\&quot;&quot;OperationID\&quot;&quot;:\&quot;&quot;ADV\&quot;&quot;,\&quot;&quot;OperationName\&quot;&quot;:\&quot;&quot;Advanced\&quot;&quot;,\&quot;&quot;OperationValue\&quot;&quot;:\&quot;&quot;SoA No. (\\\\d*)\&quot;&quot;,\&quot;&quot;QuantifierFirstValue\&quot;&quot;:\&quot;&quot;1\&quot;&quot;,\&quot;&quot;QuantifierID\&quot;&quot;:\&quot;&quot;EXT\&quot;&quot;,\&quot;&quot;QuantifierName\&quot;&quot;:\&quot;&quot;Exactly\&quot;&quot;,\&quot;&quot;QuantifierSecondValue\&quot;&quot;:null}]&quot;&quot;}]}]&quot;]" DisplayName="Regex Extractor for OR/Bill Statements" sap:VirtualizedContainerService.HintSize="234,68" sap2010:WorkflowViewState.IdRef="RegexBasedExtractor_4" PersistenceId="UIf094be6d42754e4997f9403cbf6c2397" Timeout="2000" UseVisualAlignment="False">
+                          <p4:RegexBasedExtractor.DocumentBounds>
+                            <InArgument x:TypeArguments="p5:ResultsDocumentBounds">
+                              <DelegateArgumentValue x:TypeArguments="p5:ResultsDocumentBounds">
+                                <DelegateInArgument x:TypeArguments="p5:ResultsDocumentBounds" Name="DocumentBounds" />
+                              </DelegateArgumentValue>
+                            </InArgument>
+                          </p4:RegexBasedExtractor.DocumentBounds>
+                          <p4:RegexBasedExtractor.DocumentObjectModel>
+                            <InArgument x:TypeArguments="p3:Document">
+                              <DelegateArgumentValue x:TypeArguments="p3:Document">
+                                <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
+                              </DelegateArgumentValue>
+                            </InArgument>
+                          </p4:RegexBasedExtractor.DocumentObjectModel>
+                          <p4:RegexBasedExtractor.DocumentPath>
+                            <InArgument x:TypeArguments="x:String">
+                              <DelegateArgumentValue x:TypeArguments="x:String">
+                                <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                              </DelegateArgumentValue>
+                            </InArgument>
+                          </p4:RegexBasedExtractor.DocumentPath>
+                          <p4:RegexBasedExtractor.DocumentText>
+                            <InArgument x:TypeArguments="x:String">
+                              <DelegateArgumentValue x:TypeArguments="x:String">
+                                <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                              </DelegateArgumentValue>
+                            </InArgument>
+                          </p4:RegexBasedExtractor.DocumentText>
+                          <p4:RegexBasedExtractor.ExtractorDocumentType>
+                            <InArgument x:TypeArguments="p6:ExtractorDocumentType">
+                              <DelegateArgumentValue x:TypeArguments="p6:ExtractorDocumentType">
+                                <DelegateInArgument x:TypeArguments="p6:ExtractorDocumentType" Name="ExtractorDocumentType" />
+                              </DelegateArgumentValue>
+                            </InArgument>
+                          </p4:RegexBasedExtractor.ExtractorDocumentType>
+                          <p4:RegexBasedExtractor.ExtractorResult>
+                            <OutArgument x:TypeArguments="p6:ExtractorResult">
+                              <DelegateArgumentReference x:TypeArguments="p6:ExtractorResult">
+                                <DelegateOutArgument x:TypeArguments="p6:ExtractorResult" Name="ExtractorResult" />
+                              </DelegateArgumentReference>
+                            </OutArgument>
+                          </p4:RegexBasedExtractor.ExtractorResult>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </p4:RegexBasedExtractor>
+                      </p4:DataExtractionScope.Extractors>
+                    </p4:DataExtractionScope>
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="611,51" sap2010:WorkflowViewState.IdRef="CommentOut_19">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <p:PresentValidationStation ValidatedExtractionResults="{x:Null}" AutomaticExtractionResults="[ExtractionResult]" DisplayName="Present Validation Station" DocumentObjectModel="[FileDOM]" DocumentPath="[File]" DocumentText="[FileText]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="PresentValidationStation_6" Taxonomy="[eFinanceTaxonomy]" />
+                        </Sequence>
+                      </ui:CommentOut.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:CommentOut>
+                    <p4:ExportExtractionResults DataSet="[ExtractDataSet]" DisplayName="Export Extraction Results" ExtractionResult="[ExtractionResult]" sap:VirtualizedContainerService.HintSize="611,22" sap2010:WorkflowViewState.IdRef="ExportExtractionResults_3" IncludeConfidence="False" />
+                    <If sap2010:Annotation.AnnotationText="This 'If' statement can be removed if the PH Finance deparment proceeds with enforcing the one OR PDF policy per entry" Condition="[out_TotalAmountDue = 0]" sap:VirtualizedContainerService.HintSize="611,250" sap2010:WorkflowViewState.IdRef="If_14">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_34">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Double">[out_TotalAmountDue]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Double">[CDbl(ExtractDataSet.Tables(0).Rows(0).Item(1))]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </If.Then>
+                      <If.Else>
+                        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_35">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Double">[out_TotalAmountDue]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Double">[out_TotalAmountDue + CDbl(ExtractDataSet.Tables(0).Rows(0).Item(1))]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </If.Else>
+                    </If>
+                    <AddToCollection x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="This activity can be reworked to be an 'Assign' activity when its been enforced that each communication reimbursement entry must only have one OR/Bill PDF file.&#xA;&#xA;The following argument are List type arguments:&#xA;- outORSoA_NumberList&#xA;&#xA;and should be converted to a String variable when reworked" Collection="[out_OR_SoA_NumberList]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="611,259" sap2010:WorkflowViewState.IdRef="AddToCollection`1_2" Item="[ExtractDataSet.Tables(0).Rows(0).Item(2).ToString]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </AddToCollection>
+                    <Assign sap:VirtualizedContainerService.HintSize="611,60" sap2010:WorkflowViewState.IdRef="Assign_36">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[out_OR_Name]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[ExtractDataSet.Tables(0).Rows(0).Item(0).ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="611,60" sap2010:WorkflowViewState.IdRef="Assign_37">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Int32">[FileNumber]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Int32">[FileNumber + 1]</InArgument>
+                      </Assign.Value>
+                    </Assign>
                   </Sequence>
                 </State.Entry>
                 <sap:WorkflowViewStateService.ViewState>

@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1453,2992</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1453,2550</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetAttachmentsSequence_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -58,15 +58,11 @@
       <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: This sequence will pre-screen the attachment of the current communication reimbursement entry opened. It will also extract the bill number inputted to the entry.&#xA;&#xA;The current filters are:&#xA;Only two (2) files&#xA;One &quot;.pdf&quot; file and &quot;.jpg/.jpeg&quot; OR &quot;.png&quot; file&#xA;&#xA;Arguments:&#xA;in_Config: Dictionary(String, Object)&#xA;in_TransactionItem: DataRow&#xA;out_BillNumber: String" DisplayName="Get_Attachments_and_BillNumber_Sequence" sap:VirtualizedContainerService.HintSize="1463,2787" sap2010:WorkflowViewState.IdRef="Sequence_17">
+  <Sequence sap2010:Annotation.AnnotationText="Description: This sequence will pre-screen the attachment of the current communication reimbursement entry opened. It will also extract the bill number inputted to the entry.&#xA;&#xA;The current filters are:&#xA;Only two (2) files&#xA;One &quot;.pdf&quot; file and &quot;.jpg/.jpeg&quot; OR &quot;.png&quot; file&#xA;&#xA;Arguments:&#xA;in_Config: Dictionary(String, Object)&#xA;in_TransactionItem: DataRow&#xA;out_BillNumber: String" DisplayName="Get_Attachments_and_BillNumber_Sequence" sap:VirtualizedContainerService.HintSize="1463,2345" sap2010:WorkflowViewState.IdRef="Sequence_17">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="ExtractDataTable" />
       <Variable x:TypeArguments="scg:List(x:String)" Default="[new List(Of String)()]" Name="AttachmentFilesList" />
-      <Variable x:TypeArguments="scg:List(x:String)" Name="AllowedFiles">
-        <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="new List(Of String)({&quot;.pdf&quot;,&quot;.jpg&quot;,&quot;.jpeg&quot;,&quot;.png&quot;})" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="scg:List(x:String)" Default="[new List(Of String)({&quot;.pdf&quot;,&quot;.jpg&quot;,&quot;.jpeg&quot;,&quot;.png&quot;})]" Name="AllowedFiles" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -122,15 +118,15 @@
         </ui:BrowserScope.Body>
       </ui:BrowserScope>
     </Sequence>
-    <If Condition="[ExtractDataTable.Rows.Count() = 2]" DisplayName="If: Checking on the number of uploaded attachments" sap:VirtualizedContainerService.HintSize="1421,1911" sap2010:WorkflowViewState.IdRef="If_6">
+    <If Condition="[ExtractDataTable.Rows.Count() = 2]" DisplayName="If: Checking on the number of uploaded attachments" sap:VirtualizedContainerService.HintSize="1421,1469" sap2010:WorkflowViewState.IdRef="If_6">
       <If.Then>
-        <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="1176,1763" sap2010:WorkflowViewState.IdRef="Sequence_16">
+        <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="1176,1321" sap2010:WorkflowViewState.IdRef="Sequence_16">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ExtractDataTable]" DisplayName="For Each Row, extract file type" sap:VirtualizedContainerService.HintSize="1134,493" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+          <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ExtractDataTable]" DisplayName="For Each Row, extract file type" sap:VirtualizedContainerService.HintSize="1134,51" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
                 <ActivityAction.Argument>
@@ -160,7 +156,7 @@
             </ui:ForEachRow.Body>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -197,7 +193,7 @@
                       </Assign>
                       <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click File name" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_RIGHT">
                         <ui:Click.CursorPosition>
-                          <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition Position="TopLeft">
                             <ui:CursorPosition.OffsetX>
                               <InArgument x:TypeArguments="x:Int32" />
                             </ui:CursorPosition.OffsetX>
@@ -207,7 +203,7 @@
                           </ui:CursorPosition>
                         </ui:Click.CursorPosition>
                         <ui:Click.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="e98159c47383721edae5696f11c95f71" Selector="&lt;html title='Communication - *' /&gt;&lt;webctrl id='idAttachmentsTable' tag='TABLE' /&gt;&lt;webctrl tag='TD' aaname='{{File}}' /&gt;">
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="e98159c47383721edae5696f11c95f71" Selector="&lt;html title='Communication*' /&gt;&lt;webctrl tag='TD' /&gt;&lt;webctrl tag='SPAN' aaname='{{File}}' /&gt;">
                             <ui:Target.TimeoutMS>
                               <InArgument x:TypeArguments="x:Int32" />
                             </ui:Target.TimeoutMS>
