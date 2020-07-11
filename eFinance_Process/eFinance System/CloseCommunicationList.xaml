@@ -54,7 +54,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" BrowserType="IE" DisplayName="Attach Browser eFinance Communication List" sap:VirtualizedContainerService.HintSize="434,260" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="3fa912ab17f1958ef861a8e395205027" Selector="&lt;html title='Communication*' /&gt;" UiBrowser="[Browser]">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" BrowserType="IE" DisplayName="Attach Browser eFinance Communication List" sap:VirtualizedContainerService.HintSize="434,260" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="3fa912ab17f1958ef861a8e395205027" Selector="&lt;html title='Communication*' /&gt;" TimeoutMS="5000" UiBrowser="[Browser]">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
