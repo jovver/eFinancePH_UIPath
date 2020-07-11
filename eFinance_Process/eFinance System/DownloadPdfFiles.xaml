@@ -1,12 +1,11 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="DownloadAttachments" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
-    <x:Property Name="in_File" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1119,3240</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1221,3386</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>DownloadAttachments_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -57,7 +56,7 @@
       <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DownloadPdfFiles" sap:VirtualizedContainerService.HintSize="644,3035" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DownloadPdfFiles" sap:VirtualizedContainerService.HintSize="644,3181" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="CurrentDirectory" />
       <Variable x:TypeArguments="x:String" Name="WorkingDirectory" />
@@ -229,25 +228,43 @@
         </ActivityAction>
       </ui:BrowserScope.Body>
     </ui:BrowserScope>
-    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'Save as'" sap:VirtualizedContainerService.HintSize="602,1382" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="0262d0a3b8ad85a19ed27909b84c6f2c" Selector="&lt;wnd app='iexplore.exe' cls='*' title='Save As' /&gt;&#xA;">
+    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'Save as'" sap:VirtualizedContainerService.HintSize="602,1528" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="0262d0a3b8ad85a19ed27909b84c6f2c" Selector="&lt;wnd app='iexplore.exe' cls='*' title='Save As' /&gt;&#xA;">
       <ui:WindowScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Saving PDF File" sap:VirtualizedContainerService.HintSize="568,1236" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <Sequence DisplayName="Saving PDF File" sap:VirtualizedContainerService.HintSize="568,1382" sap2010:WorkflowViewState.IdRef="Sequence_7">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="526,1144" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="526,1290" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="File" />
+              </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
+              <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get default file name" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
+                <ui:GetValue.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="acfb3d80db991807a082bdae8d9bc239" Selector="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:GetValue.Target>
+                <ui:GetValue.Value>
+                  <OutArgument x:TypeArguments="x:String">[File]</OutArgument>
+                </ui:GetValue.Value>
+              </ui:GetValue>
               <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Address' toolbar" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
                 <ui:Click.CursorPosition>
                   <ui:CursorPosition Position="Center">
@@ -316,8 +333,11 @@
                   </ui:Target>
                 </ui:Click.Target>
               </ui:Click>
-              <While sap:VirtualizedContainerService.HintSize="484,246" sap2010:WorkflowViewState.IdRef="While_1" Condition="[Not DownloadComplete]">
-                <ui:PathExists DisplayName="Path Exists" Exists="[DownloadComplete]" sap:VirtualizedContainerService.HintSize="334,89" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[CurrentDirectory + WorkingDirectory + in_File]" PathType="File" />
+              <While sap:VirtualizedContainerService.HintSize="484,247" sap2010:WorkflowViewState.IdRef="While_1">
+                <While.Condition>
+                  <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Not DownloadComplete" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
+                </While.Condition>
+                <ui:PathExists DisplayName="Path Exists" Exists="[DownloadComplete]" sap:VirtualizedContainerService.HintSize="334,89" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[CurrentDirectory + WorkingDirectory + &quot;\&quot; + File + &quot;.pdf&quot;]" PathType="File" />
               </While>
               <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Close button" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT">
                 <ui:Click.CursorPosition>
