@@ -143,7 +143,7 @@
     </ui:MultipleAssign>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="507,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Processing payment file...&quot;]" />
     <p:LoadTaxonomy DisplayName="Load Taxonomy" sap:VirtualizedContainerService.HintSize="507,22" sap2010:WorkflowViewState.IdRef="LoadTaxonomy_1" Taxonomy="[eFinanceTaxonomy]" />
-    <p:DigitizeDocument sap2010:Annotation.AnnotationText="File should be changed to &quot;in_Paymentfile&quot; when integrated" DegreeOfParallelism="1" DisplayName="Digitize Document" DocumentObjectModel="[PaymentFileDOM]" DocumentPath="[File]" DocumentText="[PaymentFileText]" ForceApplyOCR="False" sap:VirtualizedContainerService.HintSize="507,173" sap2010:WorkflowViewState.IdRef="DigitizeDocument_1">
+    <p:DigitizeDocument sap2010:Annotation.AnnotationText="File should be changed to &quot;in_Paymentfile&quot; when integrated" DegreeOfParallelism="-1" DisplayName="Digitize Document" DocumentObjectModel="[PaymentFileDOM]" DocumentPath="[File]" DocumentText="[PaymentFileText]" ForceApplyOCR="False" sap:VirtualizedContainerService.HintSize="507,173" sap2010:WorkflowViewState.IdRef="DigitizeDocument_1">
       <p:DigitizeDocument.OCREngine>
         <ActivityFunc x:TypeArguments="sd1:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
           <ActivityFunc.Argument>
