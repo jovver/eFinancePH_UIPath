@@ -38,6 +38,15 @@
           "DeriveFieldsFormat": "",
           "Components": [],
           "SetValues": []
+        },
+        {
+          "FieldId": "PDF.StatementOfAccounts.PLDT.Total(Php)",
+          "FieldName": "TotalAmountPaid",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
         }
       ]
     },
@@ -222,6 +231,80 @@
           "SetValues": []
         }
       ]
+    },
+    {
+      "DocumentTypeId": "PDF.StatementOfAccounts.GlobeHome",
+      "Group": "PDF",
+      "Category": "StatementOfAccounts",
+      "Name": "Globe Home",
+      "OptionalUniqueIdentifier": "GlobeHomeSoA",
+      "TypeField": {
+        "FieldId": "PDF.StatementOfAccounts.GlobeHome.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": [
+        {
+          "FieldId": "PDF.StatementOfAccounts.GlobeHome.Name",
+          "FieldName": "Name",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "PDF.StatementOfAccounts.GlobeHome.TotalAmountDue",
+          "FieldName": "TotalAmountDue",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "PDF.StatementOfAccounts.GlobeHome.SoANumber",
+          "FieldName": "SoANumber",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        }
+      ]
+    },
+    {
+      "DocumentTypeId": "Images.MobileScreenshots.Gcash",
+      "Group": "Images",
+      "Category": "MobileScreenshots",
+      "Name": "Gcash",
+      "OptionalUniqueIdentifier": "Gcashpayment",
+      "TypeField": {
+        "FieldId": "Images.MobileScreenshots.Gcash.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": [
+        {
+          "FieldId": "Images.MobileScreenshots.Gcash.TotalAmountPaid",
+          "FieldName": "TotalAmountPaid",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        }
+      ]
+    },
+    {
+      "DocumentTypeId": "Images.MobileScreenshots.BPI",
+      "Group": "Images",
+      "Category": "MobileScreenshots",
+      "Name": "BPI",
+      "OptionalUniqueIdentifier": "BPIMobile",
+      "TypeField": {
+        "FieldId": "Images.MobileScreenshots.BPI.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": []
     }
   ],
   "Groups": [

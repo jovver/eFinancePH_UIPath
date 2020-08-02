@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1221,1983</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1315,1983</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>BillingStatement_Compare_and_Process_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -399,7 +399,7 @@
               <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Not PDF_Found AND BusinessRuleException Is Nothing" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_2" />
             </Transition.Condition>
           </Transition>
-          <Transition DisplayName="PDF File Found" sap:VirtualizedContainerService.HintSize="450,505" sap2010:WorkflowViewState.IdRef="Transition_1">
+          <Transition DisplayName="PDF File Found" sap:VirtualizedContainerService.HintSize="450,507" sap2010:WorkflowViewState.IdRef="Transition_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:PointCollection x:Key="ConnectorLocation">207.4,184 207.4,214 245.85,214 245.85,299</av:PointCollection>
@@ -408,9 +408,9 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <Transition.To>
-              <State x:Name="__ReferenceID2" DisplayName="Digitize Document. Classify and Extract" sap:VirtualizedContainerService.HintSize="699,3647" sap2010:WorkflowViewState.IdRef="State_1">
+              <State x:Name="__ReferenceID2" DisplayName="Digitize Document. Classify and Extract" sap:VirtualizedContainerService.HintSize="699,3477" sap2010:WorkflowViewState.IdRef="State_1">
                 <State.Entry>
-                  <Sequence sap:VirtualizedContainerService.HintSize="653,3260" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                  <Sequence sap:VirtualizedContainerService.HintSize="653,3090" sap2010:WorkflowViewState.IdRef="Sequence_56">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="DocumentID" />
                       <Variable x:TypeArguments="x:String" Name="Temp_TotalAmountDue" />
@@ -437,7 +437,7 @@
                               <OutArgument x:TypeArguments="x:String">[File]</OutArgument>
                             </ui:AssignOperation.To>
                             <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="x:String">[FilesArray(FileNumber-1)]</InArgument>
+                              <InArgument x:TypeArguments="x:String">C:\Users\dnfe.NNITCORP\Documents\UiPath\eFinancePH_UIPath\eFinance_Process\Downloads\JULY BILL.pdf</InArgument>
                             </ui:AssignOperation.Value>
                           </ui:AssignOperation>
                         </scg:List>
@@ -473,7 +473,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:CommentOut>
-                    <p1:ClassifyDocumentScope ClassificationResults="[Classify_OR_Result]" DisplayName="Classify Document Scope for ORs" DocumentObjectModel="[FileDOM]" DocumentPath="[File]" DocumentText="[FileText]" sap:VirtualizedContainerService.HintSize="611,192" sap2010:WorkflowViewState.IdRef="ClassifyDocumentScope_3" Taxonomy="[eFinanceTaxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UIda1c7bd0c54b4519b1aab7840f453063&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;PDF.StatementOfAccounts.PLDT&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.PLDT&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;Images.MobileScreenshots.BDO&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;Images.MobileScreenshots.BDO&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false},&quot;PDF.StatementOfAccounts.SkyBroadband&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.SkyBroadband&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;PDF.StatementOfAccounts.Globe&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.Globe&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;PDF.StatementOfAccounts.ConvergeICT&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.ConvergeICT&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;PDF.StatementOfAccounts.SMARTCommunications&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.SMARTCommunications&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true}}}},&quot;ClassifierMinimumConfidence&quot;:{&quot;UIda1c7bd0c54b4519b1aab7840f453063&quot;:&quot;50&quot;}}">
+                    <p1:ClassifyDocumentScope ClassificationResults="[Classify_OR_Result]" DisplayName="Classify Document Scope for ORs" DocumentObjectModel="[FileDOM]" DocumentPath="[File]" DocumentText="[FileText]" sap:VirtualizedContainerService.HintSize="611,192" sap2010:WorkflowViewState.IdRef="ClassifyDocumentScope_3" Taxonomy="[eFinanceTaxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UIda1c7bd0c54b4519b1aab7840f453063&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;PDF.StatementOfAccounts.PLDT&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.PLDT&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;Images.MobileScreenshots.BDO&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;Images.MobileScreenshots.BDO&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false},&quot;PDF.StatementOfAccounts.SkyBroadband&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.SkyBroadband&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;PDF.StatementOfAccounts.Globe&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.Globe&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;PDF.StatementOfAccounts.ConvergeICT&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.ConvergeICT&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;PDF.StatementOfAccounts.SMARTCommunications&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.SMARTCommunications&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;PDF.StatementOfAccounts.GlobeHome&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;PDF.StatementOfAccounts.GlobeHome&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;Images.MobileScreenshots.Gcash&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;Images.MobileScreenshots.Gcash&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false},&quot;Images.MobileScreenshots.BPI&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;Images.MobileScreenshots.BPI&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:false}}}},&quot;ClassifierMinimumConfidence&quot;:{&quot;UIda1c7bd0c54b4519b1aab7840f453063&quot;:&quot;50&quot;}}">
                       <p1:ClassifyDocumentScope.Classifiers>
                         <p1:KeywordBasedClassifier HumanValidatedData="{x:Null}" LearningData="{x:Null}" DisplayName="Keyword Based Classifier" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="KeywordBasedClassifier_3" LearningFilePath="DocumentProcessing\Classifiers.json" PersistenceId="UIda1c7bd0c54b4519b1aab7840f453063">
                           <p1:KeywordBasedClassifier.ClassifierResult>
@@ -608,18 +608,7 @@
                         </p4:RegexBasedExtractor>
                       </p4:DataExtractionScope.Extractors>
                     </p4:DataExtractionScope>
-                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="611,192" sap2010:WorkflowViewState.IdRef="CommentOut_28">
-                      <ui:CommentOut.Body>
-                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_65">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <p:PresentValidationStation ValidatedExtractionResults="{x:Null}" AutomaticExtractionResults="[ExtractionResult]" DisplayName="Present Validation Station" DocumentObjectModel="[FileDOM]" DocumentPath="[File]" DocumentText="[FileText]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="PresentValidationStation_6" Taxonomy="[eFinanceTaxonomy]" />
-                        </Sequence>
-                      </ui:CommentOut.Body>
-                    </ui:CommentOut>
+                    <p:PresentValidationStation ValidatedExtractionResults="{x:Null}" AutomaticExtractionResults="[ExtractionResult]" DisplayName="Present Validation Station" DocumentObjectModel="[FileDOM]" DocumentPath="[File]" DocumentText="[FileText]" sap:VirtualizedContainerService.HintSize="611,22" sap2010:WorkflowViewState.IdRef="PresentValidationStation_6" Taxonomy="[eFinanceTaxonomy]" />
                     <p4:ExportExtractionResults DataSet="[ExtractDataSet]" DisplayName="Export Extraction Results" ExtractionResult="[ExtractionResult]" sap:VirtualizedContainerService.HintSize="611,22" sap2010:WorkflowViewState.IdRef="ExportExtractionResults_3" IncludeConfidence="False" />
                     <Assign sap:VirtualizedContainerService.HintSize="611,60" sap2010:WorkflowViewState.IdRef="Assign_38">
                       <Assign.To>
