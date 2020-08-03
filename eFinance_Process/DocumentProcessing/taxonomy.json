@@ -304,7 +304,17 @@
         "FieldId": "Images.MobileScreenshots.BPI.DocumentType",
         "FieldName": "Document Type"
       },
-      "Fields": []
+      "Fields": [
+        {
+          "FieldId": "Images.MobileScreenshots.BPI.TotalAmountPaid",
+          "FieldName": "TotalAmountPaid",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        }
+      ]
     }
   ],
   "Groups": [
