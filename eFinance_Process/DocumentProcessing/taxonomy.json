@@ -222,6 +222,64 @@
           "SetValues": []
         }
       ]
+    },
+    {
+      "DocumentTypeId": "Images.MobileScreenshots.BayadCenter",
+      "Group": "Images",
+      "Category": "MobileScreenshots",
+      "Name": "BayadCenter",
+      "OptionalUniqueIdentifier": null,
+      "TypeField": {
+        "FieldId": "Images.MobileScreenshots.BayadCenter.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": [
+        {
+          "FieldId": "Images.MobileScreenshots.BayadCenter.AccountNumber",
+          "FieldName": "Account Number",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "Images.MobileScreenshots.BayadCenter.Amount",
+          "FieldName": "Amount",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "Images.MobileScreenshots.BayadCenter.Date",
+          "FieldName": "Date",
+          "IsMultiValue": false,
+          "Type": "Date",
+          "DeriveFieldsFormat": "Day Month Year",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "Images.MobileScreenshots.BayadCenter.ReferenceID",
+          "FieldName": "Reference ID",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "Images.MobileScreenshots.BayadCenter.ReceiptNo",
+          "FieldName": "Receipt No",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        }
+      ]
     }
   ],
   "Groups": [
