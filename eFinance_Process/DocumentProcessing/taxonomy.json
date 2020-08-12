@@ -3,7 +3,7 @@
   "DocumentTypes": [
     {
       "DocumentTypeId": "PDF.StatementOfAccounts.PLDT",
-      "Group": "PDF",
+      "Group": "Billing",
       "Category": "StatementOfAccounts",
       "Name": "PLDT",
       "OptionalUniqueIdentifier": "PLDTSoA",
@@ -52,7 +52,7 @@
     },
     {
       "DocumentTypeId": "Images.MobileScreenshots.BDO",
-      "Group": "Images",
+      "Group": "Receipts",
       "Category": "MobileScreenshots",
       "Name": "BDO",
       "OptionalUniqueIdentifier": "BDOMobile",
@@ -74,7 +74,7 @@
     },
     {
       "DocumentTypeId": "PDF.StatementOfAccounts.SkyBroadband",
-      "Group": "PDF",
+      "Group": "Billing",
       "Category": "StatementOfAccounts",
       "Name": "Sky Broadband",
       "OptionalUniqueIdentifier": "SkySoA",
@@ -114,7 +114,7 @@
     },
     {
       "DocumentTypeId": "PDF.StatementOfAccounts.Globe",
-      "Group": "PDF",
+      "Group": "Billing",
       "Category": "StatementOfAccounts",
       "Name": "Globe",
       "OptionalUniqueIdentifier": "GlobeSoA",
@@ -154,7 +154,7 @@
     },
     {
       "DocumentTypeId": "PDF.StatementOfAccounts.ConvergeICT",
-      "Group": "PDF",
+      "Group": "Billing",
       "Category": "StatementOfAccounts",
       "Name": "ConvergeICT",
       "OptionalUniqueIdentifier": "ConvergeSoA",
@@ -194,7 +194,7 @@
     },
     {
       "DocumentTypeId": "PDF.StatementOfAccounts.SMARTCommunications",
-      "Group": "PDF",
+      "Group": "Billing",
       "Category": "StatementOfAccounts",
       "Name": "SMART Communications",
       "OptionalUniqueIdentifier": "SMARTSoA",
@@ -234,7 +234,7 @@
     },
     {
       "DocumentTypeId": "PDF.StatementOfAccounts.GlobeHome",
-      "Group": "PDF",
+      "Group": "Billing",
       "Category": "StatementOfAccounts",
       "Name": "Globe Home",
       "OptionalUniqueIdentifier": "GlobeHomeSoA",
@@ -274,7 +274,7 @@
     },
     {
       "DocumentTypeId": "Images.MobileScreenshots.Gcash",
-      "Group": "Images",
+      "Group": "Receipts",
       "Category": "MobileScreenshots",
       "Name": "Gcash",
       "OptionalUniqueIdentifier": "Gcashpayment",
@@ -296,7 +296,7 @@
     },
     {
       "DocumentTypeId": "Images.MobileScreenshots.BPI",
-      "Group": "Images",
+      "Group": "Receipts",
       "Category": "MobileScreenshots",
       "Name": "BPI",
       "OptionalUniqueIdentifier": "BPIMobile",
@@ -315,19 +315,148 @@
           "SetValues": []
         }
       ]
+    },
+    {
+      "DocumentTypeId": "Images.MobileScreenshots.BayadCenter",
+      "Group": "Receipts",
+      "Category": "MobileScreenshots",
+      "Name": "BayadCenter",
+      "OptionalUniqueIdentifier": null,
+      "TypeField": {
+        "FieldId": "Images.MobileScreenshots.BayadCenter.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": [
+        {
+          "FieldId": "Images.MobileScreenshots.BayadCenter.AccountNumber",
+          "FieldName": "Account Number",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "Images.MobileScreenshots.BayadCenter.Amount",
+          "FieldName": "Amount",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "Images.MobileScreenshots.BayadCenter.Date",
+          "FieldName": "Date",
+          "IsMultiValue": false,
+          "Type": "Date",
+          "DeriveFieldsFormat": "Day Month Year",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "Images.MobileScreenshots.BayadCenter.ReferenceID",
+          "FieldName": "Reference ID",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "Images.MobileScreenshots.BayadCenter.ReceiptNo",
+          "FieldName": "Receipt No",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        }
+      ]
+    },
+    {
+      "DocumentTypeId": "Images.MobileScreenshots.BPIOnlineReceipt",
+      "Group": "Receipts",
+      "Category": "MobileScreenshots",
+      "Name": "BPI Online Receipt",
+      "OptionalUniqueIdentifier": null,
+      "TypeField": {
+        "FieldId": "Images.MobileScreenshots.BPIOnlineReceipt.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": [
+        {
+          "FieldId": "Images.MobileScreenshots.BPIOnlineReceipt.ConfirmationNumber",
+          "FieldName": "Confirmation Number",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "Images.MobileScreenshots.BPIOnlineReceipt.TransactionDate",
+          "FieldName": "Transaction Date",
+          "IsMultiValue": false,
+          "Type": "Date",
+          "DeriveFieldsFormat": "Month Day Year",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "Images.MobileScreenshots.BPIOnlineReceipt.MerchantReferenceNumber",
+          "FieldName": "Merchant Reference Number",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "Images.MobileScreenshots.BPIOnlineReceipt.Amount",
+          "FieldName": "Amount",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        }
+      ]
+    },
+    {
+      "DocumentTypeId": "Images.MobileScreenshots.GenericReceipt",
+      "Group": "Receipts",
+      "Category": "MobileScreenshots",
+      "Name": "Generic Receipt",
+      "OptionalUniqueIdentifier": null,
+      "TypeField": {
+        "FieldId": "Images.MobileScreenshots.GenericReceipt.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": [
+        {
+          "FieldId": "Images.MobileScreenshots.GenericReceipt.Amount",
+          "FieldName": "Amount",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        }
+      ]
     }
   ],
   "Groups": [
     {
-      "Name": "Images",
+      "Name": "Billing",
       "Categories": [
-        "MobileScreenshots"
+        "StatementOfAccounts"
       ]
     },
     {
-      "Name": "PDF",
+      "Name": "Receipts",
       "Categories": [
-        "StatementOfAccounts"
+        "MobileScreenshots"
       ]
     }
   ],
