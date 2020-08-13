@@ -442,6 +442,64 @@
           "DeriveFieldsFormat": "",
           "Components": [],
           "SetValues": []
+        },
+        {
+          "FieldId": "Images.MobileScreenshots.GenericReceipt.CSH",
+          "FieldName": "CSH",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        }
+      ]
+    },
+    {
+      "DocumentTypeId": "Receipts.MobileScreenshots.GlobeOnline",
+      "Group": "Receipts",
+      "Category": "MobileScreenshots",
+      "Name": "Globe Online",
+      "OptionalUniqueIdentifier": "AmountPaid",
+      "TypeField": {
+        "FieldId": "Receipts.MobileScreenshots.GlobeOnline.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": [
+        {
+          "FieldId": "Receipts.MobileScreenshots.GlobeOnline.ReferenceNumber",
+          "FieldName": "ReferenceNumber",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "Receipts.MobileScreenshots.GlobeOnline.AccountNumber",
+          "FieldName": "AccountNumber",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "Receipts.MobileScreenshots.GlobeOnline.DateTime",
+          "FieldName": "DateTime",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        },
+        {
+          "FieldId": "Receipts.MobileScreenshots.GlobeOnline.AmountPaid",
+          "FieldName": "AmountPaid",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
         }
       ]
     }
