@@ -38,15 +38,6 @@
           "DeriveFieldsFormat": "",
           "Components": [],
           "SetValues": []
-        },
-        {
-          "FieldId": "PDF.StatementOfAccounts.PLDT.Total(Php)",
-          "FieldName": "TotalAmountPaid",
-          "IsMultiValue": false,
-          "Type": "Number",
-          "DeriveFieldsFormat": "",
-          "Components": [],
-          "SetValues": []
         }
       ]
     },
@@ -497,6 +488,28 @@
           "FieldName": "AmountPaid",
           "IsMultiValue": false,
           "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        }
+      ]
+    },
+    {
+      "DocumentTypeId": "Receipts.MobileScreenshots.PLDTOnline",
+      "Group": "Receipts",
+      "Category": "MobileScreenshots",
+      "Name": "PLDT Online",
+      "OptionalUniqueIdentifier": "PLDTOnline",
+      "TypeField": {
+        "FieldId": "Receipts.MobileScreenshots.PLDTOnline.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": [
+        {
+          "FieldId": "Receipts.MobileScreenshots.PLDTOnline.TotalAmountPaid",
+          "FieldName": "TotalAmountPaid",
+          "IsMultiValue": false,
+          "Type": "Number",
           "DeriveFieldsFormat": "",
           "Components": [],
           "SetValues": []
