@@ -319,44 +319,8 @@
       },
       "Fields": [
         {
-          "FieldId": "Images.MobileScreenshots.BayadCenter.AccountNumber",
-          "FieldName": "Account Number",
-          "IsMultiValue": false,
-          "Type": "Text",
-          "DeriveFieldsFormat": "",
-          "Components": [],
-          "SetValues": []
-        },
-        {
-          "FieldId": "Images.MobileScreenshots.BayadCenter.Amount",
-          "FieldName": "Amount",
-          "IsMultiValue": false,
-          "Type": "Number",
-          "DeriveFieldsFormat": "",
-          "Components": [],
-          "SetValues": []
-        },
-        {
-          "FieldId": "Images.MobileScreenshots.BayadCenter.Date",
-          "FieldName": "Date",
-          "IsMultiValue": false,
-          "Type": "Date",
-          "DeriveFieldsFormat": "Day Month Year",
-          "Components": [],
-          "SetValues": []
-        },
-        {
-          "FieldId": "Images.MobileScreenshots.BayadCenter.ReferenceID",
-          "FieldName": "Reference ID",
-          "IsMultiValue": false,
-          "Type": "Text",
-          "DeriveFieldsFormat": "",
-          "Components": [],
-          "SetValues": []
-        },
-        {
-          "FieldId": "Images.MobileScreenshots.BayadCenter.ReceiptNo",
-          "FieldName": "Receipt No",
+          "FieldId": "Images.MobileScreenshots.BayadCenter.TotalAmountPaid",
+          "FieldName": "TotalAmountPaid",
           "IsMultiValue": false,
           "Type": "Text",
           "DeriveFieldsFormat": "",
@@ -377,37 +341,10 @@
       },
       "Fields": [
         {
-          "FieldId": "Images.MobileScreenshots.BPIOnlineReceipt.ConfirmationNumber",
-          "FieldName": "Confirmation Number",
+          "FieldId": "Images.MobileScreenshots.BPIOnlineReceipt.TotalAmountPaid",
+          "FieldName": "TotalAmountPaid",
           "IsMultiValue": false,
           "Type": "Text",
-          "DeriveFieldsFormat": "",
-          "Components": [],
-          "SetValues": []
-        },
-        {
-          "FieldId": "Images.MobileScreenshots.BPIOnlineReceipt.TransactionDate",
-          "FieldName": "Transaction Date",
-          "IsMultiValue": false,
-          "Type": "Date",
-          "DeriveFieldsFormat": "Month Day Year",
-          "Components": [],
-          "SetValues": []
-        },
-        {
-          "FieldId": "Images.MobileScreenshots.BPIOnlineReceipt.MerchantReferenceNumber",
-          "FieldName": "Merchant Reference Number",
-          "IsMultiValue": false,
-          "Type": "Text",
-          "DeriveFieldsFormat": "",
-          "Components": [],
-          "SetValues": []
-        },
-        {
-          "FieldId": "Images.MobileScreenshots.BPIOnlineReceipt.Amount",
-          "FieldName": "Amount",
-          "IsMultiValue": false,
-          "Type": "Number",
           "DeriveFieldsFormat": "",
           "Components": [],
           "SetValues": []
@@ -457,35 +394,8 @@
       },
       "Fields": [
         {
-          "FieldId": "Receipts.MobileScreenshots.GlobeOnline.ReferenceNumber",
-          "FieldName": "ReferenceNumber",
-          "IsMultiValue": false,
-          "Type": "Text",
-          "DeriveFieldsFormat": "",
-          "Components": [],
-          "SetValues": []
-        },
-        {
-          "FieldId": "Receipts.MobileScreenshots.GlobeOnline.AccountNumber",
-          "FieldName": "AccountNumber",
-          "IsMultiValue": false,
-          "Type": "Text",
-          "DeriveFieldsFormat": "",
-          "Components": [],
-          "SetValues": []
-        },
-        {
-          "FieldId": "Receipts.MobileScreenshots.GlobeOnline.DateTime",
-          "FieldName": "DateTime",
-          "IsMultiValue": false,
-          "Type": "Text",
-          "DeriveFieldsFormat": "",
-          "Components": [],
-          "SetValues": []
-        },
-        {
           "FieldId": "Receipts.MobileScreenshots.GlobeOnline.AmountPaid",
-          "FieldName": "AmountPaid",
+          "FieldName": "TotalAmountPaid",
           "IsMultiValue": false,
           "Type": "Text",
           "DeriveFieldsFormat": "",
