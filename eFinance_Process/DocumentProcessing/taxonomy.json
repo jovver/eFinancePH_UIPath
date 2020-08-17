@@ -87,7 +87,7 @@
           "FieldId": "PDF.StatementOfAccounts.SkyBroadband.TotalAmountDue",
           "FieldName": "TotalAmountDue",
           "IsMultiValue": false,
-          "Type": "Number",
+          "Type": "Text",
           "DeriveFieldsFormat": "",
           "Components": [],
           "SetValues": []
@@ -127,7 +127,7 @@
           "FieldId": "PDF.StatementOfAccounts.Globe.TotalAmountDue",
           "FieldName": "TotalAmountDue",
           "IsMultiValue": false,
-          "Type": "Number",
+          "Type": "Text",
           "DeriveFieldsFormat": "",
           "Components": [],
           "SetValues": []
@@ -167,7 +167,7 @@
           "FieldId": "PDF.StatementOfAccounts.ConvergeICT.TotalAmountDue",
           "FieldName": "TotalAmountDue",
           "IsMultiValue": false,
-          "Type": "Number",
+          "Type": "Text",
           "DeriveFieldsFormat": "",
           "Components": [],
           "SetValues": []
@@ -207,7 +207,7 @@
           "FieldId": "PDF.StatementOfAccounts.SMARTCommunications.TotalAmountDue",
           "FieldName": "TotalAmountDue",
           "IsMultiValue": false,
-          "Type": "Number",
+          "Type": "Text",
           "DeriveFieldsFormat": "",
           "Components": [],
           "SetValues": []
@@ -247,7 +247,7 @@
           "FieldId": "PDF.StatementOfAccounts.GlobeHome.TotalAmountDue",
           "FieldName": "TotalAmountDue",
           "IsMultiValue": false,
-          "Type": "Number",
+          "Type": "Text",
           "DeriveFieldsFormat": "",
           "Components": [],
           "SetValues": []
