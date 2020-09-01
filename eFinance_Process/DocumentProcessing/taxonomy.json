@@ -447,6 +447,50 @@
           "SetValues": []
         }
       ]
+    },
+    {
+      "DocumentTypeId": "Receipts.MobileScreenshots.SmartOnline",
+      "Group": "Receipts",
+      "Category": "MobileScreenshots",
+      "Name": "Smart Online",
+      "OptionalUniqueIdentifier": null,
+      "TypeField": {
+        "FieldId": "Receipts.MobileScreenshots.SmartOnline.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": [
+        {
+          "FieldId": "Receipts.MobileScreenshots.SmartOnline.TotalAmountPaid",
+          "FieldName": "TotalAmountPaid",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        }
+      ]
+    },
+    {
+      "DocumentTypeId": "Receipts.MobileScreenshots.ConvergeOnline",
+      "Group": "Receipts",
+      "Category": "MobileScreenshots",
+      "Name": "Converge Online",
+      "OptionalUniqueIdentifier": null,
+      "TypeField": {
+        "FieldId": "Receipts.MobileScreenshots.ConvergeOnline.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": [
+        {
+          "FieldId": "Receipts.MobileScreenshots.ConvergeOnline.TotalAmountPaid",
+          "FieldName": "TotalAmountPaid",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        }
+      ]
     }
   ],
   "Groups": [
