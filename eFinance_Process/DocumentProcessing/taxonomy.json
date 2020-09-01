@@ -386,7 +386,7 @@
       "DocumentTypeId": "Receipts.MobileScreenshots.GlobeOnline",
       "Group": "Receipts",
       "Category": "MobileScreenshots",
-      "Name": "Globe Online",
+      "Name": "Globe Online Email",
       "OptionalUniqueIdentifier": "AmountPaid",
       "TypeField": {
         "FieldId": "Receipts.MobileScreenshots.GlobeOnline.DocumentType",
@@ -420,6 +420,28 @@
           "FieldName": "TotalAmountPaid",
           "IsMultiValue": false,
           "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": []
+        }
+      ]
+    },
+    {
+      "DocumentTypeId": "Receipts.MobileScreenshots.GlobeMobileOnline",
+      "Group": "Receipts",
+      "Category": "MobileScreenshots",
+      "Name": "Globe Mobile Online",
+      "OptionalUniqueIdentifier": null,
+      "TypeField": {
+        "FieldId": "Receipts.MobileScreenshots.GlobeMobileOnline.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": [
+        {
+          "FieldId": "Receipts.MobileScreenshots.GlobeMobileOnline.Amount",
+          "FieldName": "Amount",
+          "IsMultiValue": false,
+          "Type": "Text",
           "DeriveFieldsFormat": "",
           "Components": [],
           "SetValues": []
