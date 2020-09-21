@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1108,1952</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1119,1992</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>BillingStatement_Compare_and_Process_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -405,9 +405,9 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <Transition.To>
-              <State x:Name="__ReferenceID2" DisplayName="Digitize Document. Classify and Extract" sap:VirtualizedContainerService.HintSize="699,3756" sap2010:WorkflowViewState.IdRef="State_1">
+              <State x:Name="__ReferenceID2" DisplayName="Digitize Document. Classify and Extract" sap:VirtualizedContainerService.HintSize="699,3785" sap2010:WorkflowViewState.IdRef="State_1">
                 <State.Entry>
-                  <Sequence sap:VirtualizedContainerService.HintSize="653,3369" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                  <Sequence sap:VirtualizedContainerService.HintSize="653,3398" sap2010:WorkflowViewState.IdRef="Sequence_56">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="DocumentID" />
                       <Variable x:TypeArguments="x:String" Name="Temp_TotalAmountDue" />
@@ -605,7 +605,24 @@
                         </p4:RegexBasedExtractor>
                       </p4:DataExtractionScope.Extractors>
                     </p4:DataExtractionScope>
-                    <p:PresentValidationStation ValidatedExtractionResults="{x:Null}" AutomaticExtractionResults="[ExtractionResult]" DisplayName="Present Validation Station" DocumentObjectModel="[FileDOM]" DocumentPath="[File]" DocumentText="[FileText]" sap:VirtualizedContainerService.HintSize="611,22" sap2010:WorkflowViewState.IdRef="PresentValidationStation_6" Taxonomy="[eFinanceTaxonomy]" />
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="611,51" sap2010:WorkflowViewState.IdRef="CommentOut_30">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_67">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <p:PresentValidationStation ValidatedExtractionResults="{x:Null}" AutomaticExtractionResults="[ExtractionResult]" DisplayName="Present Validation Station" DocumentObjectModel="[FileDOM]" DocumentPath="[File]" DocumentText="[FileText]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="PresentValidationStation_6" Taxonomy="[eFinanceTaxonomy]" />
+                        </Sequence>
+                      </ui:CommentOut.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:CommentOut>
                     <p4:ExportExtractionResults DataSet="[ExtractDataSet]" DisplayName="Export Extraction Results" ExtractionResult="[ExtractionResult]" sap:VirtualizedContainerService.HintSize="611,22" sap2010:WorkflowViewState.IdRef="ExportExtractionResults_3" IncludeConfidence="False" />
                     <Assign sap:VirtualizedContainerService.HintSize="611,60" sap2010:WorkflowViewState.IdRef="Assign_38">
                       <Assign.To>
