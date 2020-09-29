@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1119,2569</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1056,2529</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>DownloadImages_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -149,7 +149,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'iexplore.exe'" sap:VirtualizedContainerService.HintSize="528,1925" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="428295d8330d08ab482e677c5635df5d" Selector="&lt;html url='http://workit.nnitcorp.com/Departments/399-1000/Corporate/Finance/e-Finance/Lists/Communication/Attachments/*' /&gt;">
+    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'iexplore.exe'" sap:VirtualizedContainerService.HintSize="528,1925" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="428295d8330d08ab482e677c5635df5d" Selector="&lt;html url='http://*.nnitcorp.com/Departments/399-1000/Corporate/Finance/e-Finance/Lists/Communication/Attachments/*' /&gt;">
       <ui:WindowScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
